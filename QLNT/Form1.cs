@@ -16,6 +16,7 @@ namespace QLNT
         {
             InitializeComponent();
             // Initeal Project QLNT
+            /// :)
         }
     }
 }
