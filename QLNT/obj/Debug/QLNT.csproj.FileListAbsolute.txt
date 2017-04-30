@@ -1,1 +1,5 @@
 X:\git\QLNT\git_clone\QLNT\bin\Debug\QLNT.exe.config
+D:\16HCDH\HK1\Source\QLNT\bin\Debug\QLNT.exe.config
+D:\16HCDH\HK1\Source\QLNT\obj\Debug\QLNT.csprojResolveAssemblyReference.cache
+D:\16HCDH\HK1\Source\QLNT\obj\Debug\QLNT.Properties.Resources.resources
+D:\16HCDH\HK1\Source\QLNT\obj\Debug\QLNT.csproj.GenerateResource.Cache
