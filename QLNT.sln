@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLNT", "QLNT\QLNT.csproj", "{9AAA863B-11E2-4CB3-8B92-2F04AE4E3C37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{4CFC13D1-7EC1-4D86-9601-82E74C08497D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{9AAA863B-11E2-4CB3-8B92-2F04AE4E3C37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AAA863B-11E2-4CB3-8B92-2F04AE4E3C37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AAA863B-11E2-4CB3-8B92-2F04AE4E3C37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CFC13D1-7EC1-4D86-9601-82E74C08497D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CFC13D1-7EC1-4D86-9601-82E74C08497D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CFC13D1-7EC1-4D86-9601-82E74C08497D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CFC13D1-7EC1-4D86-9601-82E74C08497D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
