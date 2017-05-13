@@ -19,11 +19,11 @@ namespace Common
         {
             try
             {
-                DataTable dt = null;
+                DataTable data = null;
                 DataAccessObject dataconn = new DataAccessObject();
                 String CmdString = @"SELECT Gui FROM GuiEMail WHERE STT=1";
                 //dt = dataconn.GetDataTable(CmdString);
-                if (dt.Rows[0]["Gui"].ToString() == "True")
+                if (data.Rows[0]["Gui"].ToString() == "True")
                 {
                     return true;
                 }
@@ -103,10 +103,7 @@ namespace Common
                     mail.Body = noidung; // Nội dung
                     if (data != null)
                     {
-                        //ContentDisposition dis = data.ContentDisposition;
-                        //dis.CreationDate = File.GetCreationTime(pathfile);
-                        //dis.ModificationDate = File.GetLastWriteTime(pathfile);
-                        //dis.ReadDate = File.GetLastAccessTime(pathfile);
+   
                         mail.Attachments.Add(data); // Thêm tập tin vào mail
                     }
                     SmtpServer.Port = 587;
@@ -127,10 +124,7 @@ namespace Common
             try
             {
                 DataTable dt = null;
-                //DataAccessObject dataconn = new DataAccessObject();
-                //String CmdString = @"SELECT MailGui FROM GuiEMail WHERE STT=1";
-                //dt = dataconn.GetDataTable(CmdString);
-                //dataconn.CloseConnect();
+
                 return dt.Rows[0][0].ToString();
             }
             catch
@@ -165,9 +159,10 @@ namespace Common
                 DataTable dt = null;
                 DataAccessObject dataconn = new DataAccessObject();
                 String CmdString = @"SELECT MatKhau FROM GuiEMail WHERE STT=1";
-                //dt = dataconn.GetDataTable(CmdString);
-                //dataconn.CloseConnect();
+
                 return MaHoa.MaHoaDES("chuoi ma hoa",dt.Rows[0][0].ToString());
+				//dt = dataconn.GetDataTable(CmdString);
+                //dataconn.CloseConnect();
             }
             catch
             {

@@ -65,40 +65,7 @@ namespace QLNT.LinQToSQL
     partial void DeleteNhatKy(NhatKy instance);
     partial void InsertOption(Option instance);
     partial void UpdateOption(Option instance);
-    partial void DeleteOption(Option instance);
-    partial void InsertPhong(Phong instance);
-    partial void UpdatePhong(Phong instance);
-    partial void DeletePhong(Phong instance);
-    partial void InsertQuanLyVatTu(QuanLyVatTu instance);
-    partial void UpdateQuanLyVatTu(QuanLyVatTu instance);
-    partial void DeleteQuanLyVatTu(QuanLyVatTu instance);
-    partial void InsertSinhVien(SinhVien instance);
-    partial void UpdateSinhVien(SinhVien instance);
-    partial void DeleteSinhVien(SinhVien instance);
-    partial void InsertSysNhomQuyen(SysNhomQuyen instance);
-    partial void UpdateSysNhomQuyen(SysNhomQuyen instance);
-    partial void DeleteSysNhomQuyen(SysNhomQuyen instance);
-    partial void InsertSysQuyenChucNang(SysQuyenChucNang instance);
-    partial void UpdateSysQuyenChucNang(SysQuyenChucNang instance);
-    partial void DeleteSysQuyenChucNang(SysQuyenChucNang instance);
-    partial void InsertSysQuyenSuDung(SysQuyenSuDung instance);
-    partial void UpdateSysQuyenSuDung(SysQuyenSuDung instance);
-    partial void DeleteSysQuyenSuDung(SysQuyenSuDung instance);
-    partial void InsertSysUser(SysUser instance);
-    partial void UpdateSysUser(SysUser instance);
-    partial void DeleteSysUser(SysUser instance);
-    partial void InsertThongTinDongTien(ThongTinDongTien instance);
-    partial void UpdateThongTinDongTien(ThongTinDongTien instance);
-    partial void DeleteThongTinDongTien(ThongTinDongTien instance);
-    partial void InsertTien(Tien instance);
-    partial void UpdateTien(Tien instance);
-    partial void DeleteTien(Tien instance);
-    partial void InsertTonGiao(TonGiao instance);
-    partial void UpdateTonGiao(TonGiao instance);
-    partial void DeleteTonGiao(TonGiao instance);
-    partial void InsertTrangThai(TrangThai instance);
-    partial void UpdateTrangThai(TrangThai instance);
-    partial void DeleteTrangThai(TrangThai instance);
+
     #endregion
 		
 		public QLNTDataContext() : 

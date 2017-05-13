@@ -46,7 +46,7 @@ namespace QLNT.Business
             try
             {
                 var quanlyvattu = new QuanLyVatTu()
-                {
+               {
                     MaPhong = qlvt.MaPhong == null ? String.Empty : qlvt.MaPhong,
                     TenVatTu = qlvt.TenVatTu == null ? String.Empty : qlvt.TenVatTu,
                     SoLuong = qlvt.SoLuong == null ? 0 : qlvt.SoLuong,
@@ -91,7 +91,7 @@ namespace QLNT.Business
         {
             var getData = (from example in dtcontent.QuanLyVatTus
                            where example.ID == ID
-                           select example).Single();
+                           select example).Single();                
             dtcontent.QuanLyVatTus.DeleteOnSubmit(getData);
             dtcontent.SubmitChanges();
         }
