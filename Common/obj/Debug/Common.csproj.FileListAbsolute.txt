@@ -1,1 +1,5 @@
-D:\16HCDH\HK1\Source\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+D:\16HCDH\HK1\Source\Common\bin\Debug\Common.dll
+D:\16HCDH\HK1\Source\Common\bin\Debug\Common.pdb
+D:\16HCDH\HK1\Source\Common\bin\Debug\Zelda.SysData.dll
+D:\16HCDH\HK1\Source\Common\obj\Debug\Common.dll
+D:\16HCDH\HK1\Source\Common\obj\Debug\Common.pdb
