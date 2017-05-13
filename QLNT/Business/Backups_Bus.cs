@@ -11,6 +11,16 @@ namespace QLNT.Business
     {
         QLNTDataContext dtcontent = new QLNTDataContext();
 
+        //public bool InsertBackups(Backupss bk)
+        //{
+        //    try
+        //    {
+        //        dtcontent.Backupsses.InsertOnSubmit(bk);
+        //        dtcontent.SubmitChanges();
+        //        return true;
+        //    }
+        //    catch { return false; }
+        //}
         public bool InsertBackups(Backupss bk)
         {
             try
