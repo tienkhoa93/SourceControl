@@ -90,8 +90,8 @@ namespace QLNT.Business
         public void DeleteQuanLyVatTu(long ID)
         {
             var getData = (from example in dtcontent.QuanLyVatTus
-                           where example.ID == ID
-                           select example).Single();                
+                                       where example.ID == ID
+                                       select example).Single();
             dtcontent.QuanLyVatTus.DeleteOnSubmit(getData);
             dtcontent.SubmitChanges();
         }
