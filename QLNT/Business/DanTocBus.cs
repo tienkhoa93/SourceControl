@@ -66,10 +66,10 @@ namespace QLNT.Business
                 return false;
             }
         }
-        //public int KiemTraTonTaiDanToc(long kh)
-        //{
-        //    return (from sv in dtcontent.KhachTros where sv.MaDanToc == kh select sv).Count();
-        //}
+        public int KiemTraTonTaiDanToc(long kh)
+        {
+            return (from sv in dtcontent.KhachTros where sv.MaDanToc == kh select sv).Count();
+        }
         public bool KiemTraDanToc(string tdt)
         {
 
