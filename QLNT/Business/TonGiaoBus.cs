@@ -13,8 +13,7 @@ namespace QLNT.Business
        Log_Bus lb = new Log_Bus();
        public List<TonGiao> ListTonGiao()
        {
-           var c = from dt in dtcontent.TonGiaos
-                   select dt;
+           var c;
            return c.ToList<TonGiao>();
        }
 
@@ -27,9 +26,7 @@ namespace QLNT.Business
                    TenTonGiao = hktt.TenTonGiao == null ? String.Empty : hktt.TenTonGiao,
                    GhiChu = hktt.GhiChu == null ? String.Empty : hktt.GhiChu,
                };
-               dtcontent.TonGiaos.InsertOnSubmit(tongiao);
-               dtcontent.SubmitChanges();
-               lb.InsertLog("Thêm " + hktt.TenTonGiao, "thực hiện thao tác thêm trong bảng tôn giáo");
+
                return true;
            }
            catch { return false; }
@@ -39,11 +36,7 @@ namespace QLNT.Business
        {
            try
            {
-               TonGiao tongiao = dtcontent.TonGiaos.Single(p => p.MaTonGiao == tg.MaTonGiao);
-               tongiao.TenTonGiao = tg.TenTonGiao;
-               tongiao.GhiChu = tg.GhiChu;
-               dtcontent.SubmitChanges();
-               lb.InsertLog("Sửa " + tg.TenTonGiao, "thực hiện thao tác Sửa trong bảng tôn giáo");
+
                return true;
            }
            catch
@@ -55,13 +48,7 @@ namespace QLNT.Business
        {
            try
            {
-               var query = (from khu in dtcontent.TonGiaos
-                            where khu.MaTonGiao == MaTonGiao
-                            select khu);
-               dtcontent.TonGiaos.DeleteAllOnSubmit(query);
-               dtcontent.SubmitChanges();
-               lb.InsertLog("Xóa " + MaTonGiao, "thực hiện thao tác xóa trong bảng tôn giáo");
-               return true;
+
            }
            catch (Exception)
            {
