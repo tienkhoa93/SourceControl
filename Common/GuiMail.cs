@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net.Mail;
 using System.Net.Mime;
 
-namespace Common
+namespace QLNT.Common
 {
     class ToolGuiMail
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Common
+namespace QLNT.Common
 {
     public class MaHoa
     {

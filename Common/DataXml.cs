@@ -8,7 +8,7 @@ using System.Xml.Linq;
 using System.Configuration;
 using System.Xml;
 
-namespace Common
+namespace QLNT.Common
 {
     public class DataXml
     {
