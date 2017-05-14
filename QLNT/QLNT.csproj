@@ -130,6 +130,16 @@
       <Name>Common</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Form\DienNuoc\VatTu\" />
+    <Folder Include="Form\In\" />
+    <Folder Include="Form\KhachTro\" />
+    <Folder Include="Form\Khu\" />
+    <Folder Include="Form\PhanQuyen\" />
+    <Folder Include="Form\PhongBan\" />
+    <Folder Include="Form\Systems\" />
+    <Folder Include="Form\UserControl\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

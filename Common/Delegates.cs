@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QLNT.Common
+namespace Common
 {
     public class Delegates
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using QLNT.Common;
+using Common;
 using QLNT.LinQToSQL;
 namespace QLNT.Business
 {

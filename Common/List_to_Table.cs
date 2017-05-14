@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QLNT.Common
+namespace Common
 {
    public  static class List_to_Table
     {

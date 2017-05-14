@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace QLNT.Common
+namespace Common
 {
     public  class DataInfo
     {

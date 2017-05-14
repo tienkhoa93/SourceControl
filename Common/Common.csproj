@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountInfo.cs" />
+    <Compile Include="AccountXml.cs" />
     <Compile Include="DataInfo.cs" />
     <Compile Include="DataAccessObject.cs" />
     <Compile Include="DataXml.cs" />
@@ -49,6 +51,7 @@
     <Compile Include="List_to_Table.cs" />
     <Compile Include="MaHoa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
