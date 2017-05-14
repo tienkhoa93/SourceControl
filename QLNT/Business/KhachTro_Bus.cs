@@ -37,8 +37,7 @@ namespace QLNT.Business
             {
                 var list_khachtro =
                     from khachtro in datacontext.KhachTros
-                    join phong in datacontext.Phongs on khachtro.MaPhong equals phong.MaPhong into pg
-                    from phg in pg.DefaultIfEmpty()
+                    join phong in datacontext.Phongs on khachtro.MaPhong equals phong.MaPhong into pg from phg in pg.DefaultIfEmpty()
                     join phongcu in datacontext.Phongs on khachtro.MaPhongCu equals phongcu.MaPhong into phc
                     from phogc in phc.DefaultIfEmpty()
                     join dantoc in datacontext.DanTocs on khachtro.MaDanToc equals dantoc.MaDanToc
@@ -50,7 +49,7 @@ namespace QLNT.Business
                         MaKhachTro = khachtro.MaKhachTro,
                         HoLot = khachtro.HoLot,
                         Ten = khachtro.Ten,
-                        HoTen = khachtro.HoLot + " " + khachtro.Ten,
+                        HoTen = khachtro.HoLot +" " + khachtro.Ten,
                         Anh = khachtro.Anh == null ? null : khachtro.Anh.ToArray(),
                         NgaySinh = khachtro.NgaySinh,
                         GioiTinh = khachtro.GioiTinh,
@@ -100,7 +99,7 @@ namespace QLNT.Business
                     {
                         HoTenChuTro = option.HoTenChuTro,
                         NgaySinhChuTro = (DateTime)option.NgaySinh,
-                        NgayCapCMNDChuTro = option.NgayCap == null ? DateTime.Parse("2-2-1000") : (DateTime)option.NgayCap,
+                        NgayCapCMNDChuTro = option.NgayCap==null?DateTime.Parse("2-2-1000"):(DateTime)option.NgayCap,
                         CMNDChuTro = option.CMND,
                         NoiCapCMNDChuTro = option.NoiCap,
                         ThuongTruChuTro = option.ThuongTru,
@@ -125,7 +124,7 @@ namespace QLNT.Business
             }
             catch { return null; }
         }
-
+       
         public List<_KhachTro> ListDanhSachKhachTro_TheoMaPhong(string map)
         {
             try
@@ -397,10 +396,10 @@ namespace QLNT.Business
             }
             catch { return false; }
         }
-        public bool KiemTraSoNguoi(string mp)
+      public bool  KiemTraSoNguoi (string mp)
         {
             var d = (from phong in datacontext.Phongs where phong.MaPhong == mp select phong).First();
-            var c = (from khach in datacontext.KhachTros where khach.MaPhong == mp where khach.HoatDong == true select khach);
+            var c = (from khach in datacontext.KhachTros where khach.MaPhong == mp where khach.HoatDong==true select khach);
 
             if (c.Count() >= d.TongNguoi)
                 return false;
@@ -429,11 +428,11 @@ namespace QLNT.Business
                 kt.MaPhongCu = kt.MaPhong;
                 m = kt.MaPhong;
                 kt.MaPhong = mp;
-
+               
                 try
                 {
                     datacontext.SubmitChanges();
-                    lb.InsertLog("Chuyển phòng cho khách trọ ", "Chuyển phòng thành công.");
+                    lb.InsertLog("Chuyển phòng cho khách trọ " , "Chuyển phòng thành công.");
                 }
                 catch { }
             }
