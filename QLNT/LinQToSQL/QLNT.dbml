@@ -285,4 +285,191 @@
       <Column Name="HoatDong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
+  <Function Name="dbo.Backup_auto" Method="Backup_auto">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.KTX_UPDATE_PHONG" Method="KTX_UPDATE_PHONG">
+    <Parameter Name="MPC" Parameter="mPC" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MPM" Parameter="mPM" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MK" Parameter="mK" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TENPHONG" Parameter="tENPHONG" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="SISOMAX" Parameter="sISOMAX" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SISOHIENTAI" Parameter="sISOHIENTAI" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HOATDONG" Parameter="hOATDONG" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="GHICHU" Parameter="gHICHU" Type="System.String" DbType="NVarChar(500)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.KTX_SP_Count_SV_Inroom" Method="KTX_SP_Count_SV_Inroom">
+    <Parameter Name="maphong" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="KTX_SP_Count_SV_InroomResult">
+      <Column Name="SISO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.KTX_SP_DELETE_ALL_NHATKY" Method="KTX_SP_DELETE_ALL_NHATKY">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.KTX_SP_DEM_THONGKE_NAM_NU" Method="KTX_SP_DEM_THONGKE_NAM_NU">
+    <ElementType Name="KTX_SP_DEM_THONGKE_NAM_NUResult">
+      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="TongSo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.KTX_SP_LIST_ROOM_SISO" Method="KTX_SP_LIST_ROOM_SISO">
+    <ElementType Name="KTX_SP_LIST_ROOM_SISOResult">
+      <Column Name="MaPhong" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaKhu" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TenPhong" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SiSoMax" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SiSoHienTai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HoatDong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SoChoTrong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.KTX_SP_LocLop" Method="KTX_SP_LocLop">
+    <Parameter Name="makhoa" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="KTX_SP_LocLopResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.KTX_SP_PHONGTUYCHON" Method="KTX_SP_PHONGTUYCHON">
+    <Parameter Name="bit" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="KTX_SP_PHONGTUYCHONResult">
+      <Column Name="MaPhong" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaKhu" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TenPhong" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SiSoMax" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SiSoHienTai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HoatDong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SoChoTrong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaKhu1" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TenKhu" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu1" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HoatDong1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SoChoTrong1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenKhu1" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.KTX_SP_THONGKE_DANTOC_THIEUSO" Method="KTX_SP_THONGKE_DANTOC_THIEUSO">
+    <ElementType Name="KTX_SP_THONGKE_DANTOC_THIEUSOResult">
+      <Column Name="DanToc" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="SoSV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.KTX_SP_THONGKE_SINHVIEN" Method="KTX_SP_THONGKE_SINHVIEN">
+    <Parameter Name="maphong" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="makhu" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="gioitinh" Type="System.String" DbType="NVarChar(5)" />
+    <Parameter Name="trangthai" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="thieuso" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tungay" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="toingay" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="stt" Type="System.Int32" DbType="Int" />
+    <ElementType Name="KTX_SP_THONGKE_SINHVIENResult">
+      <Column Name="MaSV" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HoLot" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Anh" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MaPhong" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MaHoKhau" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ThongTinChaMe" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SDTLienHe" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MaDanToc" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MaTonGiao" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MaLop" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MaKhoaHoc" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MaPhongCu" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NgayVao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayRa" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HoatDong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MaTrangThai" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="TruongPhong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="ThieuSo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TenDanToc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TenLop" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenKhoaHoc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TenPhong" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TenPhongCu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TenHoKhau" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TenTonGiao" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TenTrangThai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenKhu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.KTX_SP_THONGKE_SINHVIEN_THEOTRANGTHAI" Method="KTX_SP_THONGKE_SINHVIEN_THEOTRANGTHAI">
+    <Parameter Name="tt" Type="System.Int32" DbType="Int" />
+    <ElementType Name="KTX_SP_THONGKE_SINHVIEN_THEOTRANGTHAIResult">
+      <Column Name="MaSV" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HoLot" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Anh" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MaPhong" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MaHoKhau" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ThongTinChaMe" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SDTLienHe" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MaDanToc" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MaTonGiao" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MaLop" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MaKhoaHoc" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MaPhongCu" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NgayVao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayRa" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HoatDong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MaTrangThai" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="TruongPhong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="ThieuSo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TenDanToc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TenLop" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenKhoaHoc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TenPhong" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TenPhongCu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TenHoKhau" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TenTonGiao" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TenTrangThai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.KTX_SP_THONGKE_SV_THEOKHOAHOC" Method="KTX_SP_THONGKE_SV_THEOKHOAHOC" />
+  <Function Name="dbo.KTX_SP_THONGKE_TATCA_DANTOC" Method="KTX_SP_THONGKE_TATCA_DANTOC">
+    <ElementType Name="KTX_SP_THONGKE_TATCA_DANTOCResult">
+      <Column Name="TenDanToc" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="SoSV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.KTX_SP_THONGKE_TUOI" Method="KTX_SP_THONGKE_TUOI" />
+  <Function Name="dbo.KTX_SP_ThongKeChoTrongTheoKhu" Method="KTX_SP_ThongKeChoTrongTheoKhu">
+    <ElementType Name="KTX_SP_ThongKeChoTrongTheoKhuResult">
+      <Column Name="TenKhu" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ConTrong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.KTX_SP_UPDATE_SISO_PHONG" Method="KTX_SP_UPDATE_SISO_PHONG">
+    <Parameter Name="MPC" Parameter="mPC" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MPM" Parameter="mPM" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.KTX_SP_UPDATE_SS_PHONG" Method="KTX_SP_UPDATE_SS_PHONG">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.KTX_TGG_LOG" Method="KTX_TGG_LOG">
+    <Parameter Name="TDN" Parameter="tDN" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="TV" Parameter="tV" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="CT" Parameter="cT" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="mac" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="name" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>
