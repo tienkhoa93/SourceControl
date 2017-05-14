@@ -14,6 +14,12 @@ namespace QLNT.Business
            public String TenKhu { get; set; }
            public int SoNguoi { get; set; }
       }
+      //public class ThongKeKhu
+      //{
+      //    public String TenKhu { get; set; }
+      //    public int SoNguoi { get; set; }
+      //}
+
 
       public class ThongKeNamNu_
       {
