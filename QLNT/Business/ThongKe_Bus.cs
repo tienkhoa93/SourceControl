@@ -20,6 +20,18 @@ namespace QLNT.Business
          public String GioiTinh { get; set; }
          public int TongSo { get; set; }
       }
+
+      /* -------------------------------------------------------------------------------------------*/
+        public  List<ThongKeKhu> SiSoTheoKhu()
+        {
+            var ob = dtcontent.ExecuteQuery<ThongKeKhu>("exec [dbo].[NT_SP_ThongKeSoNguoiTheoKhu]");
+               return ob.ToList<ThongKeKhu>();
+        }
+        public List<ThongKeNamNu_> ThongKeNamNu()
+        {
+            var ob = dtcontent.ExecuteQuery<ThongKeNamNu_>("exec [dbo].[NT_SP_ThongKeTheoGioiTinh]");
+            return ob.ToList<ThongKeNamNu_>();
+        }
        
     }
 }

@@ -38,17 +38,6 @@ namespace QLNT.Business
        {
            try {
            Option op = datacontext.Options.Single(p=> p.Id==1);
-           op.HoTenChuTro = opp.HoTenChuTro;
-           op.NgaySinh = opp.NgaySinh;
-           op.CMND = opp.CMND;
-           op.NgayCap = opp.NgayCap;
-           op.NoiCap = opp.NoiCap;
-           op.ThuongTru = opp.ThuongTru;
-           op.GiaTienPhong = opp.GiaTienPhong;
-           op.GiaTienDien = opp.GiaTienDien;
-           op.GiaTienNuoc = opp.GiaTienNuoc;
-           op.TenFileBackup =opp.TenFileBackup;
-           op.LuufileBackup = opp.LuufileBackup;
            op.LuufileRestore = opp.LuufileRestore;
            datacontext.SubmitChanges();
            lb.InsertLog("Thay đổi bảng tùy chọn."," Đã thay đổi bảng tùy chọn trong phần mềm");
