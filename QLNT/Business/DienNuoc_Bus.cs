@@ -20,6 +20,13 @@ namespace QLNT.Business
         public int SoDienMoi { get; set; }
         public int SoNuocMoi { get; set; }
     }
+
+    //public class DienNuocCu
+    //{
+    //    public string MaPhong { get; set; }
+    //    public int SoDienMoi { get; set; }
+    //    public int SoNuocMoi { get; set; }
+    //}
     public class DienNuoc_Bus
     {
 

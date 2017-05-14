@@ -45,8 +45,7 @@ namespace QLNT.Business
                         InAn = true,
                         XuatDuLieu = true,
                         NhapDuLieu = true,
-                        HoatDong = true,
-
+                        HoatDong = true
                     };
                     dtcontext.SysQuyenSuDungs.InsertOnSubmit(qsd);
                     dtcontext.SubmitChanges();

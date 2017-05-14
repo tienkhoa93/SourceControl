@@ -32,7 +32,7 @@ namespace QLNT.Business
                     MaNhom = nq.MaNhom == null ? string.Empty : nq.MaNhom,
                     TenNhom = nq.TenNhom == null ? string.Empty : nq.TenNhom,
                     DienGiai = nq.DienGiai == null ? string.Empty : nq.DienGiai,
-                    HoatDong = nq.HoatDong,
+                    HoatDong = nq.HoatDong
                 };
                 dtcontent.SysNhomQuyens.InsertOnSubmit(nhomquyen);
                 dtcontent.SubmitChanges();
@@ -48,8 +48,6 @@ namespace QLNT.Business
             try
             {
                 SysNhomQuyen nhomquyen = dtcontent.SysNhomQuyens.Single(p => p.MaNhom == nq.MaNhom);
-
-
                 nhomquyen.TenNhom = nq.TenNhom == null ? string.Empty : nq.TenNhom;
                 nhomquyen.DienGiai = nq.DienGiai == null ? string.Empty : nq.DienGiai;
                 nhomquyen.HoatDong = nq.HoatDong;
