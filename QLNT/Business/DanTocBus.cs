@@ -17,6 +17,13 @@ namespace QLNT.Business
                     select dt;
             return c.ToList<DanToc>();
         }
+
+        //public List<DanToc> ListDanToc()
+        //{
+        //    var c = from dt in dtcontent.DanTocs
+        //            select dt;
+        //    return c.ToList<DanToc>();
+        //}
         public bool InsertDanToc(DanToc dt)
         {
             try
