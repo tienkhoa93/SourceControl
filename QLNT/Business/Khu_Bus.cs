@@ -41,28 +41,6 @@ namespace QLNT.Business
        }
        public List<Khu_Count> GetAllKhu_Count()
        {
-           //var query = (from khu in datacontent.Khus
-           //             join phong in datacontent.Phongs on khu.MaKhu equals phong.MaKhu
-           //             where khu.HoatDong == true
-           //             group khu by khu.MaKhu into c
-           //             select new Khu_Count
-           //             {
-           //                 MaKhu = c.Key,
-           //                 SoPhong = c.Count() == null ? 0 : c.Count()
-           //                 //SoPhong = c.Count(),                            
-           //             });
-
-           //var qr = (from k in query.ToList<Khu_Count>()
-           //          join kh in datacontent.Khus on k.MaKhu equals kh.MaKhu
-
-           //          select new Khu_Count
-           //          {
-           //              MaKhu = k.MaKhu,
-           //              TenKhu = kh.TenKhu,
-           //              SoPhong = k.SoPhong == null ? (int)0 : k.SoPhong,
-           //              GhiChu = kh.GhiChu
-           //          });
-           //return qr.ToList<Khu_Count>();
 
            var query1 = (from khu in datacontent.Khus
                          where khu.HoatDong == true
