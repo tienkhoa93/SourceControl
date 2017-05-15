@@ -78,6 +78,26 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\Systems\frmBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Systems\frmBackup.designer.cs">
+      <DependentUpon>frmBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Systems\frmCauHinhDungChung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Systems\frmCauHinhDungChung.Designer.cs">
+      <DependentUpon>frmCauHinhDungChung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Systems\frmDoiMatKhau.cs" />
+    <Compile Include="Form\Systems\frmDoiMatKhau.Designer.cs">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Systems\frmQuanLiDungChung.cs" />
+    <Compile Include="Form\Systems\frmQuanLiDungChung.Designer.cs">
+      <DependentUpon>frmQuanLiDungChung.cs</DependentUpon>
+    </Compile>
     <Compile Include="LinQToSQL\QLNT.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -94,6 +114,19 @@
     <None Include="LinQToSQL\QLNT.dbml.layout">
       <DependentUpon>QLNT.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="Form\Systems\frmBackup.resx">
+      <DependentUpon>frmBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Systems\frmCauHinhDungChung.resx">
+      <DependentUpon>frmCauHinhDungChung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Systems\frmDoiMatKhau.resx">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Systems\frmQuanLiDungChung.resx">
+      <DependentUpon>frmQuanLiDungChung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -137,7 +170,6 @@
     <Folder Include="Form\Khu\" />
     <Folder Include="Form\PhanQuyen\" />
     <Folder Include="Form\PhongBan\" />
-    <Folder Include="Form\Systems\" />
     <Folder Include="Form\UserControl\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
