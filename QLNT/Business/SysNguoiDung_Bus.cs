@@ -16,13 +16,7 @@ namespace QLNT.Business
                     select dt;
             return c.ToList<SysUser>();
         }
-        public List<SysUser> SelectNguoiDung(string taikhoan)
-        {
-            var c = from dt in dtcontent.SysUsers
-                    where dt.TaiKhoan == taikhoan
-                    select dt;
-            return c.ToList<SysUser>();
-        }
+
         public List<SysUser> SelectNguoiDung_MaTKhau(string mk)
         {
             var c = from dt in dtcontent.SysUsers
@@ -30,37 +24,8 @@ namespace QLNT.Business
                     select dt;
             return c.ToList<SysUser>();
         }
-        public List<SysUser> GetNguoiDung_MaNhom(string manhom)
-        {
-            var c = from dt in dtcontent.SysUsers
-                    where dt.MaNhom == manhom
-                    select dt;
-            return c.ToList<SysUser>();
-        }
-        public bool insertNguoiDung(SysUser user)
-        {
-            try
-            {
-                SysUser nguoidung = new SysUser()
-                {
-                    ID = user.ID == null ? string.Empty : user.ID,
-                    TaiKhoan = user.TaiKhoan == null ? string.Empty : user.TaiKhoan,
-                    MatKhau = user.MatKhau == null ? string.Empty : user.MatKhau,
-                    HoTen = user.HoTen == null ? string.Empty : user.HoTen,
-                    MaNhom = user.MaNhom == null ? string.Empty : user.MaNhom,
-                    Email = user.Email == null ? string.Empty : user.Email,
-                    DienGiai = user.DienGiai == null ? string.Empty : user.DienGiai,
-                    HoatDong = user.HoatDong,
-                };
-                dtcontent.SysUsers.InsertOnSubmit(nguoidung);
-                dtcontent.SubmitChanges();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
+
+
 
         public bool UpdateNguoiDung(SysUser user)
         {
@@ -78,6 +43,30 @@ namespace QLNT.Business
 
                 dtcontent.SubmitChanges();
 
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+		        public bool insertNguoiDung(SysUser user)
+        {
+            try
+            {
+                SysUser nguoidung = new SysUser()
+                {
+                    ID = user.ID == null ? string.Empty : user.ID,
+                    TaiKhoan = user.TaiKhoan == null ? string.Empty : user.TaiKhoan,
+                    MatKhau = user.MatKhau == null ? string.Empty : user.MatKhau,
+                    HoTen = user.HoTen == null ? string.Empty : user.HoTen,
+                    MaNhom = user.MaNhom == null ? string.Empty : user.MaNhom,
+                    Email = user.Email == null ? string.Empty : user.Email,
+                    DienGiai = user.DienGiai == null ? string.Empty : user.DienGiai,
+                    HoatDong = user.HoatDong,
+                };
+                dtcontent.SysUsers.InsertOnSubmit(nguoidung);
+                dtcontent.SubmitChanges();
                 return true;
             }
             catch

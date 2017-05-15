@@ -18,12 +18,6 @@ namespace QLNT.Business
             return c.ToList<DanToc>();
         }
 
-        //public List<DanToc> ListDanToc()
-        //{
-        //    var c = from dt in dtcontent.DanTocs
-        //            select dt;
-        //    return c.ToList<DanToc>();
-        //}
         public bool InsertDanToc(DanToc dt)
         {
             try
@@ -46,8 +40,7 @@ namespace QLNT.Business
             {
                 DanToc dantoc = dtcontent.DanTocs.Single(p => p.MaDanToc == dt.MaDanToc);
                 dantoc.TenDanToc = dt.TenDanToc;
-                dantoc.GhiChu = dt.GhiChu;
-                dtcontent.SubmitChanges();
+ 
                 lb.InsertLog("Sửa dân tộc " + dt.TenDanToc, "Sửa dân tộc");
                 return true;
             }
