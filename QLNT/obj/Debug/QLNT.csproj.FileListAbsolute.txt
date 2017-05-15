@@ -4,3 +4,6 @@ D:\16HCDH\HK1\Source\QLNT\obj\Debug\QLNT.csprojResolveAssemblyReference.cache
 D:\16HCDH\HK1\Source\QLNT\obj\Debug\QLNT.Properties.Resources.resources
 D:\16HCDH\HK1\Source\QLNT\obj\Debug\QLNT.csproj.GenerateResource.Cache
 X:\git\QLNT\khoa_git\QLNT\bin\Debug\QLNT.exe.config
+X:\git\QLNT\khoa_git\QLNT\obj\Debug\QLNT.csprojResolveAssemblyReference.cache
+X:\git\QLNT\khoa_git\QLNT\obj\Debug\QLNT.Properties.Resources.resources
+X:\git\QLNT\khoa_git\QLNT\obj\Debug\QLNT.csproj.GenerateResource.Cache

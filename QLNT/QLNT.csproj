@@ -49,8 +49,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\Backups_Bus.cs" />
+    <Compile Include="Business\DanTocBus.cs" />
+    <Compile Include="Business\DienNuoc_Bus.cs" />
+    <Compile Include="Business\HoaDon_Buss.cs" />
+    <Compile Include="Business\HoKhauThuongTruBus.cs" />
+    <Compile Include="Business\KhachBus.cs" />
+    <Compile Include="Business\KhachTro_Bus.cs" />
+    <Compile Include="Business\Khu_Bus.cs" />
+    <Compile Include="Business\KyLuat_Bus.cs" />
     <Compile Include="Business\Log_Bus.cs" />
+    <Compile Include="Business\Options_Bus.cs" />
     <Compile Include="Business\Phong_Bus.cs" />
+    <Compile Include="Business\QuanLyVatTuBus.cs" />
+    <Compile Include="Business\SysChucNang_Bus.cs" />
+    <Compile Include="Business\SysNguoiDung_Bus.cs" />
+    <Compile Include="Business\SySNhomQuyen_Bus.cs" />
+    <Compile Include="Business\SysQuyenSuDung_Bus.cs" />
+    <Compile Include="Business\Systems_Bus.cs" />
+    <Compile Include="Business\ThongKe_Bus.cs" />
+    <Compile Include="Business\Tien_Buss.cs" />
+    <Compile Include="Business\TinhTrangBus.cs" />
+    <Compile Include="Business\TonGiaoBus.cs" />
+    <Compile Include="Business\VatTuBus.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +129,16 @@
       <Project>{4cfc13d1-7ec1-4d86-9601-82e74c08497d}</Project>
       <Name>Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Form\DienNuoc\VatTu\" />
+    <Folder Include="Form\In\" />
+    <Folder Include="Form\KhachTro\" />
+    <Folder Include="Form\Khu\" />
+    <Folder Include="Form\PhanQuyen\" />
+    <Folder Include="Form\PhongBan\" />
+    <Folder Include="Form\Systems\" />
+    <Folder Include="Form\UserControl\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
