@@ -28,6 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+                switch (c.MaChucNang.ToString())
+                {
+                        case "1": ribbonPage2.Visible = false; break;
+                        case "2": ribbonPage1.Visible = false; navQuanLySinhVien.Visible = false; break;
+                        case "3": ribbonPage3.Visible = false; navQuanLyPhongkhu.Visible = false; break;
+                        case "4": ribbonPage4.Visible = false; navQuanLyDienNuoc.Visible = false; break;
+                }
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             DevExpress.XtraCharts.UI.ChartControlCommandGalleryItemGroup2DColumn chartControlCommandGalleryItemGroup2DColumn1 = new DevExpress.XtraCharts.UI.ChartControlCommandGalleryItemGroup2DColumn();
