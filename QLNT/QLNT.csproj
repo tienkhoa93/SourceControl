@@ -118,6 +118,16 @@
     <Compile Include="Form\DienNuoc\frmTien.Designer.cs">
       <DependentUpon>frmTien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\frmCho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmCho.Designer.cs">
+      <DependentUpon>frmCho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmMain.cs" />
+    <Compile Include="Form\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\frmWait.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,11 +192,35 @@
     <Compile Include="Form\UserControl\uclDienNuoc.Designer.cs">
       <DependentUpon>uclDienNuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\UserControl\uclDienNuocSoTien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\UserControl\uclDienNuocSoTien.Designer.cs">
+      <DependentUpon>uclDienNuocSoTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\UserControl\uclDSKhachTro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\UserControl\uclDSKhachTro.Designer.cs">
+      <DependentUpon>uclDSKhachTro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\UserControl\uclLichSuTruyCap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\UserControl\uclLichSuTruyCap.Designer.cs">
+      <DependentUpon>uclLichSuTruyCap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\UserControl\uclThungRac.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Form\UserControl\uclThungRac.designer.cs">
       <DependentUpon>uclThungRac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\UserControl\uclTienPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\UserControl\uclTienPhong.Designer.cs">
+      <DependentUpon>uclTienPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="LinQToSQL\QLNT.designer.cs">
       <AutoGen>True</AutoGen>
@@ -222,6 +256,12 @@
     <EmbeddedResource Include="Form\DienNuoc\frmTien.resx">
       <DependentUpon>frmTien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmCho.resx">
+      <DependentUpon>frmCho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Systems\frmBackup.resx">
       <DependentUpon>frmBackup.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,8 +292,20 @@
     <EmbeddedResource Include="Form\UserControl\uclDienNuoc.resx">
       <DependentUpon>uclDienNuoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\UserControl\uclDienNuocSoTien.resx">
+      <DependentUpon>uclDienNuocSoTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\UserControl\uclDSKhachTro.resx">
+      <DependentUpon>uclDSKhachTro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\UserControl\uclLichSuTruyCap.resx">
+      <DependentUpon>uclLichSuTruyCap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\UserControl\uclThungRac.resx">
       <DependentUpon>uclThungRac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\UserControl\uclTienPhong.resx">
+      <DependentUpon>uclTienPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -299,6 +351,46 @@
     <Folder Include="Form\Khu\" />
     <Folder Include="Form\PhanQuyen\" />
     <Folder Include="Form\PhongBan\" />
+    <Folder Include="Report\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\1.png" />
+    <Content Include="Resources\1432128378_building.png" />
+    <Content Include="Resources\16x16-excel.png" />
+    <Content Include="Resources\Bedroom community.png" />
+    <Content Include="Resources\building.png" />
+    <Content Include="Resources\cash-icon.png" />
+    <Content Include="Resources\change_password.png" />
+    <Content Include="Resources\client_list-icon.jpg" />
+    <Content Include="Resources\croppedimage170170-bill_payments.png" />
+    <Content Include="Resources\delete.png" />
+    <Content Include="Resources\dialog-information.png" />
+    <Content Include="Resources\diennuoc.png" />
+    <Content Include="Resources\document-open.png" />
+    <Content Include="Resources\favicon.ico" />
+    <Content Include="Resources\Graduate-male.png" />
+    <Content Include="Resources\group_khachtro.png" />
+    <Content Include="Resources\home-folder-icon-md.png" />
+    <Content Include="Resources\home-icon.ico" />
+    <Content Include="Resources\house-of-bluez-theme-cm12c5_icon.png" />
+    <Content Include="Resources\invoice.png" />
+    <Content Include="Resources\Law court.png" />
+    <Content Include="Resources\Law court1.png" />
+    <Content Include="Resources\legal-icon.png" />
+    <Content Include="Resources\login.ico" />
+    <Content Include="Resources\Login.png" />
+    <Content Include="Resources\logo.jpg" />
+    <Content Include="Resources\lophoc.png" />
+    <Content Include="Resources\money.png" />
+    <Content Include="Resources\money_dollar.png" />
+    <Content Include="Resources\Recycle Bin.png" />
+    <Content Include="Resources\Recycle Bin1.png" />
+    <Content Include="Resources\room.png" />
+    <Content Include="Resources\thutien.png" />
+    <Content Include="Resources\tra_room.png" />
+    <Content Include="Resources\user-icon1.png" />
+    <Content Include="Resources\users-icon1.png" />
+    <Content Include="Resources\_qlychi.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

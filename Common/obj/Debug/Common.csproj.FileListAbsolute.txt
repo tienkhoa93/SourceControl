@@ -7,3 +7,4 @@ X:\git\QLNT\khoa_git\Common\bin\Debug\Common.dll
 X:\git\QLNT\khoa_git\Common\bin\Debug\Common.pdb
 X:\git\QLNT\khoa_git\Common\obj\Debug\Common.dll
 X:\git\QLNT\khoa_git\Common\obj\Debug\Common.pdb
+X:\git\QLNT\khoa_git\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
