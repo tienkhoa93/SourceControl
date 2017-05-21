@@ -26,10 +26,41 @@ namespace QLNT.Form.UserControl
         }
         private void PhanQuyen()
         {
-
+            SysNguoiDung_Bus ndb = new SysNguoiDung_Bus();
+            SysQuyenSuDung_Bus qsdb = new SysQuyenSuDung_Bus();
+            List<SysUser> listuser = ndb.SelectNguoiDung(UserInfo.Account);
+            string manhom = "";
+            foreach (var a in listuser)
+            {
+                manhom = a.MaNhom;
+            }
+            List<SysQuyenSuDung> listquyen = qsdb.SelectQuyenSuDung(manhom, "18");
+            foreach (var b in listquyen)
+            {
+                if (b.Them == false)
+                    barButtonItem1.Enabled = false;
+                if (b.Sua == false)
+                    barButtonItem2.Enabled = false;
+                if (b.Xoa == false)
+                    barButtonItem3.Enabled = false;
+                //if (b.XuatDuLieu == false)
+                //    btnXuat.Enabled = false;
+                //if (b.NhapDuLieu == false)
+                //    btnNhap.Enabled = false;
+                //if (b.InAn == false)
+                //    btnIn.Enabled = false;
+            }
 
         }
-
+        void RefeshG(object ob)
+        {
+            gridKhu.DataSource = ob;
+        }
+        private void gridKhu_Load(object sender, EventArgs e)
+        {
+            gridKhu.DataSource = khub.GetAllKhu_Count();
+            this.gridViewKhu.OptionsBehavior.Editable = false;
+        }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
