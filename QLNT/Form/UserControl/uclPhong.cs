@@ -25,6 +25,30 @@ namespace QLNT.Form.UserControl
         }
         private void PhanQuyen()
         {
+            SysNguoiDung_Bus ndb = new SysNguoiDung_Bus();
+            SysQuyenSuDung_Bus qsdb = new SysQuyenSuDung_Bus();
+            List<SysUser> listuser = ndb.SelectNguoiDung(UserInfo.Account);
+            string manhom = "";
+            foreach (var a in listuser)
+            {
+                manhom = a.MaNhom;
+            }
+            List<SysQuyenSuDung> listquyen = qsdb.SelectQuyenSuDung(manhom, "17");
+            foreach (var b in listquyen)
+            {
+                if (b.Them == false)
+                    btnThem.Enabled = false;
+                if (b.Sua == false)
+                    btnSua.Enabled = false;
+                if (b.Xoa == false)
+                    btnXoa.Enabled = false;
+                //if (b.XuatDuLieu == false)
+                //    btnXuat.Enabled = false;
+                //if (b.NhapDuLieu == false)
+                //    btnNhap.Enabled = false;
+                if (b.InAn == false)
+                    btnIn.Enabled = false;
+            }
 
         }
         void RefeshG(object ob)
