@@ -22,9 +22,6 @@ namespace QLNT.Business
         public double SoTienNuoc { get; set; }
         public string ThangNam { get; set; }
         public string TenPhong { get; set; }
-        //public DateTime? NgayDong { get; set; }
-        //public string NguoiDong { get; set; }
-        //public double TongTien { get; set; }
     }
     public class HoaDon_Buss
     {
