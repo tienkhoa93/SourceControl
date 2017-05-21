@@ -172,8 +172,20 @@ namespace QLNT.Business
                         TenPhongCu = pc.TenPhong,
                         TenTrangThai = tt.TenTrangThai,
                         Anh = khachtro.Anh == null ? null : khachtro.Anh
-						
-					     MaKhachTro = khachtro.MaKhachTro,
+                    };
+
+                return list_khachtro.ToList<_KhachTro>();
+            }
+            catch { return null; }
+        }
+
+        public object ThongKeKhachTro(string mp, string mk, string gioitinh, short trangthai, DateTime t1, DateTime t2)
+        {
+            var ob = from khachtro in datacontext.nt_SP_THONGKE_KHACHTRO(mp, mk, gioitinh, trangthai, t1, t2)
+
+                     select new _KhachTro
+                     {
+                         MaKhachTro = khachtro.MaKhachTro,
                          HoLot = khachtro.HoLot,
                          Ten = khachtro.Ten,
                          Anh = khachtro.Anh == null ? null : khachtro.Anh.ToArray(),
@@ -200,20 +212,6 @@ namespace QLNT.Business
                          TenPhong = khachtro.TenPhong,
                          TenPhongCu = khachtro.TenPhongCu,
                          TenTrangThai = khachtro.TenTrangThai
-                    };
-
-                return list_khachtro.ToList<_KhachTro>();
-            }
-            catch { return null; }
-        }
-
-        public object ThongKeKhachTro(string mp, string mk, string gioitinh, short trangthai, DateTime t1, DateTime t2)
-        {
-            var ob = from khachtro in datacontext.nt_SP_THONGKE_KHACHTRO(mp, mk, gioitinh, trangthai, t1, t2)
-
-                     select new _KhachTro
-                     {
-
                      };
             return ob.ToList<_KhachTro>();
         }
@@ -343,7 +341,18 @@ namespace QLNT.Business
                 khachtro.MaDanToc = kh.MaDanToc;
                 khachtro.MaTonGiao = kh.MaTonGiao;
                 khachtro.MaTrangThai = kh.MaTrangThai;
-
+                khachtro.CMND = kh.CMND;
+                khachtro.NoiCap = kh.NoiCap;
+                khachtro.NgayCap = kh.NgayCap;
+                khachtro.SDTLienHe = kh.SDTLienHe;
+                khachtro.SDT = kh.SDT;
+                khachtro.NgayRa = kh.NgayRa;
+                khachtro.NgayVao = kh.NgayVao;
+                khachtro.TruongPhong = kh.TruongPhong;
+                khachtro.GhiChu = kh.GhiChu;
+                khachtro.ThuongTru = kh.ThuongTru;
+                khachtro.TamTru = kh.TamTru;
+                khachtro.HoatDong = kh.HoatDong;
 
                 datacontext.SubmitChanges();
                 datacontext.sp_DemSoNguoi(khachtro.MaPhong);
