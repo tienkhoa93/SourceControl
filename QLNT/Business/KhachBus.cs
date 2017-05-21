@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+// Form Khach
 namespace QLNT.Business
 {
     public class _Khach : Khach
