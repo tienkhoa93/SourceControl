@@ -69,7 +69,14 @@ namespace QLNT.Form.UserControl
         }
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            this.Cursor = Cursors.WaitCursor;
+            s = gridViewPhong.GetDataSourceRowIndex(gridViewPhong.FocusedRowHandle);
+            Business.Phong_B item = (Business.Phong_B)gridViewPhong.GetRow(gridViewPhong.FocusedRowHandle);
+            PhongBan.frmPhongBan pb = new PhongBan.frmPhongBan(ChucNang.Sua, item);
+            Delegates.Regrib = new Delegates.RefeshGrid(RefeshG);
+            pb.ShowDialog();
+            gridViewPhong.MoveBy(s);
+            this.Cursor = Cursors.Default;
         }
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -114,7 +121,37 @@ namespace QLNT.Form.UserControl
             //        XtraMessageBox.Show("Không thể xóa phòng ở.\nLỗi: "+ee, "Xóa", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //    }
             // }
-
+            this.Cursor = Cursors.WaitCursor;
+            s = gridViewPhong.GetDataSourceRowIndex(gridViewPhong.FocusedRowHandle);
+            try
+            {
+                if (gridViewPhong.IsRowSelected(gridViewPhong.FocusedRowHandle) == false)
+                {
+                    XtraMessageBox.Show("Không có dữ liệu để xóa !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    DialogResult x = XtraMessageBox.Show("Bạn có muốn xóa không ?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (x == DialogResult.Yes)
+                    {
+                        for (int i = 0; i < gridViewPhong.RowCount; i++)
+                        {
+                            if (gridViewPhong.IsRowSelected(i) == true)
+                            {
+                                string ID = gridViewPhong.GetRowCellValue(i, "MaPhong").ToString();
+                                pbb.DeletePhong(ID);
+                            }
+                        }
+                        gridViewPhong.DeleteSelectedRows();
+                    }
+                }
+            }
+            catch
+            {
+                XtraMessageBox.Show("Không có dữ liệu để xóa !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            gridViewPhong.MoveBy(s - 1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
         }
 
         private void btnNapLai_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -124,7 +161,33 @@ namespace QLNT.Form.UserControl
             this.Cursor = Cursors.Default;
         }
 
+        private void gridViewPhong_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
+        {
+            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
+                e.Info.DisplayText = (e.RowHandle + 1).ToString();
+        }
 
+        private void gridPhong_DoubleClick(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            s = gridViewPhong.GetDataSourceRowIndex(gridViewPhong.FocusedRowHandle);
+            Business.Phong_B item = (Business.Phong_B)gridViewPhong.GetRow(gridViewPhong.FocusedRowHandle);
+            PhongBan.frmPhongBan pb = new PhongBan.frmPhongBan(ChucNang.Sua, item);
+            Delegates.Regrib = new Delegates.RefeshGrid(RefeshG);
+            pb.ShowDialog();
+            gridViewPhong.MoveBy(s);
+            this.Cursor = Cursors.Default;
+        }
+
+        private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
 
     }
 }
