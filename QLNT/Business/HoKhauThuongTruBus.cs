@@ -17,12 +17,6 @@ namespace QLNT.Business
                     select dt;
             return c.ToList<HoKhauThuongTru>();
         }
-        //public List<HoKhauThuongTru> ListHoKhauThuongTru()
-        //{
-        //    var c = from dt in dtcontent.HoKhauThuongTrus
-        //            select dt;
-        //    return c.ToList<HoKhauThuongTru>();
-        //}
         public bool InsertHoKhau(HoKhauThuongTru hktt)
         {
             try
