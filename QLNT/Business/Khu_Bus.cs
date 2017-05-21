@@ -27,13 +27,13 @@ namespace QLNT.Business
       }
        public List<Khu> GetAllKhu()
        {
-           try {
-               var list_k = from khu in datacontent.Khus where khu.HoatDong ==true select khu;
+           try
+           {
+               var list_k = from khu in datacontent.Khus where khu.HoatDong == true select khu;
                return list_k.ToList<Khu>();
            }
-           catch { return null; }         
-           
-       }      
+           catch { return null; }
+       }
 
        public class Khu_Count: Khu
        {
@@ -53,13 +53,6 @@ namespace QLNT.Business
                              //SoPhong = c.Count(),                            
                          });
            return query1.ToList<Khu_Count>();
-
-                    //var q =
-                    //from c in datacontent.Khus
-                    //join p in datacontent.Phongs on c.MaKhu equals p.MaKhu into ps
-                    //from p in ps.DefaultIfEmpty()
-                    //select new Khu_Count { MaKhu = c.MaKhu, TenKhu = c.TenKhu, SoPhong = p.TenPhong.Count() == null ? 0 : p.TenPhong.Count() };
-                    //return q.ToList<Khu_Count>();
        }
 
        public bool InsertKhu(Khu kh)

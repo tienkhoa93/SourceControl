@@ -23,23 +23,25 @@ namespace QLNT.Form.DienNuoc
            
             gridPhong.DisplayMember = "TenPhong";
             gridPhong.ValueMember = "MaPhong";
-
-            GridColumn col1 = new GridColumn();
-            col1.Caption = "Mã Phòng";
-            col1.FieldName = "MaPhong";
-            col1.VisibleIndex = 0;
             GridColumn col2 = new GridColumn();
             col2.Caption = "Tên Phòng";
             col2.FieldName = "TenPhong";
             col2.VisibleIndex = 1;
             gridPhong.View.Columns.Add(col1);
             gridPhong.View.Columns.Add(col2);
+
+
            
         }
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-                    gvDienNuoc.DeleteSelectedRows();
+            gvDienNuoc.DeleteSelectedRows();
+            GridColumn col2 = new GridColumn();
+                    
+            if(dt.Rows.Count>0)
+                dnb.InsertDataTable(dt);
+            this.Close();
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -48,9 +50,6 @@ namespace QLNT.Form.DienNuoc
             DataView dv = (DataView)gvDienNuoc.DataSource;
             dt = dv.ToTable();
 
-            if(dt.Rows.Count>0)
-                dnb.InsertDataTable(dt);
-            this.Close();
         }
     }
 }

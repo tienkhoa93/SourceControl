@@ -25,7 +25,10 @@ namespace QLNT.Business
                      select qsd;
             return dt.ToList<SysQuyenSuDung>();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="manhom"></param>
         public void insertQuyenSuDung(string manhom)
         {
             try

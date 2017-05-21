@@ -66,7 +66,6 @@ namespace QLNT.Business
                 return false;
             }
         }
-
         public bool KiemTraVatTu(string vt)
         {
             if ((from pb in dtcontent.VatTus where pb.TenVatTu == vt select pb).Count() > 0)
