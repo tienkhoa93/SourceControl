@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QLNT.LinQToSQL;
+// From ky luat 
 namespace QLNT.Business
 {
    public class KyLuat_Bus
