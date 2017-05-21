@@ -82,6 +82,30 @@
     <Compile Include="Form\DanhMuc\frmDanToc.Designer.cs">
       <DependentUpon>frmDanToc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\DanhMuc\frmHinhThucKyLuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\DanhMuc\frmHinhThucKyLuat.Designer.cs">
+      <DependentUpon>frmHinhThucKyLuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\DanhMuc\frmHoKhauThuongTru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\DanhMuc\frmHoKhauThuongTru.Designer.cs">
+      <DependentUpon>frmHoKhauThuongTru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\DanhMuc\frmTonGiao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\DanhMuc\frmTonGiao.Designer.cs">
+      <DependentUpon>frmTonGiao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\DanhMuc\frmTrangThai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\DanhMuc\frmTrangThai.Designer.cs">
+      <DependentUpon>frmTrangThai.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\DienNuoc\frmDienNuoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +262,18 @@
     <None Include="LinQToSQL\QLNT.dbml.layout">
       <DependentUpon>QLNT.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="Form\DanhMuc\frmHinhThucKyLuat.resx">
+      <DependentUpon>frmHinhThucKyLuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\DanhMuc\frmHoKhauThuongTru.resx">
+      <DependentUpon>frmHoKhauThuongTru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\DanhMuc\frmTonGiao.resx">
+      <DependentUpon>frmTonGiao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\DanhMuc\frmTrangThai.resx">
+      <DependentUpon>frmTrangThai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\DienNuoc\frmDienNuoc.resx">
       <DependentUpon>frmDienNuoc.cs</DependentUpon>
     </EmbeddedResource>
