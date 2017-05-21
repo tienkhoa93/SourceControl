@@ -74,6 +74,58 @@ namespace QLNT.Form.UserControl
             }
         }
 
+        private void btnLuuLai_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int fc = gvHoaDon.FocusedRowHandle;
+
+            List<int> row = list.Distinct().ToList();
+            row.RemoveAll(s => s == -2147483647);
+            row.RemoveAll(s => s == -999997);
+
+            if (row.Count > 0)
+            {
+                DataView view = (DataView)gvHoaDon.DataSource;
+                DataTable dt = view.ToTable();
+                int c = dt.Rows.Count;
+                hdb.InsertHoaDon(row, dt);
+                gcHoaDon.DataSource = Common.List_to_Table.ToDataTable(hdb.ListHoaDon());
+                XtraMessageBox.Show("Thay đổi thành công thành công.");
+                list.Clear();
+            }
+        }
+
+        private void gvHoaDon_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (e.RowHandle == -2147483647)
+            {
+                list.Add(gvHoaDon.DataRowCount);
+            }
+            else
+            {
+                list.Add(e.RowHandle);
+                gvHoaDon.OptionsView.ShowGroupedColumns = false;
+            }
+        }
+
+        private void btnXoaHD_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (XtraMessageBox.Show("Bạn chắc chắn muốn thực hiện thao tác.", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                List<int> Xoa = new List<int>();
+                for (int i = 0; i < gvHoaDon.DataRowCount; i++)
+                    if (gvHoaDon.IsRowSelected(i) == true)//kiem tra xem dòng i này có select hay k, neu có sẽ get madot
+                    {
+                        list.Add(int.Parse(gvHoaDon.GetRowCellValue(i, "Id").ToString()));
+                    }
+
+                list.RemoveAll(s => s == -2147483647);
+                list.RemoveAll(s => s == -999997);
+                hdb.XoaHoaDon(list);
+                gvHoaDon.DeleteSelectedRows();
+                XtraMessageBox.Show("Xoá thành công.");
+            }
+
+        }
 
       
 
