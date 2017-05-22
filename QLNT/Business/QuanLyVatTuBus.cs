@@ -46,7 +46,7 @@ namespace QLNT.Business
                {
                     MaPhong = qlvt.MaPhong == null ? String.Empty : qlvt.MaPhong,
                     TenVatTu = qlvt.TenVatTu == null ? String.Empty : qlvt.TenVatTu,
-                    SoLuong = qlvt.SoLuong == qlvt.SoLuong,
+                    SoLuong = qlvt.SoLuong,
                     NgaySuaChua = qlvt.NgaySuaChua == null ? DateTime.Today : qlvt.NgaySuaChua,
                     SuaChua = qlvt.SuaChua == null ? true : qlvt.SuaChua,
                     ThayThe = qlvt.ThayThe == qlvt.ThayThe,

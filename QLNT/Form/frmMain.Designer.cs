@@ -28,13 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-                switch (c.MaChucNang.ToString())
-                {
-                        case "1": ribbonPage2.Visible = false; break;
-                        case "2": ribbonPage1.Visible = false; navQuanLySinhVien.Visible = false; break;
-                        case "3": ribbonPage3.Visible = false; navQuanLyPhongkhu.Visible = false; break;
-                        case "4": ribbonPage4.Visible = false; navQuanLyDienNuoc.Visible = false; break;
-                }
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             DevExpress.XtraCharts.UI.ChartControlCommandGalleryItemGroup2DColumn chartControlCommandGalleryItemGroup2DColumn1 = new DevExpress.XtraCharts.UI.ChartControlCommandGalleryItemGroup2DColumn();
@@ -576,7 +569,7 @@
             // 
             this.barButtonItem24.Caption = "Hóa Đơn Điện Nước";
             this.barButtonItem24.Id = 66;
-            this.barButtonItem24.LargeGlyph = global::QLNT.Properties.Resources._qlychi1;
+            this.barButtonItem24.LargeGlyph = global::QLNT.Properties.Resources._qlychi;
             this.barButtonItem24.Name = "barButtonItem24";
             // 
             // barButtonItem25
@@ -723,7 +716,7 @@
             // 
             this.btnDanhSachNguoiDung.Caption = "Danh sách người dùng";
             this.btnDanhSachNguoiDung.Id = 88;
-            this.btnDanhSachNguoiDung.LargeGlyph = global::QLNT.Properties.Resources.users_icon;
+            this.btnDanhSachNguoiDung.LargeGlyph = global::QLNT.Properties.Resources.users_icon1;
             this.btnDanhSachNguoiDung.Name = "btnDanhSachNguoiDung";
             this.btnDanhSachNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDanhSachNguoiDung_ItemClick);
             // 
@@ -731,7 +724,7 @@
             // 
             this.btnDanhSachNhomQuyen.Caption = "Danh sách nhóm quyền";
             this.btnDanhSachNhomQuyen.Id = 89;
-            this.btnDanhSachNhomQuyen.LargeGlyph = global::QLNT.Properties.Resources.user_icon;
+            this.btnDanhSachNhomQuyen.LargeGlyph = global::QLNT.Properties.Resources.user_icon1;
             this.btnDanhSachNhomQuyen.Name = "btnDanhSachNhomQuyen";
             this.btnDanhSachNhomQuyen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDanhSachNhomQuyen_ItemClick);
             // 
@@ -967,8 +960,8 @@
             this.navBarControl1.ActiveGroup = this.navQuanLySinhVien;
             this.navBarControl1.CausesValidation = false;
             this.navBarControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.navBarControl1.DragDropFlags = ((DevExpress.XtraNavBar.NavBarDragDrop)((((DevExpress.XtraNavBar.NavBarDragDrop.Default | DevExpress.XtraNavBar.NavBarDragDrop.AllowDrag) 
-            | DevExpress.XtraNavBar.NavBarDragDrop.AllowDrop) 
+            this.navBarControl1.DragDropFlags = ((DevExpress.XtraNavBar.NavBarDragDrop)((((DevExpress.XtraNavBar.NavBarDragDrop.Default | DevExpress.XtraNavBar.NavBarDragDrop.AllowDrag)
+            | DevExpress.XtraNavBar.NavBarDragDrop.AllowDrop)
             | DevExpress.XtraNavBar.NavBarDragDrop.AllowOuterDrop)));
             this.navBarControl1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {

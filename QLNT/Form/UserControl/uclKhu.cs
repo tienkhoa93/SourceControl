@@ -102,7 +102,7 @@ namespace QLNT.Form.UserControl
                     gridKhu.DataSource = khub.GetAllKhu_Count();
                 }
             }
-            
+
             List<Business.Khu_Bus.Khu_Count> sinhvien = (List<Business.Khu_Bus.Khu_Count>)gridViewKhu.DataSource;
             Business.Khu_Bus.Khu_Count khu = (Business.Khu_Bus.Khu_Count)sinhvien[gridViewKhu.FocusedRowHandle];
             if (khub.KiemTraTonTaiPhong(khu.MaKhu) == 0)

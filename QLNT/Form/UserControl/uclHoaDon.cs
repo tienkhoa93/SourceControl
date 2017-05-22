@@ -35,7 +35,7 @@ namespace QLNT.Form.UserControl
             rpcboTienDong.DataSource = tb.ListThongTinTien();
 
             rpTienPhong.DataSource = tb.ListTien();
-        //    rpvDienNuoc.FixedLineWidth = 900;
+            //    rpvDienNuoc.FixedLineWidth = 900;
             rpDienNuoc.DataSource = dnb.ListDienNuoc();
 
         }
@@ -127,16 +127,42 @@ namespace QLNT.Form.UserControl
 
         }
 
-      
+
 
         private void btnXuatExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (gvHoaDon.RowCount == 0)
+            {
+                XtraMessageBox.Show("Không có dữ liệu để xuất file !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+            DevExpress.XtraGrid.Views.Grid.GridView grid = gcHoaDon.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
+
+            if (grid != null)
+            {
+                SaveFileDialog saveExcel = new SaveFileDialog();
+                saveExcel.Filter = "Excel Workbook|*.xlsx|Excel Macro-Enabled Workbook|*.xlsm|Excel 97-2003 Workbook|*.xls";
+                saveExcel.Title = "Save an Excel File";
+                saveExcel.InitialDirectory = @"C:\";
+                if (saveExcel.ShowDialog() == DialogResult.OK)
+                {
+                    grid.ExportToXlsx(saveExcel.FileName);
+                    XtraMessageBox.Show("Export File thành công!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (XtraMessageBox.Show("Bạn có muốn xem file ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    {
+                        Process exportXlsx = new Process();
+                        exportXlsx.StartInfo.FileName = "EXCEL.exe";
+                        exportXlsx.StartInfo.Arguments = saveExcel.FileName;
+                        exportXlsx.Start();
+                    }
+                }
+            }
         }
-     void   RefeshG (object b)
+        void RefeshG(object b)
         {
             gcHoaDon.DataSource = b;
-            }
+        }
         private void btnTaoHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             DienNuoc.frmTaoHoaDon thd = new DienNuoc.frmTaoHoaDon(true);
@@ -144,7 +170,7 @@ namespace QLNT.Form.UserControl
             thd.ShowDialog();
         }
 
-       
+
         private void btnNapLai_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             rpPhong.DataSource = pb.ListPhong();
@@ -153,7 +179,7 @@ namespace QLNT.Form.UserControl
             rpcboTienDong.DataSource = tb.ListThongTinTien();
 
             rpTienPhong.DataSource = tb.ListTien();
-         
+
             rpDienNuoc.DataSource = dnb.ListDienNuoc();
         }
 

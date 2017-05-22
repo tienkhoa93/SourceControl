@@ -22,6 +22,7 @@ using System.Xml;
 using QLNT.Form.PhanQuyen;
 using QLNT.LinQToSQL;
 using QLNT.Business;
+using QLNT.Form.UserControl;
 using QLNT.Form.In;
 namespace QLNT
 {
