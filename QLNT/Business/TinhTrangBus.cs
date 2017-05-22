@@ -18,7 +18,11 @@ namespace QLNT.Business
             return c.ToList<TrangThai>();
         }
 
-
+      /// <summary>
+      /// 
+      /// </summary>
+      /// <param name="tt"></param>
+      /// <returns></returns>
         public bool UpdateTinhTrang(TrangThai tt)
         {
             try
