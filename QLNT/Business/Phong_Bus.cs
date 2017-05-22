@@ -28,6 +28,12 @@ namespace QLNT.Business
             var list_khachtro = (from nt in dtcontent.Phongs where nt.MaPhong == mp select nt).First();
             return list_khachtro;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="tn"></param>
+        /// <param name="ttn"></param>
+        /// <returns></returns>
         public List<Phong_B> PhongXapHetHan(DateTime tn, DateTime ttn)
         {
             try
