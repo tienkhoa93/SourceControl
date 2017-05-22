@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
@@ -13,17 +8,12 @@ using DevExpress.XtraTab.ViewInfo;
 using DevExpress.XtraTab;
 using Common;
 using DevExpress.LookAndFeel;
-using QLNT.Form.UserControl;
 using System.Threading;
-using DevExpress.XtraReports.UI;
 using DevExpress.XtraCharts;
 using DevExpress.Utils;
-using System.Xml;
-using QLNT.Form.PhanQuyen;
 using QLNT.LinQToSQL;
 using QLNT.Business;
 using QLNT.Form.UserControl;
-using QLNT.Form.In;
 namespace QLNT
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
