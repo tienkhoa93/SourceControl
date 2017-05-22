@@ -15,9 +15,12 @@ namespace QLNT
         static void Main()
         {
             Application.EnableVisualStyles();
-            //
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Form.Systems.RunApplication run = new Form.Systems.RunApplication();
+
+            // chay cac form test o day
+            // Application.Run(new Form.Systems.RunApplication());
+
         }
     }
 }

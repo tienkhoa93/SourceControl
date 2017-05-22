@@ -19,7 +19,7 @@ namespace QLNT.Business
         /// 
         public void InsertLog(String tv = null, String ct = null)
         {
-            dtcontext.KTX_TGG_LOG(UserInfo.Account, tv, ct, UserInfo.MacAdd, UserInfo.NameComputer);
+            dtcontext.NT_TGG_LOG(UserInfo.Account, tv, ct, UserInfo.MacAdd, UserInfo.NameComputer);
             try
             {
                 dtcontext.SubmitChanges();
@@ -36,7 +36,7 @@ namespace QLNT.Business
         {
             try
             {
-                dtcontext.KTX_SP_DELETE_ALL_NHATKY();
+                dtcontext.NT_SP_DELETE_ALL_NHATKY();
                 dtcontext.SubmitChanges();
             }
             catch { }

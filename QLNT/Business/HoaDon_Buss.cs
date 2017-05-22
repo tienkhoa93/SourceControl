@@ -31,7 +31,7 @@ namespace QLNT.Business
         {
             try
             {
-                dtcontent.SP_TAOHOADON(thang, nam, makhu);
+                dtcontent.NT_SP_TAOHOADON(thang, nam, makhu);
                 dtcontent.SubmitChanges();
             }
             catch { }
@@ -80,7 +80,7 @@ namespace QLNT.Business
 
         public _HoaDon GetHoaDonTheoPhong(long id)
         {
-            var ob = (from hoadon in dtcontent.SPHOADONTIENPHONG(id)
+            var ob = (from hoadon in dtcontent.NT_SPHOADONTIENPHONG(id)
                       select new _HoaDon
                       {
                           SoDienCu = (int)hoadon.SoDienCu,
