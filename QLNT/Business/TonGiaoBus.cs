@@ -68,12 +68,12 @@ namespace QLNT.Business
                return false;
            }
        }
-       public int KiemTraTonTaiTonGiao(long tg) //Để xóa
+       public int KiemTraTonTaiTonGiao(long tg)
        {
            return (from sv in dtcontent.KhachTros where sv.MaTonGiao == tg select sv).Count();
        }
 
-       public bool KiemTraTonGiao(string mhk) //Để thêm
+       public bool KiemTraTonGiao(string mhk) 
        {
            if ((from pb in dtcontent.TonGiaos where pb.TenTonGiao == mhk select pb).Count() > 0)
                return true;
