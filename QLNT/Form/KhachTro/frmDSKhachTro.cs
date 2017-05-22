@@ -290,6 +290,7 @@ namespace QLNT.Form.KhachTro
             {
             }
 
+<<<<<<< HEAD
             if (DateTime.Parse( dateNgaySinh.EditValue.ToString()) > DateTime.Today)
             {
                 s += "Ngày sinh không thể lớn hơn ngày hiện tại\n";
@@ -299,6 +300,15 @@ namespace QLNT.Form.KhachTro
                 {
                     s += "Ngày cấp CMND không thể lớn hơn ngày hiện tại\n";
                 }
+=======
+            if (DateTime.Parse(dateNgaySinh.EditValue.ToString())> DateTime.Today)
+            {
+                s += "Ngày sinh không thể lớn hơn ngày hiện tại\n";
+            }
+            if (DateTime.Parse(dateNgayCap.EditValue.ToString())> DateTime.Today)
+            {
+                s += "Ngày cấp CMND không thể lớn hơn ngày hiện tại\n";
+>>>>>>> e26dc7aaaa740efc8efc4fb28fb6419d13d7b80e
             }
             catch { }
             
