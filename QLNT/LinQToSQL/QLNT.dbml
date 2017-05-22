@@ -308,6 +308,27 @@
       <Column Name="GhiChu" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
+  <Table Name="dbo.Khach" Member="Khaches">
+    <Type Name="Khach">
+      <Column Name="MaKhach" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoLot" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Anh" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NoiSinh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CMND" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NoiCap" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NgayCap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="GioVao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayVao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="GioRa" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayRa" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MaKhachTro" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MaPhong" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HoatDong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.Backup_auto" Method="Backup_auto">
     <Return Type="System.Int32" />
   </Function>
@@ -332,8 +353,9 @@
       <Column Name="ThangNam" Type="System.String" DbType="NVarChar(21)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.KTX_SP_Count_SV_Inroom" Method="KTX_SP_Count_SV_Inroom">
+  <Function Name="dbo.KTX_SP_Count_SV_Inroom" Method="KTX_SP_Count_SV_Inroom" IsComposable="true">
     <Parameter Name="maphong" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="object" />
   </Function>
   <Function Name="dbo.KTX_SP_DELETE_ALL_NHATKY" Method="KTX_SP_DELETE_ALL_NHATKY">
     <Return Type="System.Int32" />
@@ -421,10 +443,11 @@
     <Parameter Name="maphong" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.SP_TAOHOADON" Method="SP_TAOHOADON">
+  <Function Name="dbo.SP_TAOHOADON" Method="SP_TAOHOADON" IsComposable="true">
     <Parameter Name="THANG" Parameter="tHANG" Type="System.Int32" DbType="Int" />
     <Parameter Name="NAM" Parameter="nAM" Type="System.Int32" DbType="Int" />
     <Parameter Name="MAKHU" Parameter="mAKHU" Type="System.String" DbType="NVarChar(10)" />
+    <Return Type="object" />
   </Function>
   <Function Name="dbo.SP_UpdatePhong" Method="SP_UpdatePhong">
     <Parameter Name="mp" Type="System.String" DbType="NVarChar(50)" />

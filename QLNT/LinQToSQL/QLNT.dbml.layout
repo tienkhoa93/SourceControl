@@ -170,5 +170,11 @@
         <elementListCompartment Id="0f13d752-b377-4937-9ab4-bd06b98adca2" absoluteBounds="15.765, 15.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="5e4111dc-3312-4c5a-a9a3-503dc73bf3f4" absoluteBounds="2.75, 0.625, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/QLNTDataContext/Khach" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df496560-b4c6-4361-b574-f3b9f1ec1d98" absoluteBounds="2.765, 1.085, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
