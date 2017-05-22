@@ -277,11 +277,11 @@ namespace QLNT.Form.KhachTro
             {
             }
 
-            if ((DateTime)dateNgaySinh.EditValue > DateTime.Today)
+            if (DateTime.Parse(dateNgaySinh.EditValue.ToString())> DateTime.Today)
             {
                 s += "Ngày sinh không thể lớn hơn ngày hiện tại\n";
             }
-            if ((DateTime)dateNgayCap.EditValue > DateTime.Today)
+            if (DateTime.Parse(dateNgayCap.EditValue.ToString())> DateTime.Today)
             {
                 s += "Ngày cấp CMND không thể lớn hơn ngày hiện tại\n";
             }
