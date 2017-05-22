@@ -25,8 +25,11 @@ namespace QLNT.Business
             return c.ToList<SysUser>();
         }
 
-
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public bool UpdateNguoiDung(SysUser user)
         {
             try
