@@ -21,7 +21,6 @@ namespace QLNT.Business
          public int TongSo { get; set; }
       }
 
-      /* -------------------------------------------------------------------------------------------*/
         public  List<ThongKeKhu> SiSoTheoKhu()
         {
             var ob = dtcontent.ExecuteQuery<ThongKeKhu>("exec [dbo].[NT_SP_ThongKeSoNguoiTheoKhu]");
