@@ -17,7 +17,6 @@ namespace QLNT.Business
                     select dt;
             return c.ToList<DanToc>();
         }
-
         public bool InsertDanToc(DanToc dt)
         {
             try
