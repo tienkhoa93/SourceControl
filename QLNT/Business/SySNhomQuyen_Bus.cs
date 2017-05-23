@@ -23,6 +23,11 @@ namespace QLNT.Business
                      select nq;
             return dt.ToList<SysNhomQuyen>();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nq"></param>
+        /// <returns></returns>
         public bool InsertNhomQuyen(SysNhomQuyen nq)
         {
             try

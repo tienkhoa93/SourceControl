@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QLNT.Business
 {
-    public class TinhTrangBus
+  public class TinhTrangBus
     {
         QLNTDataContext dtcontent = new QLNTDataContext();
         Log_Bus lb = new Log_Bus();
@@ -17,23 +17,12 @@ namespace QLNT.Business
                     select dt;
             return c.ToList<TrangThai>();
         }
-        public bool InsertTinhTrang(TrangThai tt)
-        {
-            try
-            {
-                TrangThai trangthai = new TrangThai()
-                {
-                    TenTrangThai = tt.TenTrangThai == null ? String.Empty : tt.TenTrangThai,
-                    GhiChu = tt.GhiChu == null ? String.Empty : tt.GhiChu,
-                };
-                dtcontent.TrangThais.InsertOnSubmit(trangthai);
-                dtcontent.SubmitChanges();
-                lb.InsertLog("Thêm " + trangthai.TenTrangThai, "thực hiện thao tác thêm trong bảng trạng thái.");
-                return true;
-            }
-            catch { return false; }
-        }
 
+      /// <summary>
+      /// 
+      /// </summary>
+      /// <param name="tt"></param>
+      /// <returns></returns>
         public bool UpdateTinhTrang(TrangThai tt)
         {
             try
@@ -43,7 +32,7 @@ namespace QLNT.Business
                 trangthai.GhiChu = tt.GhiChu;
                 dtcontent.SubmitChanges();
                 lb.InsertLog("Sửa " + trangthai.TenTrangThai, "thực hiện thao tác sửa trong bảng trạng thái.");
-
+              
                 return true;
             }
             catch
@@ -61,13 +50,20 @@ namespace QLNT.Business
                 dtcontent.TrangThais.DeleteAllOnSubmit(query);
                 dtcontent.SubmitChanges();
                 lb.InsertLog("Xóa " + MaTrangThai, "thực hiện thao tác xóa trong bảng trạng thái.");
-
+              
                 return true;
             }
             catch (Exception)
             {
                 return false;
             }
+        }
+		        public List<SysUser> SelectNguoiDung(string taikhoan)
+        {
+            var c = from dt in dtcontent.SysUsers
+                    where dt.TaiKhoan == taikhoan
+                    select dt;
+            return c.ToList<SysUser>();
         }
         public int KiemTraTonTaiTrangThai(long kh)
         {

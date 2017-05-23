@@ -25,7 +25,6 @@ namespace QLNT.Business
         public string ThuongTruChuTro { get; set; }
         public DateTime NgayCapCMNDChuTro { get; set; }
     }
-
     public class KhachTro_Bus
     {
         QLNTDataContext datacontext = new QLNTDataContext();

@@ -28,7 +28,10 @@ namespace QLNT.Business
                return null;
            }
        }
-
+       /// <summary>
+       /// 
+       /// </summary>
+       /// <returns></returns>
        public List<Option> ListOption()
        {
            var op = (from o in datacontext.Options select o);

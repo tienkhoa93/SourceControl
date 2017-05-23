@@ -20,7 +20,6 @@ namespace QLNT.Business
         private QLNTDataContext dtcontent = new QLNTDataContext();
         private Log_Bus lb = new Log_Bus();
 
-
         public string TenTien(string[] list)
         {
             var s = string.Empty;

@@ -37,7 +37,11 @@ namespace QLNT.Business
             lb.InsertLog("Xem danh sách quản lý vật tư.", string.Empty);
             return c.ToList<QuanLiVatTu_B>();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="qlvt"></param>
+        /// <returns></returns>
         public bool InsertQuanLyVatTu(QuanLiVatTu_B qlvt)
         {
             try

@@ -51,7 +51,6 @@ namespace QLNT.Business
             }
             catch { return null; }
         }
-
         public List<_Khach> DanhSachKhach_DaXoa()
         {
             try

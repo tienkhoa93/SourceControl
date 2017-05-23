@@ -12,7 +12,6 @@ namespace QLNT.Business
         public String MaKhu { get; set; }
         public String TenPhong { get; set; }
         public String TenKhu { get; set; }
-       
     }
     public class DienNuocCu
     {
