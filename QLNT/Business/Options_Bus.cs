@@ -40,7 +40,7 @@ namespace QLNT.Business
            Option op = datacontext.Options.Single(p=> p.Id==1);
            op.HoTenChuTro = opp.HoTenChuTro;
            op.NgaySinh = opp.NgaySinh;
-		   op.LuufileBackup = opp.LuufileBackup;
+		   op.TenFileBackup = opp.TenFileBackup;
            op.CMND = opp.CMND;
            op.NgayCap = opp.NgayCap;
            op.NoiCap = opp.NoiCap;
@@ -52,7 +52,7 @@ namespace QLNT.Business
            op.GiaTienDien = opp.GiaTienDien;
            op.GiaTienNuoc = opp.GiaTienNuoc;
 		              
-           op.LuufileRestore = opp.LuufileRestore;
+          // op.LuufileRestore = opp.LuufileRestore;
            datacontext.SubmitChanges();
            op.TenFileBackup =opp.TenFileBackup;
 	

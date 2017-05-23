@@ -111,8 +111,8 @@ namespace QLNT.Form.UserControl
                     //}
                     //else { item.Description = "Trạng thái: Trống. "; }
                     item.Value = phong[i].MaPhong;
-                    if (File.Exists(@"../../../Resources/1.png"))// user-icon1
-                        item.Image = Image.FromFile(@"../../../1.png");
+                    if (File.Exists(@"../../Resources/1.png"))// user-icon1 @"../../Resources/1.png"
+                        item.Image = Image.FromFile(@"../../Resources/1.png");
                     g.Items.Add(item);
                 }
                 galleryPhong.Gallery.Groups.Add(g);
