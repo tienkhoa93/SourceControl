@@ -74,10 +74,6 @@
     <Compile Include="Business\TinhTrangBus.cs" />
     <Compile Include="Business\TonGiaoBus.cs" />
     <Compile Include="Business\VatTuBus.cs" />
-    <Compile Include="Form1.cs" />
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\DanhMuc\frmDanToc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +103,14 @@
     </Compile>
     <Compile Include="Form\DanhMuc\frmTrangThai.Designer.cs">
       <DependentUpon>frmTrangThai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\DanhMuc\VatTu\frmQuanLyVatTu.cs" />
+    <Compile Include="Form\DanhMuc\VatTu\frmQuanLyVatTu.Designer.cs">
+      <DependentUpon>frmQuanLyVatTu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\DanhMuc\VatTu\frmVatTu.cs" />
+    <Compile Include="Form\DanhMuc\VatTu\frmVatTu.Designer.cs">
+      <DependentUpon>frmVatTu.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\DienNuoc\frmDienNuoc.cs">
       <SubType>Form</SubType>
@@ -158,6 +162,50 @@
     </Compile>
     <Compile Include="Form\frmWait.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\In\frmInHoaDonDienNuocKoCS.cs" />
+    <Compile Include="Form\In\frmInHoaDonDienNuocKoCS.Designer.cs">
+      <DependentUpon>frmInHoaDonDienNuocKoCS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\KhachTro\frmDSKhachTro.cs" />
+    <Compile Include="Form\KhachTro\frmDSKhachTro.Designer.cs">
+      <DependentUpon>frmDSKhachTro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\KhachTro\frmKhach.cs" />
+    <Compile Include="Form\KhachTro\frmKhach.Designer.cs">
+      <DependentUpon>frmKhach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Khu\frmKhu.cs" />
+    <Compile Include="Form\Khu\frmKhu.Designer.cs">
+      <DependentUpon>frmKhu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\PhanQuyen\frmDanhSachNguoiDung.cs" />
+    <Compile Include="Form\PhanQuyen\frmDanhSachNguoiDung.Designer.cs">
+      <DependentUpon>frmDanhSachNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\PhanQuyen\frmNhomNguoiDung.cs" />
+    <Compile Include="Form\PhanQuyen\frmNhomNguoiDung.Designer.cs">
+      <DependentUpon>frmNhomNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\PhanQuyen\frmPhanNhomQuyen.cs" />
+    <Compile Include="Form\PhanQuyen\frmPhanNhomQuyen.Designer.cs">
+      <DependentUpon>frmPhanNhomQuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\PhanQuyen\frmThemNguoiDung.cs" />
+    <Compile Include="Form\PhanQuyen\frmThemNguoiDung.Designer.cs">
+      <DependentUpon>frmThemNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\PhanQuyen\frmThemNhomQuyen.cs" />
+    <Compile Include="Form\PhanQuyen\frmThemNhomQuyen.Designer.cs">
+      <DependentUpon>frmThemNhomQuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\PhongBan\frmKhachTro_Phong.cs" />
+    <Compile Include="Form\PhongBan\frmKhachTro_Phong.Designer.cs">
+      <DependentUpon>frmKhachTro_Phong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\PhongBan\frmPhongBan.cs" />
+    <Compile Include="Form\PhongBan\frmPhongBan.Designer.cs">
+      <DependentUpon>frmPhongBan.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Systems\frmBackup.cs">
       <SubType>Form</SubType>
@@ -232,11 +280,35 @@
     <Compile Include="Form\UserControl\uclDSKhachTro.Designer.cs">
       <DependentUpon>uclDSKhachTro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\UserControl\uclHoaDon.cs" />
+    <Compile Include="Form\UserControl\uclHoaDon.Designer.cs">
+      <DependentUpon>uclHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\UserControl\uclKhachTro.cs" />
+    <Compile Include="Form\UserControl\uclKhachTro.Designer.cs">
+      <DependentUpon>uclKhachTro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\UserControl\uclKhu.cs" />
+    <Compile Include="Form\UserControl\uclKhu.Designer.cs">
+      <DependentUpon>uclKhu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\UserControl\uclLichSuTruyCap.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Form\UserControl\uclLichSuTruyCap.Designer.cs">
       <DependentUpon>uclLichSuTruyCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\UserControl\uclLoaiTienDong.cs" />
+    <Compile Include="Form\UserControl\uclLoaiTienDong.Designer.cs">
+      <DependentUpon>uclLoaiTienDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\UserControl\uclPhong.cs" />
+    <Compile Include="Form\UserControl\uclPhong.Designer.cs">
+      <DependentUpon>uclPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\UserControl\uclQuanLyVatTu.cs" />
+    <Compile Include="Form\UserControl\uclQuanLyVatTu.Designer.cs">
+      <DependentUpon>uclQuanLyVatTu.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\UserControl\uclThungRac.cs">
       <SubType>UserControl</SubType>
@@ -257,6 +329,38 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\DanhSachKhachTro.cs" />
+    <Compile Include="Report\DanhSachKhachTro.Designer.cs">
+      <DependentUpon>DanhSachKhachTro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DanhSachTrichNgang.cs" />
+    <Compile Include="Report\DanhSachTrichNgang.Designer.cs">
+      <DependentUpon>DanhSachTrichNgang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\HoaDonDienNuoc_KoChiSo.cs" />
+    <Compile Include="Report\HoaDonDienNuoc_KoChiSo.Designer.cs">
+      <DependentUpon>HoaDonDienNuoc_KoChiSo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\HoaDonTienPhong.cs" />
+    <Compile Include="Report\HoaDonTienPhong.Designer.cs">
+      <DependentUpon>HoaDonTienPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\HopDong.cs" />
+    <Compile Include="Report\HopDong.Designer.cs">
+      <DependentUpon>HopDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Report.cs" />
+    <Compile Include="Report\Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\reportDienNuoc.cs" />
+    <Compile Include="Report\reportDienNuoc.Designer.cs">
+      <DependentUpon>reportDienNuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\reportTienPhong.cs" />
+    <Compile Include="Report\reportTienPhong.Designer.cs">
+      <DependentUpon>reportTienPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\ThongKeDienNuoc.cs" />
     <Compile Include="Report\ThongKeDienNuoc.designer.cs">
       <DependentUpon>ThongKeDienNuoc.cs</DependentUpon>
@@ -265,18 +369,94 @@
     <Compile Include="Report\ThongKeSinhVien.Designer.cs">
       <DependentUpon>ThongKeSinhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraForm1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="XtraForm1.Designer.cs">
-      <DependentUpon>XtraForm1.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Form\DanhMuc\VatTu\frmQuanLyVatTu.resx">
+      <DependentUpon>frmQuanLyVatTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\DanhMuc\VatTu\frmVatTu.resx">
+      <DependentUpon>frmVatTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\In\frmInHoaDonDienNuocKoCS.resx">
+      <DependentUpon>frmInHoaDonDienNuocKoCS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\KhachTro\frmDSKhachTro.resx">
+      <DependentUpon>frmDSKhachTro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\KhachTro\frmKhach.resx">
+      <DependentUpon>frmKhach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Khu\frmKhu.resx">
+      <DependentUpon>frmKhu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\PhanQuyen\frmDanhSachNguoiDung.resx">
+      <DependentUpon>frmDanhSachNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\PhanQuyen\frmNhomNguoiDung.resx">
+      <DependentUpon>frmNhomNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\PhanQuyen\frmPhanNhomQuyen.resx">
+      <DependentUpon>frmPhanNhomQuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\PhanQuyen\frmThemNguoiDung.resx">
+      <DependentUpon>frmThemNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\PhanQuyen\frmThemNhomQuyen.resx">
+      <DependentUpon>frmThemNhomQuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\PhongBan\frmKhachTro_Phong.resx">
+      <DependentUpon>frmKhachTro_Phong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\PhongBan\frmPhongBan.resx">
+      <DependentUpon>frmPhongBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\UserControl\uclHoaDon.resx">
+      <DependentUpon>uclHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\UserControl\uclKhachTro.resx">
+      <DependentUpon>uclKhachTro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\UserControl\uclKhu.resx">
+      <DependentUpon>uclKhu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\UserControl\uclLoaiTienDong.resx">
+      <DependentUpon>uclLoaiTienDong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\UserControl\uclPhong.resx">
+      <DependentUpon>uclPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\UserControl\uclQuanLyVatTu.resx">
+      <DependentUpon>uclQuanLyVatTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\DanhSachKhachTro.resx">
+      <DependentUpon>DanhSachKhachTro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\DanhSachTrichNgang.resx">
+      <DependentUpon>DanhSachTrichNgang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\HoaDonDienNuoc_KoChiSo.resx">
+      <DependentUpon>HoaDonDienNuoc_KoChiSo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\HoaDonTienPhong.resx">
+      <DependentUpon>HoaDonTienPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\HopDong.resx">
+      <DependentUpon>HopDong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\reportDienNuoc.resx">
+      <DependentUpon>reportDienNuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\reportTienPhong.resx">
+      <DependentUpon>reportTienPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\ThongKeDienNuoc.resx">
       <DependentUpon>ThongKeDienNuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\ThongKeSinhVien.resx">
       <DependentUpon>ThongKeSinhVien.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="LinQToSQL\QLNT.dbml.layout">
       <DependentUpon>QLNT.dbml</DependentUpon>
     </None>
@@ -398,14 +578,7 @@
       <Name>Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Form\DienNuoc\VatTu\" />
-    <Folder Include="Form\In\" />
-    <Folder Include="Form\KhachTro\" />
-    <Folder Include="Form\Khu\" />
-    <Folder Include="Form\PhanQuyen\" />
-    <Folder Include="Form\PhongBan\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\1.png" />
     <Content Include="Resources\1432128378_building.png" />
