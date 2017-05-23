@@ -18,7 +18,7 @@ namespace QLNT.Form.In
     public partial class frmInHoaDonDienNuocKoCS : DevExpress.XtraEditors.XtraForm
     {
         QLNTDataContext db = new QLNTDataContext();
-        //  SinhVienBus svb = new SinhVienBus();
+      //  SinhVienBus svb = new SinhVienBus();
         LinQToSQL.KhachTro sv = new QLNT.LinQToSQL.KhachTro();
         DienNuoc_Bus dnb = new DienNuoc_Bus();
         public frmInHoaDonDienNuocKoCS()
@@ -44,7 +44,7 @@ namespace QLNT.Form.In
             {
                 XtraMessageBox.Show("Phòng này chưa có Hóa đơn!");
             }
-
+           
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace QLNT.Form.In
             this.Close();
         }
 
-
+     
 
     }
 }

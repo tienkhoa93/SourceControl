@@ -45,13 +45,13 @@ namespace QLNT.Form.DanhMuc.VatTu
         }
         public void GVupForm(QuanLiVatTu_B quanlyvattu)
         {
-            //quanlyvattu = _quanlyvattu;
+           //quanlyvattu = _quanlyvattu;
             glkPhong.EditValue = quanlyvattu.MaPhong;
             glkVatTu.EditValue = quanlyvattu.TenVatTu;
-            calcSoLuong.Text = Convert.ToString(quanlyvattu.SoLuong);
-            dateNgaySuaChua.EditValue = Convert.ToDateTime(quanlyvattu.NgaySuaChua);
-            if (checkSuaChua.Checked == true)
-                quanlyvattu.SuaChua = true;
+            calcSoLuong.Text =  Convert.ToString(quanlyvattu.SoLuong);
+            dateNgaySuaChua.EditValue = Convert.ToDateTime( quanlyvattu.NgaySuaChua);
+            if (checkSuaChua.Checked == true )
+                quanlyvattu.SuaChua=true;
             else checkSuaChua.Checked = false;
             if (checkThayThe.Checked == true)
                 quanlyvattu.ThayThe = true;
@@ -72,7 +72,7 @@ namespace QLNT.Form.DanhMuc.VatTu
 
             Table<LinQToSQL.VatTu> vattu = db.GetTable<LinQToSQL.VatTu>();
             glkVatTu.Properties.ValueMember = "TenVatTu";
-            glkVatTu.Properties.DisplayMember = "TenVatTu";
+            glkVatTu.Properties.DisplayMember = "TenVatTu";           
             glkVatTu.Properties.DataSource = vattu;
         }
         public void GetValueItems()
@@ -82,7 +82,7 @@ namespace QLNT.Form.DanhMuc.VatTu
             try
             {
                 quanlyvattu.SoLuong = Convert.ToInt16(calcSoLuong.Text);
-
+               
             }
             catch
             {
@@ -93,7 +93,7 @@ namespace QLNT.Form.DanhMuc.VatTu
             {
 
             }
-
+        
             if (checkThayThe.Checked)
             {
                 quanlyvattu.ThayThe = true;
@@ -135,11 +135,11 @@ namespace QLNT.Form.DanhMuc.VatTu
                 this.Close();
             }
             else
-            {
+            {                
                 qlvtb.UpdateQuanLyVatTu(quanlyvattu);
                 Common.Delegates.GetList(qlvtb.ListQuanLyVatTu());
-                this.Close();
-            }
+                this.Close();              
+            }                      
         }
 
         private void btnLuuThem_Click(object sender, EventArgs e)
@@ -155,10 +155,10 @@ namespace QLNT.Form.DanhMuc.VatTu
             else
             {
                 qlvtb.UpdateQuanLyVatTu(quanlyvattu);
-                glkPhong.Properties.ReadOnly = false;
+                glkPhong.Properties.ReadOnly = false; 
                 Common.Delegates.GetList(qlvtb.ListQuanLyVatTu());
                 ResetItems();
-            }
+            }        
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

@@ -15,7 +15,7 @@ namespace QLNT.Form.DanhMuc
 {
     public partial class frmHinhThucKyLuat : DevExpress.XtraEditors.XtraForm
     {
-
+       
         HinhThucKyLuat htkl = new HinhThucKyLuat();
         Business.KyLuat_Bus klb = new Business.KyLuat_Bus();
         bool err = false;
@@ -34,7 +34,7 @@ namespace QLNT.Form.DanhMuc
             }
             else
             {
-                this.htkl.id = htkl.id;
+                this.htkl.id= htkl.id;
                 this.Text = "Sửa Hình Thức Kỷ Luật";
                 GVupForm(htkl);
             }
@@ -61,13 +61,13 @@ namespace QLNT.Form.DanhMuc
             txtTenHinhThucKyLuat.Text = "";
             txtGhiChu.Text = "";
             txtMaHinhThucKyLuat.Focus();
-            this.Text = "Thêm Hình Thức Kỷ Luật";
+            this.Text ="Thêm Hình Thức Kỷ Luật";
             this.cn = Common.ChucNang.Them;
-        }
+        } 
         #endregion
         #region bắt lỗi
-
-
+        
+       
         private void txtMaHinhThucKyLuat_TextChanged(object sender, EventArgs e)
         {
             if (txtMaHinhThucKyLuat.Text.Length == 0 && err == false)
@@ -105,7 +105,7 @@ namespace QLNT.Form.DanhMuc
         private void btnLuuDong_Click(object sender, EventArgs e)
         {
             GetValueItems();
-            if (cn == Common.ChucNang.Them)
+            if(cn==Common.ChucNang.Them)
             {
                 if (klb.CheckHTKL(htkl.MaHinhThucKyLuat))
                 {
@@ -114,7 +114,7 @@ namespace QLNT.Form.DanhMuc
                     Common.Delegates.GetList(klb.ListHinhThucKyLuat());
                     this.Close();
                 }
-                else XtraMessageBox.Show("Mã hình thức kỷ luật đã tồn tại.");
+                else XtraMessageBox.Show("Mã hình thức kỷ luật đã tồn tại.");   
 
             }
             else
@@ -129,10 +129,10 @@ namespace QLNT.Form.DanhMuc
                         this.Close();
                     }
                 }
-                else XtraMessageBox.Show("Mã hình thức kỷ luật đã tồn tại.");
+                else XtraMessageBox.Show("Mã hình thức kỷ luật đã tồn tại.");   
             }
-
-
+            
+            
 
         }
 
@@ -146,7 +146,7 @@ namespace QLNT.Form.DanhMuc
                     if (klb.InsertHTKL(htkl))
                         XtraMessageBox.Show("Thêm thành công.");
                     Common.Delegates.GetList(klb.ListHinhThucKyLuat());
-
+                    
                 }
                 else XtraMessageBox.Show("Mã hình thức kỷ luật đã tồn tại.");
 
@@ -163,12 +163,12 @@ namespace QLNT.Form.DanhMuc
                         this.Close();
                     }
                 }
-                else XtraMessageBox.Show("Mã hình thức kỷ luật đã tồn tại.");
+                else XtraMessageBox.Show("Mã hình thức kỷ luật đã tồn tại.");   
             }
-            ResetItems();
+           ResetItems();
         }
 
-
+       
 
     }
 }

@@ -129,7 +129,7 @@
             this.galleryPhong.DesignGalleryItemIndex = 0;
             this.galleryPhong.Dock = System.Windows.Forms.DockStyle.Fill;
             // 
-            // 
+            // galleryControlGallery1
             // 
             this.galleryPhong.Gallery.AutoSize = DevExpress.XtraBars.Ribbon.GallerySizeMode.Both;
             this.galleryPhong.Gallery.CheckSelectedItemViaKeyboard = true;
@@ -150,7 +150,7 @@
             // 
             this.galleryControlClient1.GalleryControl = this.galleryPhong;
             this.galleryControlClient1.Location = new System.Drawing.Point(2, 2);
-            this.galleryControlClient1.Size = new System.Drawing.Size(101, 100);
+            this.galleryControlClient1.Size = new System.Drawing.Size(508, 383);
             // 
             // uclKhachTro
             // 

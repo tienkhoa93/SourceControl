@@ -31,7 +31,7 @@ namespace QLNT.Form.PhongBan
         Business.Phong_Bus pb = new Business.Phong_Bus();
         Business.Khu_Bus kb = new Business.Khu_Bus();
         List<string> list = new List<string>();
-
+       
         LinQToSQL.Phong phong;
 
 
@@ -40,7 +40,7 @@ namespace QLNT.Form.PhongBan
             InitializeComponent();
             this.mp = mp;
             Refetch();
-
+            
         }
 
         private void PhanQuyenKhachTro()
@@ -147,7 +147,7 @@ namespace QLNT.Form.PhongBan
             a.Start();
 
             gridKhachTro.DataSource = ktb.ListDanhSachKhachTro_TheoMaPhong(this.mp);
-
+         
             gluTrangThai.Properties.DataSource = ttb.ListTinhTrang();
             gluTonGiao.Properties.DataSource = tgb.ListTonGiao();
             gluDanToc.Properties.DataSource = dtb.ListDanToc();
@@ -169,52 +169,52 @@ namespace QLNT.Form.PhongBan
             if (e.Info.IsRowIndicator && e.RowHandle >= 0)
                 e.Info.DisplayText = (e.RowHandle + 1).ToString();
         }
-
+     
 
         private void gvKhachTro_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-
+            
             if (e.FocusedRowHandle != -999997)
             {
                 var c = gvKhachTro.GetFocusedRowCellValue("MaKhachTro");
-                if (c != null)
-                {
-                    txtMaKhachTro.Properties.ReadOnly = true;
-                    txtMaKhachTro.Text = gvKhachTro.GetFocusedRowCellValue("MaKhachTro").ToString();
-                    txtHoLot.Text = gvKhachTro.GetFocusedRowCellValue("HoLot").ToString();
-                    txtTen.Text = gvKhachTro.GetFocusedRowCellValue("Ten").ToString();
-                    dateNgaySinh.EditValue = gvKhachTro.GetFocusedRowCellValue("NgaySinh");
-                    gluPhong.EditValue = gvKhachTro.GetFocusedRowCellValue("MaPhong").ToString();
-                    txtCMND.Text = gvKhachTro.GetFocusedRowCellValue("CMND").ToString();
-                    dateNgayCapCMND.EditValue = gvKhachTro.GetFocusedRowCellValue("NgayCap");
-                    txtNoiCapCMND.Text = gvKhachTro.GetFocusedRowCellValue("NoiCap").ToString();
-                    txtPhongCu.Text = gvKhachTro.GetFocusedRowCellValue("MaPhongCu").ToString();
-                    txtSDT.Text = gvKhachTro.GetFocusedRowCellValue("SDT").ToString();
-                    txtSDTLienHe.Text = gvKhachTro.GetFocusedRowCellValue("SDTLienHe").ToString();
-                    dateNgayVao.EditValue = gvKhachTro.GetFocusedRowCellValue("NgayVao");
-                    try
-                    {
-                        dateNgayRa.EditValue = gvKhachTro.GetFocusedRowCellValue("NgayRa");
-                    }
-                    catch { }
-                    txtThuongTru.Text = gvKhachTro.GetFocusedRowCellValue("ThuongTru").ToString();
-                    txtTamTru.Text = gvKhachTro.GetFocusedRowCellValue("TamTru").ToString();
-                    txtGhiChu.Text = gvKhachTro.GetFocusedRowCellValue("GhiChu").ToString();
-                    chckConQuanLy.Checked = bool.Parse(gvKhachTro.GetFocusedRowCellValue("HoatDong").ToString());
-                    chckTruongPhong.Checked = bool.Parse(gvKhachTro.GetFocusedRowCellValue("TruongPhong").ToString());
+              if(c!=null)
+              {
+                  txtMaKhachTro.Properties.ReadOnly = true;
+                  txtMaKhachTro.Text = gvKhachTro.GetFocusedRowCellValue("MaKhachTro").ToString();
+                  txtHoLot.Text = gvKhachTro.GetFocusedRowCellValue("HoLot").ToString();
+                  txtTen.Text = gvKhachTro.GetFocusedRowCellValue("Ten").ToString();
+                  dateNgaySinh.EditValue = gvKhachTro.GetFocusedRowCellValue("NgaySinh");
+                  gluPhong.EditValue = gvKhachTro.GetFocusedRowCellValue("MaPhong").ToString();
+                  txtCMND.Text = gvKhachTro.GetFocusedRowCellValue("CMND").ToString();
+                  dateNgayCapCMND.EditValue = gvKhachTro.GetFocusedRowCellValue("NgayCap");
+                  txtNoiCapCMND.Text = gvKhachTro.GetFocusedRowCellValue("NoiCap").ToString();
+                  txtPhongCu.Text = gvKhachTro.GetFocusedRowCellValue("MaPhongCu").ToString();
+                  txtSDT.Text = gvKhachTro.GetFocusedRowCellValue("SDT").ToString();
+                  txtSDTLienHe.Text = gvKhachTro.GetFocusedRowCellValue("SDTLienHe").ToString();
+                  dateNgayVao.EditValue = gvKhachTro.GetFocusedRowCellValue("NgayVao");
+                  try
+                  {
+                      dateNgayRa.EditValue = gvKhachTro.GetFocusedRowCellValue("NgayRa");
+                  }
+                  catch { }
+                  txtThuongTru.Text = gvKhachTro.GetFocusedRowCellValue("ThuongTru").ToString();
+                  txtTamTru.Text = gvKhachTro.GetFocusedRowCellValue("TamTru").ToString();
+                  txtGhiChu.Text = gvKhachTro.GetFocusedRowCellValue("GhiChu").ToString();
+                  chckConQuanLy.Checked = bool.Parse(gvKhachTro.GetFocusedRowCellValue("HoatDong").ToString());
+                  chckTruongPhong.Checked = bool.Parse(gvKhachTro.GetFocusedRowCellValue("TruongPhong").ToString());
+                 
+                  try { gluDanToc.EditValue = gvKhachTro.GetFocusedRowCellValue("MaDanToc").ToString(); }
+                  catch { }
 
-                    try { gluDanToc.EditValue = gvKhachTro.GetFocusedRowCellValue("MaDanToc").ToString(); }
-                    catch { }
+                  try { gluTrangThai.EditValue = gvKhachTro.GetFocusedRowCellValue("MaTrangThai").ToString(); }
+                  catch { }
 
-                    try { gluTrangThai.EditValue = gvKhachTro.GetFocusedRowCellValue("MaTrangThai").ToString(); }
-                    catch { }
+                  try { gluTonGiao.EditValue = gvKhachTro.GetFocusedRowCellValue("MaTonGiao").ToString(); }
+                  catch { }
 
-                    try { gluTonGiao.EditValue = gvKhachTro.GetFocusedRowCellValue("MaTonGiao").ToString(); }
-                    catch { }
-
-                    cboGioiTinh.EditValue = gvKhachTro.GetFocusedRowCellValue("GioiTinh").ToString();
-                }
-
+                  cboGioiTinh.EditValue = gvKhachTro.GetFocusedRowCellValue("GioiTinh").ToString();
+              }
+               
             }
         }
 
@@ -222,14 +222,14 @@ namespace QLNT.Form.PhongBan
         {
             if (LayThongTinPhong())
             {
-
-                if (pb.UpdatePhong(phong))
-                {
-                    gluPhong.Properties.DataSource = pb.ListPhong();
-                    gridKhachTro.DataSource = ktb.ListDanhSachKhachTro_TheoMaPhong(phong.MaPhong);
-                    this.mp = phong.MaPhong;
-                    XtraMessageBox.Show("Sửa thông tin phòng thành công.");
-                }
+               
+                    if (pb.UpdatePhong(phong))
+                    {
+                        gluPhong.Properties.DataSource = pb.ListPhong();
+                        gridKhachTro.DataSource = ktb.ListDanhSachKhachTro_TheoMaPhong(phong.MaPhong);
+                        this.mp = phong.MaPhong;
+                        XtraMessageBox.Show("Sửa thông tin phòng thành công.");
+                    }
             }
         }
 
@@ -265,21 +265,20 @@ namespace QLNT.Form.PhongBan
         {
             Business.KhachTro_Bus ktb = new Business.KhachTro_Bus();
 
-            if (!ktb.KiemTraSoNguoi(gluPhong.EditValue.ToString()))
+            if(!ktb.KiemTraSoNguoi(gluPhong.EditValue.ToString()))
             {
                 XtraMessageBox.Show("Không thể thêm người vào phòng vì số người đã đủ.");
-                return;
+                return ;
             }
             if (them == true)
             {
                 LinQToSQL.KhachTro k = new LinQToSQL.KhachTro();
-
+               
                 k.MaKhachTro = txtMaKhachTro.Text;
                 k.GioiTinh = cboGioiTinh.Text;
                 k.HoLot = txtHoLot.Text;
                 k.Ten = txtTen.Text;
-                try
-                {
+                try { 
                     k.NgaySinh = DateTime.Parse(dateNgaySinh.EditValue.ToString());
                     if (k.NgaySinh > DateTime.Today)
                     {
@@ -288,12 +287,11 @@ namespace QLNT.Form.PhongBan
                     }
                 }
                 catch { }
-
-
+                
+              
                 k.MaPhong = gluPhong.EditValue.ToString();
                 k.CMND = txtCMND.Text;
-                try
-                {
+                try    {
                     k.NgayCap = DateTime.Parse(dateNgayCapCMND.EditValue.ToString());
                     if (k.NgayCap > DateTime.Today)
                     {
@@ -302,7 +300,7 @@ namespace QLNT.Form.PhongBan
                     }
                 }
                 catch { }
-
+             
                 k.NoiCap = txtNoiCapCMND.Text;
                 k.MaPhongCu = txtPhongCu.Text;
                 k.SDTLienHe = txtSDTLienHe.Text;
@@ -322,25 +320,25 @@ namespace QLNT.Form.PhongBan
                 k.ThuongTru = txtThuongTru.Text;
                 k.TamTru = txtTamTru.Text;
                 k.GhiChu = txtGhiChu.Text;
-                if (gluDanToc.EditValue != null)
-                    k.MaDanToc = int.Parse(gluDanToc.EditValue.ToString());
+               if(gluDanToc.EditValue!=null)
+                k.MaDanToc = int.Parse(gluDanToc.EditValue.ToString());
 
-                if (gluTonGiao.EditValue != null)
-                    k.MaTonGiao = int.Parse(gluTonGiao.EditValue.ToString());
+               if (gluTonGiao.EditValue != null)
+                k.MaTonGiao = int.Parse(gluTonGiao.EditValue.ToString());
 
-                if (gluTrangThai.EditValue != null)
-                    k.MaTrangThai = int.Parse(gluTrangThai.EditValue.ToString());
+               if (gluTrangThai.EditValue != null)
+                k.MaTrangThai = int.Parse(gluTrangThai.EditValue.ToString());
                 if (chckConQuanLy.Checked == true)
                     k.HoatDong = true;
                 else k.HoatDong = false;
                 if (chckTruongPhong.Checked == true)
                     k.TruongPhong = true;
                 else k.TruongPhong = false;
-
+               
                 if (ktb.KiemTraKhachTro(k.MaKhachTro))
                 {
                     String er = CheckInfor();
-                    if (er == "")
+                    if(er=="")
                     {
                         if (ktb.InsertKhachTro(k))
                         {
@@ -354,7 +352,7 @@ namespace QLNT.Form.PhongBan
                     {
                         XtraMessageBox.Show(er);
                     }
-
+                   
                 }
                 else
                 {
@@ -365,38 +363,38 @@ namespace QLNT.Form.PhongBan
             {
                 XtraMessageBox.Show("Click vào button Xóa Trắng để nhập thông tin cho người mới.");
             }
-
-
+          
+          
         }
-
+       
         private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
         {
+           
 
-
-            if (tabPhong.PageVisible == true && e.Page.Name == "tabPhong")
+            if (tabPhong.PageVisible==true && e.Page.Name == "tabPhong")
             {
                 PhanQuyenPhong();
                 btnNap.Visibility = BarItemVisibility.Never;
                 btnThemKhachTro.Visibility = BarItemVisibility.Never;
                 btnChuyenPhong.Visibility = BarItemVisibility.Never;
                 btnXoaKhach.Visibility = BarItemVisibility.Always;
-
+                
             }
             else
             {
                 PhanQuyenKhachTro();
                 btnNap.Visibility = BarItemVisibility.Always;
-                btnThemKhachTro.Visibility = BarItemVisibility.Always;
+                btnThemKhachTro.Visibility = BarItemVisibility.Always;             
                 btnChuyenPhong.Visibility = BarItemVisibility.Always;
                 btnXoaKhach.Visibility = BarItemVisibility.Always;
             }
-            if (tabChuyenPhong.PageVisible == true)
+            if(tabChuyenPhong.PageVisible==true)
             {
                 btnNap.Visibility = BarItemVisibility.Never;
                 btnThemKhachTro.Visibility = BarItemVisibility.Never;
                 btnXoaKhach.Visibility = BarItemVisibility.Never;
                 btnChuyenPhong.Visibility = BarItemVisibility.Never;
-
+                
                 VeCayChucNang();
             }
 
@@ -404,22 +402,21 @@ namespace QLNT.Form.PhongBan
         #region Ve cay
         private void VeCayChucNang()
         {
-
-
+          
+            
             TreeListNode rootNode = null;
             TreeListNode childnode0 = null;
             TreeListNode childNode = null;
             TreeListNode childNode1 = null;
-
+            
             rootNode = tlDanhSachPhong.AppendNode(null, null);
             rootNode.SetValue("ChucNang", "Trường Cao Đẳng Công Thương");
             rootNode.StateImageIndex = 0;
 
             List<LinQToSQL.Khu> khu = kb.GetAllKhu();
-            foreach (var a in khu)
-            {
+            foreach(var a in khu){
                 childnode0 = tlDanhSachPhong.AppendNode(null, rootNode);
-                childnode0.SetValue("MaPhong", a.TenKhu);
+                childnode0.SetValue("MaPhong",a.TenKhu);
                 childnode0.StateImageIndex = 1;
                 childnode0.Tag = a.MaKhu;
 
@@ -447,22 +444,22 @@ namespace QLNT.Form.PhongBan
                 er += "Nhập mã cho khách trọ\n";
             if (txtHoLot.Text == "")
                 er += "Nhập họ cho khách trọ.\n";
-            if (txtTen.Text == "")
+            if(txtTen.Text=="")
                 er += "Nhập tên cho khách trọ.\n";
             if (cboGioiTinh.Text == "")
                 er += "Chọn giới tính cho khách trọ.\n";
-            return er;
+                return er;
         }
 
         #endregion
         private void btnNap_ItemClick(object sender, ItemClickEventArgs e)
         {
-            string cc = string.Empty;
+            string cc =string.Empty;
             try { cc = txtMaKhachTro.Text; }
             catch { }
-
+           
             LinQToSQL.KhachTro k = new LinQToSQL.KhachTro();
-
+           
             k.MaKhachTro = txtMaKhachTro.Text;
             k.GioiTinh = cboGioiTinh.Text;
             k.HoLot = txtHoLot.Text;
@@ -501,9 +498,9 @@ namespace QLNT.Form.PhongBan
             else k.TruongPhong = false;
             Business.KhachTro_Bus ktb = new Business.KhachTro_Bus();
             String er = CheckInfor();
-            if (er == "")
+            if(er=="")
             {
-                if (ktb.UpdateKhachTroTheoMaCu(cc, k))
+                if (ktb.UpdateKhachTroTheoMaCu(cc,k))
                 {
                     XtraMessageBox.Show("Cập nhật thông tin thành công.");
                     gridKhachTro.DataSource = ktb.ListDanhSachKhachTro_TheoMaPhong(k.MaPhong);
@@ -527,14 +524,14 @@ namespace QLNT.Form.PhongBan
             tabPhong.PageVisible = false;
             tabKhachTro.PageVisible = false;
             tabMain.SelectedTabPage = tabChuyenPhong;
-
+           
             for (int i = 0; i < gvKhachTro.RowCount; i++)
             {
                 if (gvKhachTro.IsRowSelected(i) == true)
-                    list.Add(gvKhachTro.GetRowCellValue(i, "MaKhachTro").ToString());
+                    list.Add(gvKhachTro.GetRowCellValue(i,"MaKhachTro").ToString());
             }
             Refetch1();
-
+          
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -549,10 +546,10 @@ namespace QLNT.Form.PhongBan
         {
             if (!maphong.Equals(""))
             {
-                ktb.ChuyenPhong(list, maphong);
+                ktb.ChuyenPhong(list,maphong);
                 gridKhachTro.DataSource = ktb.ListDanhSachKhachTro_TheoMaPhong(mp);
                 XtraMessageBox.Show("Chuyển phòng thành công.");
-
+              
                 tabChuyenPhong.PageVisible = false;
                 tabPhong.PageVisible = true;
                 tabKhachTro.PageVisible = true;
@@ -568,11 +565,10 @@ namespace QLNT.Form.PhongBan
         {
             try
             {
-                if (e.Node.Level == 2)
+                if(e.Node.Level==2)
                     maphong = e.Node.Tag.ToString();
             }
-            catch
-            {
+            catch {
             }
         }
 
@@ -582,28 +578,28 @@ namespace QLNT.Form.PhongBan
             {
                 MessageBox.Show("Phong");
             }
-            else if (tabMain.SelectedTabPage == tabKhachTro)
+            else if(tabMain.SelectedTabPage==tabKhachTro)
             {
 
-                List<string> xoa = new List<string>();
-                for (int i = 0; i < gvKhachTro.RowCount; i++)
-                {
-                    if (gvKhachTro.IsRowSelected(i) == true)
-                        xoa.Add(gvKhachTro.GetRowCellValue(i, "MaKhachTro").ToString());
-                }
-                if (XtraMessageBox.Show("Bạn muốn thực hiện thao tác xóa không?", "Xác thực", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-                {
-                    foreach (string t in xoa)
+                    List<string> xoa = new List<string>();
+                    for (int i = 0; i < gvKhachTro.RowCount; i++)
                     {
-                        ktb.DeleteKhachTro(t);
+                        if (gvKhachTro.IsRowSelected(i) == true)
+                            xoa.Add(gvKhachTro.GetRowCellValue(i, "MaKhachTro").ToString());
+                    }
+                    if(XtraMessageBox.Show("Bạn muốn thực hiện thao tác xóa không?","Xác thực",MessageBoxButtons.OKCancel,MessageBoxIcon.Question)==DialogResult.OK)
+                    {
+                        foreach (string t in xoa)
+                        {
+                            ktb.DeleteKhachTro(t);
+
+                        }
+                        gvKhachTro.DeleteSelectedRows();
+                        XtraMessageBox.Show("Xoá thành công.");
+                        Refetch1();
+                    }
 
                     }
-                    gvKhachTro.DeleteSelectedRows();
-                    XtraMessageBox.Show("Xoá thành công.");
-                    Refetch1();
-                }
-
-            }
         }
 
 

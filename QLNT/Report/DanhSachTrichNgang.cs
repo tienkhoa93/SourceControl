@@ -14,12 +14,12 @@ namespace QLNT.Report
             InitializeComponent();
             LayDuLieu(_source);
         }
-
+      
         private void LayDuLieu(object _source)
         {
-
+            
             cellHoTen.DataBindings.Add("Text", _source, "HoTen");
-            cellNgaySinh.DataBindings.Add("Text", _source, "NgaySinh", "{0: dd/MM/yyyy}");
+            cellNgaySinh.DataBindings.Add("Text", _source, "NgaySinh","{0: dd/MM/yyyy}");
             cellHKTT.DataBindings.Add("Text", _source, "TenHoKhau");
             cellDanToc.DataBindings.Add("Text", _source, "TenDanToc");
             cellTonGiao.DataBindings.Add("Text", _source, "TenTonGiao");
@@ -31,7 +31,7 @@ namespace QLNT.Report
             GroupHeader1.GroupFields.Add(new GroupField("TenPhong"));
         }
 
-
+       
 
     }
 }

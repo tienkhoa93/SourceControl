@@ -12,6 +12,7 @@ namespace QLNT.Business
         public String MaKhu { get; set; }
         public String TenPhong { get; set; }
         public String TenKhu { get; set; }
+       
     }
     public class DienNuocCu
     {
@@ -19,13 +20,6 @@ namespace QLNT.Business
         public int SoDienMoi { get; set; }
         public int SoNuocMoi { get; set; }
     }
-
-    //public class DienNuocCu
-    //{
-    //    public string MaPhong { get; set; }
-    //    public int SoDienMoi { get; set; }
-    //    public int SoNuocMoi { get; set; }
-    //}
     public class DienNuoc_Bus
     {
 

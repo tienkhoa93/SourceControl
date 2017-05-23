@@ -21,6 +21,7 @@ namespace QLNT.Report
 
         public void DuLieu(object datasoucre, int loai, int khoang, int quynam) 
         {
+            //cellThang.DataBindings.Add("Text", datasoucre, "Thang");
             if (loai==1)
             {
                 labTieuDe1.Text = " ĐIỆN NƯỚC TIÊU THỤ";

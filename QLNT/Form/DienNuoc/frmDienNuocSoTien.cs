@@ -20,7 +20,7 @@ namespace QLNT.Form.DienNuoc
         {
             InitializeComponent();
             grcDienNuoc.DataSource = dt;
-
+           
             gridPhong.DisplayMember = "TenPhong";
             gridPhong.ValueMember = "MaPhong";
 
@@ -34,12 +34,12 @@ namespace QLNT.Form.DienNuoc
             col2.VisibleIndex = 1;
             gridPhong.View.Columns.Add(col1);
             gridPhong.View.Columns.Add(col2);
-
+           
         }
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            gvDienNuoc.DeleteSelectedRows();
+                    gvDienNuoc.DeleteSelectedRows();
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -48,7 +48,7 @@ namespace QLNT.Form.DienNuoc
             DataView dv = (DataView)gvDienNuoc.DataSource;
             dt = dv.ToTable();
 
-            if (dt.Rows.Count > 0)
+            if(dt.Rows.Count>0)
                 dnb.InsertDataTable(dt);
             this.Close();
         }

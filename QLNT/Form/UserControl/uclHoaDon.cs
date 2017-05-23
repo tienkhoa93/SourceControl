@@ -35,7 +35,7 @@ namespace QLNT.Form.UserControl
             rpcboTienDong.DataSource = tb.ListThongTinTien();
 
             rpTienPhong.DataSource = tb.ListTien();
-            //    rpvDienNuoc.FixedLineWidth = 900;
+        //    rpvDienNuoc.FixedLineWidth = 900;
             rpDienNuoc.DataSource = dnb.ListDienNuoc();
 
         }
@@ -127,7 +127,7 @@ namespace QLNT.Form.UserControl
 
         }
 
-
+      
 
         private void btnXuatExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -159,10 +159,10 @@ namespace QLNT.Form.UserControl
                 }
             }
         }
-        void RefeshG(object b)
+     void   RefeshG (object b)
         {
             gcHoaDon.DataSource = b;
-        }
+            }
         private void btnTaoHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             DienNuoc.frmTaoHoaDon thd = new DienNuoc.frmTaoHoaDon(true);
@@ -170,7 +170,7 @@ namespace QLNT.Form.UserControl
             thd.ShowDialog();
         }
 
-
+       
         private void btnNapLai_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             rpPhong.DataSource = pb.ListPhong();
@@ -179,7 +179,7 @@ namespace QLNT.Form.UserControl
             rpcboTienDong.DataSource = tb.ListThongTinTien();
 
             rpTienPhong.DataSource = tb.ListTien();
-
+         
             rpDienNuoc.DataSource = dnb.ListDienNuoc();
         }
 

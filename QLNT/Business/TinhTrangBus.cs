@@ -17,12 +17,23 @@ namespace QLNT.Business
                     select dt;
             return c.ToList<TrangThai>();
         }
+        public bool InsertTinhTrang(TrangThai tt)
+        {
+            try
+            {
+                TrangThai trangthai = new TrangThai()
+                {
+                    TenTrangThai = tt.TenTrangThai == null ? String.Empty : tt.TenTrangThai,
+                    GhiChu = tt.GhiChu == null ? String.Empty : tt.GhiChu,
+                };
+                dtcontent.TrangThais.InsertOnSubmit(trangthai);
+                dtcontent.SubmitChanges();
+                lb.InsertLog("Thêm " + trangthai.TenTrangThai, "thực hiện thao tác thêm trong bảng trạng thái.");
+                return true;
+            }
+            catch { return false; }
+        }
 
-      /// <summary>
-      /// 
-      /// </summary>
-      /// <param name="tt"></param>
-      /// <returns></returns>
         public bool UpdateTinhTrang(TrangThai tt)
         {
             try
@@ -57,13 +68,6 @@ namespace QLNT.Business
             {
                 return false;
             }
-        }
-		        public List<SysUser> SelectNguoiDung(string taikhoan)
-        {
-            var c = from dt in dtcontent.SysUsers
-                    where dt.TaiKhoan == taikhoan
-                    select dt;
-            return c.ToList<SysUser>();
         }
         public int KiemTraTonTaiTrangThai(long kh)
         {

@@ -16,7 +16,7 @@ namespace QLNT.Business
             var c = from vt in dtcontent.VatTus
                     select vt;
             return c.ToList<VatTu>();
-        }
+        }    
         public bool XoaVatTu(long mavattu)
         {
             try
@@ -26,11 +26,11 @@ namespace QLNT.Business
                                select vt).Single();
                 dtcontent.VatTus.DeleteOnSubmit(getData);
                 dtcontent.SubmitChanges();
-                lb.InsertLog("Xóa " + getData.TenVatTu, "thực hiện thao tác xóa trong quản lý vật tư.");
+                lb.InsertLog("Xóa "+getData.TenVatTu,"thực hiện thao tác xóa trong quản lý vật tư.");
                 return true;
             }
             catch
-            {
+            {    
                 return false;
             }
         }
@@ -66,13 +66,14 @@ namespace QLNT.Business
                 return false;
             }
         }
+        
         public bool KiemTraVatTu(string vt)
         {
             if ((from pb in dtcontent.VatTus where pb.TenVatTu == vt select pb).Count() > 0)
                 return true;
             return false;
         }
-
+        
     }
 
 }

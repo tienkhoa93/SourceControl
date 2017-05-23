@@ -62,7 +62,7 @@ namespace QLNT.Form.DanhMuc
             txtTenHoKhau.Text = "";
             txtGhiChu.Text = "";
             txtTenHoKhau.Focus();
-        }
+        } 
         #endregion
         #region Bắt lỗi trên form
 
@@ -80,7 +80,7 @@ namespace QLNT.Form.DanhMuc
                     errorProviderTen.SetError(txtTenHoKhau, "");
                 }
             }
-        }
+        } 
         #endregion
 
         private void btnLuuDong_Click(object sender, EventArgs e)

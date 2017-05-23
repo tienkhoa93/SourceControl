@@ -28,7 +28,7 @@ namespace QLNT.Business
            return true;
        }
        /// <summary>
-       /// Update mật khẩu mới cho user. 
+       /// Update mật khẩu mới cho user.
        /// </summary>
        /// <param name="tk"></param>
        /// <param name="mk"></param>

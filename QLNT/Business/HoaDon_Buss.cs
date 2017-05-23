@@ -22,6 +22,9 @@ namespace QLNT.Business
         public double SoTienNuoc { get; set; }
         public string ThangNam { get; set; }
         public string TenPhong { get; set; }
+        //public DateTime? NgayDong { get; set; }
+        //public string NguoiDong { get; set; }
+        //public double TongTien { get; set; }
     }
     public class HoaDon_Buss
     {
@@ -31,7 +34,7 @@ namespace QLNT.Business
         {
             try
             {
-                dtcontent.NT_SP_TAOHOADON(thang, nam, makhu);
+                dtcontent.SP_TAOHOADON(thang, nam, makhu);
                 dtcontent.SubmitChanges();
             }
             catch { }
@@ -80,7 +83,7 @@ namespace QLNT.Business
 
         public _HoaDon GetHoaDonTheoPhong(long id)
         {
-            var ob = (from hoadon in dtcontent.NT_SPHOADONTIENPHONG(id)
+            var ob = (from hoadon in dtcontent.SPHOADONTIENPHONG(id)
                       select new _HoaDon
                       {
                           SoDienCu = (int)hoadon.SoDienCu,

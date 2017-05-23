@@ -41,7 +41,7 @@ namespace QLNT.Form.DanhMuc
                 this.trangthai = tt;
                 GVupForm(this.trangthai);
             }
-        }
+        } 
         #endregion
         #region Get dữ liệu các form
         private void GetValueItems()
@@ -61,7 +61,7 @@ namespace QLNT.Form.DanhMuc
             txtTenTrangThai.Text = "";
             txtGhiChu.Text = "";
             txtTenTrangThai.Focus();
-        }
+        } 
         #endregion
         #region Bắt lỗi trên các form
 
@@ -79,7 +79,7 @@ namespace QLNT.Form.DanhMuc
                     errorProviderTen.SetError(txtTenTrangThai, "");
                 }
             }
-        }
+        } 
         #endregion
         #region Sự kiện các nút
         private void btnLuuDong_Click(object sender, EventArgs e)
@@ -141,7 +141,7 @@ namespace QLNT.Form.DanhMuc
         private void btnHuyBo_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
+        } 
         #endregion
     }
 }

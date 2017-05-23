@@ -115,13 +115,13 @@ namespace QLNT.Form.PhanQuyen
 
         private void btnPhanQuyen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SysNhomQuyen item = (SysNhomQuyen)gridView1.GetRow(gridView1.FocusedRowHandle);
+            SysNhomQuyen item=(SysNhomQuyen)gridView1.GetRow(gridView1.FocusedRowHandle);
             if (item.MaNhom.ToUpper() == "NQ01")
             {
                 MessageBox.Show("Không thể phân quyền nhóm quyền hệ thống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            frmPhanNhomQuyen frm = new frmPhanNhomQuyen(manhom);
+            frmPhanNhomQuyen frm = new frmPhanNhomQuyen( manhom);
             frm.ShowDialog();
         }
         private void frmNhomNguoiDung_Shown(object sender, EventArgs e)

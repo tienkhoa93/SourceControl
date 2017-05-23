@@ -46,7 +46,7 @@ namespace QLNT.Form.DanhMuc
             txtTenDanToc.Text = "";
             txtGhiChu.Text = "";
             txtTenDanToc.Focus();
-
+          
         }
         private void GetValueItems()
         {

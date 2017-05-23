@@ -63,16 +63,6 @@ namespace QLNT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1 {
-            get {
-                object obj = ResourceManager.GetObject("1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _1432128378_building {
             get {
                 object obj = ResourceManager.GetObject("1432128378_building", resourceCulture);
@@ -103,9 +93,19 @@ namespace QLNT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _qlychi1 {
+            get {
+                object obj = ResourceManager.GetObject("_qlychi1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bedroom_community {
             get {
-                object obj = ResourceManager.GetObject("Bedroom community", resourceCulture);
+                object obj = ResourceManager.GetObject("Bedroom_community", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace QLNT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap client_list_icon {
+        internal static System.Drawing.Bitmap change_password1 {
             get {
-                object obj = ResourceManager.GetObject("client_list-icon", resourceCulture);
+                object obj = ResourceManager.GetObject("change_password1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -175,7 +175,7 @@ namespace QLNT.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap dialog_information {
             get {
-                object obj = ResourceManager.GetObject("dialog-information", resourceCulture);
+                object obj = ResourceManager.GetObject("dialog_information", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +186,16 @@ namespace QLNT.Properties {
         internal static System.Drawing.Bitmap diennuoc {
             get {
                 object obj = ResourceManager.GetObject("diennuoc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap diennuoc1 {
+            get {
+                object obj = ResourceManager.GetObject("diennuoc1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -205,7 +215,7 @@ namespace QLNT.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Graduate_male {
             get {
-                object obj = ResourceManager.GetObject("Graduate-male", resourceCulture);
+                object obj = ResourceManager.GetObject("Graduate_male", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,9 +263,9 @@ namespace QLNT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Law_court {
+        internal static System.Drawing.Bitmap Law_court1 {
             get {
-                object obj = ResourceManager.GetObject("Law court", resourceCulture);
+                object obj = ResourceManager.GetObject("Law_court1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +273,9 @@ namespace QLNT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Law_court1 {
+        internal static System.Drawing.Bitmap Law_court2 {
             get {
-                object obj = ResourceManager.GetObject("Law court1", resourceCulture);
+                object obj = ResourceManager.GetObject("Law_court2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,6 +303,16 @@ namespace QLNT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Login1 {
+            get {
+                object obj = ResourceManager.GetObject("Login1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
@@ -306,6 +326,16 @@ namespace QLNT.Properties {
         internal static System.Drawing.Bitmap lophoc {
             get {
                 object obj = ResourceManager.GetObject("lophoc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lophoc1 {
+            get {
+                object obj = ResourceManager.GetObject("lophoc1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,6 +363,16 @@ namespace QLNT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap money_dollar1 {
+            get {
+                object obj = ResourceManager.GetObject("money_dollar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Recycle_Bin {
             get {
                 object obj = ResourceManager.GetObject("Recycle Bin", resourceCulture);
@@ -343,9 +383,9 @@ namespace QLNT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Recycle_Bin1 {
+        internal static System.Drawing.Bitmap room {
             get {
-                object obj = ResourceManager.GetObject("Recycle Bin1", resourceCulture);
+                object obj = ResourceManager.GetObject("room", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,9 +393,9 @@ namespace QLNT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap room {
+        internal static System.Drawing.Bitmap room1 {
             get {
-                object obj = ResourceManager.GetObject("room", resourceCulture);
+                object obj = ResourceManager.GetObject("room1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -383,9 +423,9 @@ namespace QLNT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap user_icon1 {
+        internal static System.Drawing.Bitmap user_icon {
             get {
-                object obj = ResourceManager.GetObject("user-icon1", resourceCulture);
+                object obj = ResourceManager.GetObject("user-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -393,9 +433,9 @@ namespace QLNT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap users_icon1 {
+        internal static System.Drawing.Bitmap users_icon {
             get {
-                object obj = ResourceManager.GetObject("users-icon1", resourceCulture);
+                object obj = ResourceManager.GetObject("users-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

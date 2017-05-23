@@ -28,10 +28,7 @@ namespace QLNT.Business
                return null;
            }
        }
-       /// <summary>
-       /// 
-       /// </summary>
-       /// <returns></returns>
+
        public List<Option> ListOption()
        {
            var op = (from o in datacontext.Options select o);
@@ -43,6 +40,7 @@ namespace QLNT.Business
            Option op = datacontext.Options.Single(p=> p.Id==1);
            op.HoTenChuTro = opp.HoTenChuTro;
            op.NgaySinh = opp.NgaySinh;
+<<<<<<< HEAD
 		   op.TenFileBackup = opp.TenFileBackup;
            op.CMND = opp.CMND;
            op.NgayCap = opp.NgayCap;
@@ -72,6 +70,8 @@ namespace QLNT.Business
            Option op = datacontext.Options.Single(p=> p.Id==1);
            op.HoTenChuTro = opp.HoTenChuTro;
            op.NgaySinh = opp.NgaySinh;
+=======
+>>>>>>> 8f3af8a8254642c7700d94cfa898c3c29db4f0c9
            op.CMND = opp.CMND;
            op.NgayCap = opp.NgayCap;
            op.NoiCap = opp.NoiCap;
