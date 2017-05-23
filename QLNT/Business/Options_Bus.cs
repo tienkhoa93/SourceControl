@@ -40,6 +40,38 @@ namespace QLNT.Business
            Option op = datacontext.Options.Single(p=> p.Id==1);
            op.HoTenChuTro = opp.HoTenChuTro;
            op.NgaySinh = opp.NgaySinh;
+<<<<<<< HEAD
+		   op.TenFileBackup = opp.TenFileBackup;
+           op.CMND = opp.CMND;
+           op.NgayCap = opp.NgayCap;
+           op.NoiCap = opp.NoiCap;
+           op.ThuongTru = opp.ThuongTru;
+		   op.LuufileBackup = opp.LuufileBackup;
+           op.LuufileRestore = opp.LuufileRestore;
+           datacontext.SubmitChanges();
+           op.GiaTienPhong = opp.GiaTienPhong;
+           op.GiaTienDien = opp.GiaTienDien;
+           op.GiaTienNuoc = opp.GiaTienNuoc;
+		              
+          // op.LuufileRestore = opp.LuufileRestore;
+           datacontext.SubmitChanges();
+           op.TenFileBackup =opp.TenFileBackup;
+	
+
+           lb.InsertLog("Thay đổi bảng tùy chọn."," Đã thay đổi bảng tùy chọn trong phần mềm");
+           return true;
+           }
+           catch { return false; }
+           
+       }
+	   public bool UpdateOption_Bk(Option opp)
+       {
+           try {
+           Option op = datacontext.Options.Single(p=> p.Id==1);
+           op.HoTenChuTro = opp.HoTenChuTro;
+           op.NgaySinh = opp.NgaySinh;
+=======
+>>>>>>> 8f3af8a8254642c7700d94cfa898c3c29db4f0c9
            op.CMND = opp.CMND;
            op.NgayCap = opp.NgayCap;
            op.NoiCap = opp.NoiCap;

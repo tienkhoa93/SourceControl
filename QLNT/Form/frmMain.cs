@@ -166,6 +166,7 @@ namespace QLNT
             phong.Dock = DockStyle.Fill;
             tabQuanLyPhong.Controls.Add(phong);
             tabQuanLyPhong.PageVisible = true;
+            tabMain.SelectedTabPage = tabQuanLyPhong;
             tabMain.SelectedTabPageIndex = 1;
         }        
         /// <summary>
@@ -557,7 +558,7 @@ namespace QLNT
             phong.Dock = DockStyle.Fill;
             tabQuanLyPhong.Controls.Add(phong);
             tabQuanLyPhong.PageVisible = true;
-            tabMain.SelectedTabPageIndex = 1;
+            tabMain.SelectedTabPage = tabQuanLyPhong;
         }
         private void btnDanhSachKhu_ItemClick(object sender, ItemClickEventArgs e)
         {

@@ -96,8 +96,13 @@ namespace QLNT.Form.UserControl
                     }
                     else { item.Description = "Trạng thái: Trống. "; }
                     item.Value = phong[i].MaPhong;
+<<<<<<< HEAD
+                    if (File.Exists(@"../../Resources/1.png"))// user-icon1 @"../../Resources/1.png"
+                        item.Image = Image.FromFile(@"../../Resources/1.png");
+=======
                     if (File.Exists(@"../../../Resources/user-icon1.png"))
                         item.Image = Image.FromFile(@"../../../Resources/user-icon1.png"); 
+>>>>>>> 8f3af8a8254642c7700d94cfa898c3c29db4f0c9
                     g.Items.Add(item);
                 }
                     galleryPhong.Gallery.Groups.Add(g);
