@@ -11,7 +11,7 @@ namespace QLNT.Business
     public class Phong_B : QLNT.LinQToSQL.Phong
     {
         public string TenKhu { get; set; }
-
+    
     }
     public class Phong_Bus
     {
@@ -28,20 +28,14 @@ namespace QLNT.Business
             var list_khachtro = (from nt in dtcontent.Phongs where nt.MaPhong == mp select nt).First();
             return list_khachtro;
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="tn"></param>
-        /// <param name="ttn"></param>
-        /// <returns></returns>
-        public List<Phong_B> PhongXapHetHan(DateTime tn, DateTime ttn)
+        public List<Phong_B> PhongXapHetHan(DateTime tn,DateTime ttn)
         {
             try
             {
                 var list_phong =
                     from ph in dtcontent.Phongs
                     join khu in dtcontent.Khus on ph.MaKhu equals khu.MaKhu
-                    where ph.HoatDong == true && (ph.TuNgay >= tn && ph.ToiNgay <= ttn)
+                    where ph.HoatDong == true && (ph.TuNgay>=tn && ph.ToiNgay<=ttn)
                     select new Phong_B
                     {
                         MaPhong = ph.MaPhong,
@@ -68,7 +62,7 @@ namespace QLNT.Business
                 var list_phong =
                     from ph in dtcontent.Phongs
                     join khu in dtcontent.Khus on ph.MaKhu equals khu.MaKhu
-                    where ph.HoatDong == true && (ph.SoNguoi == null || ph.SoNguoi == 0)
+                    where ph.HoatDong == true && (ph.SoNguoi ==null||ph.SoNguoi==0)
                     select new Phong_B
                     {
                         MaPhong = ph.MaPhong,
@@ -98,17 +92,17 @@ namespace QLNT.Business
                     where ph.HoatDong == true
                     select new Phong_B
                     {
-                        MaPhong = ph.MaPhong,
-                        MaKhu = ph.MaKhu,
-                        TenPhong = ph.TenPhong,
-                        TenKhu = khu.TenKhu,
-                        GiaPhong = ph.GiaPhong,
-                        SoNguoi = ph.SoNguoi,
-                        HoatDong = ph.HoatDong,
-                        GhiChu = ph.GhiChu,
-                        TongNguoi = ph.TongNguoi,
-                        TuNgay = ph.TuNgay,
-                        ToiNgay = ph.ToiNgay
+                       MaPhong=ph.MaPhong,
+                       MaKhu=ph.MaKhu,
+                       TenPhong=ph.TenPhong,
+                       TenKhu = khu.TenKhu,
+                       GiaPhong=ph.GiaPhong,
+                       SoNguoi=ph.SoNguoi,
+                       HoatDong=ph.HoatDong,
+                       GhiChu=ph.GhiChu,
+                       TongNguoi=ph.TongNguoi,
+                       TuNgay = ph.TuNgay,
+                       ToiNgay = ph.ToiNgay
                     };
 
                 return list_phong.ToList<Phong_B>();

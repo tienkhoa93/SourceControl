@@ -42,7 +42,7 @@ namespace QLNT.Form.DanhMuc
                 this.tongiao = tg;
                 GVupForm(this.tongiao);
             }
-        }
+        } 
         #endregion
         #region Get dữ liệu lên form
         private void GetValueItems()
@@ -143,7 +143,7 @@ namespace QLNT.Form.DanhMuc
         private void btnHuyBo_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
+        } 
         #endregion
     }
 }

@@ -18,12 +18,12 @@ namespace QLNT.Form.PhanQuyen
         SySNhomQuyen_Bus nqb = new SySNhomQuyen_Bus();
         SysNhomQuyen nq = new SysNhomQuyen();
         SysQuyenSuDung_Bus qsdb = new SysQuyenSuDung_Bus();
-        Common.ChucNang cn = new Common.ChucNang();
+        Common.ChucNang cn =new  Common.ChucNang();
         public frmThemNhomQuyen()
         {
             InitializeComponent();
         }
-        public frmThemNhomQuyen(Common.ChucNang cn, SysNhomQuyen nq)
+        public frmThemNhomQuyen(Common.ChucNang cn,SysNhomQuyen nq)
         {
             InitializeComponent();
             this.cn = cn;
@@ -47,8 +47,7 @@ namespace QLNT.Form.PhanQuyen
             txtDienGia.Text = nq.DienGiai;
             chkHoatDong.Checked = (bool)nq.HoatDong;
         }
-        private void GetValues()
-        {
+        private void GetValues(){
             nq.MaNhom = txtMaNhomQuyen.Text;
             nq.TenNhom = txtTenNhomQuyen.Text;
             nq.DienGiai = txtDienGia.Text;
@@ -64,7 +63,7 @@ namespace QLNT.Form.PhanQuyen
 
         private void KiemTraThongTin()
         {
-            string s = "";
+            string s="";
             if (txtMaNhomQuyen.Text == string.Empty)
                 s += "Nhập vào mã nhóm quyền\n";
             if (txtTenNhomQuyen.Text == string.Empty)
@@ -95,7 +94,7 @@ namespace QLNT.Form.PhanQuyen
                     qsdb.insertQuyenSuDung(nq.MaNhom);
                     txtMaNhomQuyen.Properties.ReadOnly = false;
                     Common.Delegates.GetList(nqb.ListNhomQuyen());
-
+                    
                 }
             }
             else

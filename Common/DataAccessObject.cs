@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.SqlClient;
 using System.Data;
 
 namespace Common
 {
     public class DataAccessObject
     {
-
+           
         // Khai bao cac thuoc tinh cua lop     
         // ket noi co so du lieu theo Linq
-        private static string strCon = String.Empty;
+        private static string strCon = String.Empty;      
         static System.Data.Linq.DataContext db;
 
 
@@ -19,15 +20,14 @@ namespace Common
         /// </summary>
         public DataAccessObject()
         {
-
+           
             try
             {
-                if (strCon == String.Empty)
-                    strCon = DataXml.Info.ConnectStr;
+                if(strCon==String.Empty)
+                strCon = DataXml.Info.ConnectStr;
             }
-            catch
-            {
-
+            catch { 
+            
             }
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Common
         /// <summary>
         /// set/get chuỗi kết nối SQL
         /// </summary>
-        public string StrConnect
+        public  string StrConnect
         {
             get
             {
@@ -66,7 +66,7 @@ namespace Common
                 strCon = value;
             }
         }
-
+       
         /// <summary>
         /// Hàm trả về một chuôi kết nối
         /// </summary>
@@ -76,15 +76,15 @@ namespace Common
             try
             {
                 if (db.Connection.State == ConnectionState.Closed)
-                {
+                {   
                     db = new System.Data.Linq.DataContext(strCon);
                     db.Connection.Open();
                 }
             }
             catch
-            {
+            {                
                 return;
-            }
+            }          
         }
         /// <summary>
         /// kiểm tra khả năng kết nối đến SQLServer
@@ -116,7 +116,7 @@ namespace Common
         public static bool KT_KetNoi(string strconnect)
         {
             System.Data.Linq.DataContext temp = new System.Data.Linq.DataContext(strconnect);
-
+          
             try
             {
                 temp.Connection.Open();
@@ -143,7 +143,7 @@ namespace Common
                 if (dtcontext.Connection.State == ConnectionState.Open)
                     dtcontext.Connection.Close();
             }
-            catch { }
+            catch { } 
         }
     }
 

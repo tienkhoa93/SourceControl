@@ -15,7 +15,7 @@ namespace QLNT.Form.PhanQuyen
     public partial class frmThemNguoiDung : DevExpress.XtraEditors.XtraForm
     {
         Common.ChucNang cn;
-
+        
         SySNhomQuyen_Bus nqb = new SySNhomQuyen_Bus();
         SysNguoiDung_Bus ndb = new SysNguoiDung_Bus();
         SysUser user = new SysUser();
@@ -29,7 +29,7 @@ namespace QLNT.Form.PhanQuyen
             chkHoatDong.Checked = true;
             gridNhomQuyen.Properties.DisplayMember = "TenNhom";
             gridNhomQuyen.Properties.ValueMember = "MaNhom";
-            gridNhomQuyen.Properties.DataSource = nqb.ListNhomQuyen();
+            gridNhomQuyen.Properties.DataSource =nqb.ListNhomQuyen();
             gridNhomQuyen.EditValue = gridNhomQuyen.Properties.GetKeyValue(0);
             chkHoatDong.Checked = true;
             this.cn = cn;
@@ -62,7 +62,7 @@ namespace QLNT.Form.PhanQuyen
             gridNhomQuyen.EditValue = "";
             txtEmail.Text = "";
             chkHoatDong.Checked = true;
-
+           
         }
         private void GVupForm(LinQToSQL.SysUser user)
         {
@@ -81,11 +81,11 @@ namespace QLNT.Form.PhanQuyen
             user.ID = txtMaNguoiDung.Text;
             user.HoTen = txtTenNguoiDung.Text;
             user.TaiKhoan = txtTaiKhoan.Text;
-            if (cn == Common.ChucNang.Them)
-                user.MatKhau = Common.MaHoa.MaHoaMD5(txtMatKhau.Text);
+            if(cn==Common.ChucNang.Them)
+                user.MatKhau =Common.MaHoa.MaHoaMD5( txtMatKhau.Text);
             else
                 user.MatKhau = Common.MaHoa.MaHoaMD5(txtMKNhapLai.Text);
-            try { user.MaNhom = gridNhomQuyen.EditValue.ToString(); }
+            try{user.MaNhom = gridNhomQuyen.EditValue.ToString();}
             catch { user.MaNhom = string.Empty; }
             user.DienGiai = txtDienGiai.Text;
             user.Email = txtEmail.Text;
@@ -114,12 +114,12 @@ namespace QLNT.Form.PhanQuyen
                 if (txtXacNhanMK.Text == string.Empty)
                     s += "\nXác nhận mật khẩu";
             }
-            if (s != string.Empty)
+            if(s!=string.Empty)
             {
-                MessageBox.Show(s, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(s,"Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return false;
             }
-
+           
             if (cn == Common.ChucNang.Sua)
             {
 
@@ -148,7 +148,7 @@ namespace QLNT.Form.PhanQuyen
             //    return false;
             //}
             return true;
-
+            
 
         }
 
@@ -217,7 +217,7 @@ namespace QLNT.Form.PhanQuyen
                     this.Close();
                 }
             }
-
+            
         }
     }
 }

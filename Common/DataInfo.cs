@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,27 +11,27 @@ namespace Common
     public  class DataInfo
     {
         /// <summary>
-        /// T�n m�y ch? SQL
+        /// Tên máy chủ SQL
         /// </summary>
         public string Server { get; set; }
         /// <summary>
-        /// Ch? d? dang nh?p SQL
+        /// Chế độ đăng nhập SQL
         /// </summary>
         public string Auth { get; set; }
         /// <summary>
-        /// T�i kho?n truy c?p SQL
+        /// Tài khoản truy cập SQL
         /// </summary>
         public string User { get; set; }
         /// <summary>
-        /// M?t kh?u truy c?p SQL
+        /// Mật khẩu truy cập SQL
         /// </summary>
         public string Pass { get; set; }
         /// <summary>
-        /// T�n DataBase
+        /// Tên DataBase
         /// </summary>
         public string Database { get; set; }
         /// <summary>
-        /// Chu?i k?t n?i
+        /// Chuỗi kết nối
         /// </summary>
         public string ConnectStr { get; set; }
     }

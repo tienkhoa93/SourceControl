@@ -27,13 +27,13 @@ namespace QLNT.Business
       }
        public List<Khu> GetAllKhu()
        {
-           try
-           {
-               var list_k = from khu in datacontent.Khus where khu.HoatDong == true select khu;
+           try {
+               var list_k = from khu in datacontent.Khus where khu.HoatDong ==true select khu;
                return list_k.ToList<Khu>();
            }
-           catch { return null; }
-       }
+           catch { return null; }         
+           
+       }      
 
        public class Khu_Count: Khu
        {
@@ -41,6 +41,28 @@ namespace QLNT.Business
        }
        public List<Khu_Count> GetAllKhu_Count()
        {
+           //var query = (from khu in datacontent.Khus
+           //             join phong in datacontent.Phongs on khu.MaKhu equals phong.MaKhu
+           //             where khu.HoatDong == true
+           //             group khu by khu.MaKhu into c
+           //             select new Khu_Count
+           //             {
+           //                 MaKhu = c.Key,
+           //                 SoPhong = c.Count() == null ? 0 : c.Count()
+           //                 //SoPhong = c.Count(),                            
+           //             });
+
+           //var qr = (from k in query.ToList<Khu_Count>()
+           //          join kh in datacontent.Khus on k.MaKhu equals kh.MaKhu
+
+           //          select new Khu_Count
+           //          {
+           //              MaKhu = k.MaKhu,
+           //              TenKhu = kh.TenKhu,
+           //              SoPhong = k.SoPhong == null ? (int)0 : k.SoPhong,
+           //              GhiChu = kh.GhiChu
+           //          });
+           //return qr.ToList<Khu_Count>();
 
            var query1 = (from khu in datacontent.Khus
                          where khu.HoatDong == true
@@ -53,6 +75,13 @@ namespace QLNT.Business
                              //SoPhong = c.Count(),                            
                          });
            return query1.ToList<Khu_Count>();
+
+                    //var q =
+                    //from c in datacontent.Khus
+                    //join p in datacontent.Phongs on c.MaKhu equals p.MaKhu into ps
+                    //from p in ps.DefaultIfEmpty()
+                    //select new Khu_Count { MaKhu = c.MaKhu, TenKhu = c.TenKhu, SoPhong = p.TenPhong.Count() == null ? 0 : p.TenPhong.Count() };
+                    //return q.ToList<Khu_Count>();
        }
 
        public bool InsertKhu(Khu kh)

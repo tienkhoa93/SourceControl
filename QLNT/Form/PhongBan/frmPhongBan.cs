@@ -71,10 +71,9 @@ namespace QLNT.Form.PhongBan
                 phong.TongNguoi = int.Parse(calTongSoNguoi.EditValue.ToString());
             }
             catch { }
-            try
-            {
-                phong.TuNgay = (DateTime)dateTuNgay.EditValue;
-                phong.ToiNgay = (DateTime)dateToiNgay.EditValue;
+            try {
+            phong.TuNgay = (DateTime)dateTuNgay.EditValue;
+            phong.ToiNgay = (DateTime)dateToiNgay.EditValue;
             }
             catch { }
         }
@@ -123,7 +122,7 @@ namespace QLNT.Form.PhongBan
         bool CheckInfor()
         {
             string s = "";
-            float tmp = 0;
+            float tmp=0;
             if (txtMaPhong.Text.Equals("") || txtTenPhong.Text.Equals(""))
             {
                 s = "Nhập đầy đủ mã phòng và tên phòng\n";
@@ -134,7 +133,7 @@ namespace QLNT.Form.PhongBan
             }
             try
             {
-                tmp = float.Parse(calGiaPhong.EditValue.ToString());
+                tmp =float.Parse( calGiaPhong.EditValue.ToString());
                 if (tmp < 0)
                     s += "Giá phòng phải > 0\n";
                 tmp = float.Parse(calSoNguoi.EditValue.ToString());
@@ -143,9 +142,8 @@ namespace QLNT.Form.PhongBan
                 tmp = float.Parse(calSoNguoi.EditValue.ToString());
                 if (tmp < 0)
                     s += "Tổng số người phải > 0\n";
-
-            }
-            catch { }
+                
+            }catch{}
             if (s != "")
             {
                 XtraMessageBox.Show(s, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -24,7 +24,7 @@ namespace QLNT.Form.PhanQuyen
         SysQuyenSuDung qsd = new SysQuyenSuDung();
         SysNguoiDung_Bus ndb = new SysNguoiDung_Bus();
         string manhom;
-        string machucnang = "1";
+        string machucnang="1";
         public frmPhanNhomQuyen(string mn)
         {
             InitializeComponent();
@@ -38,7 +38,7 @@ namespace QLNT.Form.PhanQuyen
 
         private void VeCayChucNang()
         {
-
+            
             SysChucNang cn = new SysChucNang();
 
             TreeListNode rootNode = null;
@@ -98,13 +98,11 @@ namespace QLNT.Form.PhanQuyen
 
         private void treeListPhanQuyen_FocusedNodeChanged(object sender, FocusedNodeChangedEventArgs e)
         {
-            try
-            {
-                gridQuyenSuDung.DataSource = qsdb.SelectQuyenSuDung(manhom, e.Node.Tag.ToString());
-                machucnang = e.Node.Tag.ToString();
+            try { gridQuyenSuDung.DataSource = qsdb.SelectQuyenSuDung(manhom, e.Node.Tag.ToString());
+                machucnang=e.Node.Tag.ToString();
             }
             catch { }
-
+         
 
         }
 
@@ -121,7 +119,7 @@ namespace QLNT.Form.PhanQuyen
             bool k = bool.Parse(gridView2.GetRowCellValue(0, gridView2.Columns["TruyCap"]).ToString());
             if (e.Column.Name == "colTatCa")
             {
-
+               
                 if (a == false)
                 {
                     gridView2.SetRowCellValue(0, gridView2.Columns["TatCa"], true);
@@ -146,9 +144,10 @@ namespace QLNT.Form.PhanQuyen
                 }
             }
             else if (e.Column.Name == "colThem")
+               
             {
-
-                if (b == true)
+                
+                if (b== true)
                 {
 
                     gridView2.SetRowCellValue(0, gridView2.Columns["TatCa"], false);
@@ -166,7 +165,7 @@ namespace QLNT.Form.PhanQuyen
             {
                 if (c == true)
                 {
-
+            
                     gridView2.SetRowCellValue(0, gridView2.Columns["TatCa"], false);
                 }
             }
@@ -181,7 +180,7 @@ namespace QLNT.Form.PhanQuyen
             {
                 if (h == true)
                 {
-
+       
                     gridView2.SetRowCellValue(0, gridView2.Columns["TatCa"], false);
                 }
             }
@@ -196,11 +195,11 @@ namespace QLNT.Form.PhanQuyen
             {
                 if (g == true)
                 {
-
+            
                     gridView2.SetRowCellValue(0, gridView2.Columns["TatCa"], false);
                 }
             }
-
+           
             this.Cursor = System.Windows.Forms.Cursors.Default;
         }
 
@@ -221,7 +220,7 @@ namespace QLNT.Form.PhanQuyen
             qsd.HoatDong = true;
 
             if (!qsdb.UpdateQuyenSuDung(qsd))
-                XtraMessageBox.Show("Sửa Quyền Không Thành Công !!!");
+                XtraMessageBox.Show("Sửa Quyền Không Thành Công !!!");  
         }
 
         private void btnDongY_Click(object sender, EventArgs e)

@@ -25,12 +25,12 @@ namespace QLNT.Form.KhachTro
         {
             InitializeComponent();
             LoadDataToGrid();
-
+            
         }
         public frmKhach(Common.ChucNang cn, Khach khach)
         {
             InitializeComponent();
-
+            
             LoadDataToGrid();
 
             this.cn = cn;
@@ -51,9 +51,9 @@ namespace QLNT.Form.KhachTro
             Phong_Bus pb = new Phong_Bus();
             glkPhong.Properties.DisplayMember = "TenPhong";
             glkPhong.Properties.ValueMember = "MaPhong";
-            glkPhong.Properties.DataSource = pb.ListPhong();
+            glkPhong.Properties.DataSource = pb.ListPhong();           
 
-
+            
             glkKhachTro.Properties.DisplayMember = "HoTen";
             glkKhachTro.Properties.ValueMember = "MaKhachTro";
             glkKhachTro.Properties.DataSource = ktb.ListDanhSachKhachTro();
@@ -116,7 +116,7 @@ namespace QLNT.Form.KhachTro
             txtNoiCap.Text = string.Empty;
             txtNoiSinh.Text = string.Empty;
             glkKhachTro.Properties.DataSource = ktb.ListDanhSachKhachTro();
-
+            
             txtGhiChu.Text = string.Empty;
             txtCMND.Text = string.Empty;
             txtNgaySinh.EditValue = DateTime.Today;
@@ -125,7 +125,7 @@ namespace QLNT.Form.KhachTro
             txtNgayRa.EditValue = DateTime.Today.AddDays(1);
             txtGioVao.EditValue = DateTime.Now;
             txtGioRa.EditValue = DateTime.Now.AddHours(24);
-
+          
         }
         private void GetValueItems()
         {
@@ -145,13 +145,13 @@ namespace QLNT.Form.KhachTro
 
             this.khachk.MaKhachTro = glkKhachTro.EditValue.ToString();
             this.khachk.MaPhong = glkPhong.EditValue.ToString();
-            this.khachk.NgaySinh = Convert.ToDateTime(txtNgaySinh.EditValue);
+            this.khachk.NgaySinh =Convert.ToDateTime( txtNgaySinh.EditValue);
             this.khachk.NgayCap = Convert.ToDateTime(txtNgayCap.EditValue);
-            //  this.khachk. = Convert.ToDateTime(txtNgayCap.EditValue);
+          //  this.khachk. = Convert.ToDateTime(txtNgayCap.EditValue);
             this.khachk.NoiSinh = txtNoiSinh.Text;
             this.khachk.NoiCap = txtNoiCap.Text;
             this.khachk.CMND = txtNoiCap.Text;
-            this.khachk.NgayVao = Convert.ToDateTime(txtNgayVao.EditValue);
+            this.khachk.NgayVao =Convert.ToDateTime(txtNgayVao.EditValue);
             this.khachk.NgayRa = Convert.ToDateTime(txtNgayRa.EditValue);
 
             this.khachk.GioVao = Convert.ToDateTime(txtGioVao.EditValue);
@@ -227,10 +227,10 @@ namespace QLNT.Form.KhachTro
         {
             if (cn == Common.ChucNang.Them)
             {
-                // string makhachtro=  (glkKhachTro.EditValue.ToString());
-                List<Business._KhachTro> l = (List<Business._KhachTro>)glkKhachTro.Properties.DataSource;
-                glkPhong.EditValue = l.Find(item => item.MaKhachTro == glkKhachTro.EditValue.ToString()).MaPhong;
-
+           // string makhachtro=  (glkKhachTro.EditValue.ToString());
+             List<Business._KhachTro> l = (List<Business._KhachTro>)glkKhachTro.Properties.DataSource;
+             glkPhong.EditValue = l.Find(item => item.MaKhachTro == glkKhachTro.EditValue.ToString()).MaPhong;
+        
             }
         }
     }

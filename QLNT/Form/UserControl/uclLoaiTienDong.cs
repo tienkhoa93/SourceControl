@@ -27,7 +27,7 @@ namespace QLNT.Form.UserControl
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form.DienNuoc.frmThongTinDongTien tt = new DienNuoc.frmThongTinDongTien(Common.ChucNang.Them, null);
+            Form.DienNuoc.frmThongTinDongTien tt = new DienNuoc.frmThongTinDongTien(Common.ChucNang.Them,null);
             Delegates.Regrib = new Delegates.RefeshGrid(RefeshG);
             tt.ShowDialog();
         }
@@ -44,13 +44,13 @@ namespace QLNT.Form.UserControl
         {
             List<LinQToSQL.ThongTinDongTien> listtttd = (List<LinQToSQL.ThongTinDongTien>)gridView1.DataSource;
             LinQToSQL.ThongTinDongTien tttd = listtttd[gridView1.FocusedRowHandle];
-
-            if (tb.DeleteThongTinTien(tttd.MaLoaiTien))
-                gridView1.DeleteSelectedRows();
+           
+            if(tb.DeleteThongTinTien(tttd.MaLoaiTien))
+                 gridView1.DeleteSelectedRows();
         }
         private void btnNapLai_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            // gridThongTinTien.DataSource = tb.ListThonglatheTinTien();
+           // gridThongTinTien.DataSource = tb.ListThonglatheTinTien();
         }
     }
 }

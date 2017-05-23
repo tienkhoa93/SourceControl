@@ -25,10 +25,7 @@ namespace QLNT.Business
                      select qsd;
             return dt.ToList<SysQuyenSuDung>();
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="manhom"></param>
+
         public void insertQuyenSuDung(string manhom)
         {
             try
@@ -48,7 +45,8 @@ namespace QLNT.Business
                         InAn = true,
                         XuatDuLieu = true,
                         NhapDuLieu = true,
-                        HoatDong = true
+                        HoatDong = true,
+
                     };
                     dtcontext.SysQuyenSuDungs.InsertOnSubmit(qsd);
                     dtcontext.SubmitChanges();

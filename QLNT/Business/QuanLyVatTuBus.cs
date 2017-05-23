@@ -33,29 +33,26 @@ namespace QLNT.Business
                         TenVatTu = qlvt.TenVatTu,
                         SoLuong = qlvt.SoLuong,
                         NgaySuaChua = qlvt.NgaySuaChua,
+                        ThayThe = qlvt.ThayThe,
+                        SuaChua = qlvt.SuaChua,
+                        GhiChu = qlvt.GhiChu
                     };
             lb.InsertLog("Xem danh sách quản lý vật tư.", string.Empty);
             return c.ToList<QuanLiVatTu_B>();
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="qlvt"></param>
-        /// <returns></returns>
+
         public bool InsertQuanLyVatTu(QuanLiVatTu_B qlvt)
         {
             try
             {
                 var quanlyvattu = new QuanLyVatTu()
-               {
-                    MaPhong = qlvt.MaPhong == null ? String.Empty : qlvt.MaPhong,
+                { MaPhong = qlvt.MaPhong == null ? String.Empty : qlvt.MaPhong,
                     TenVatTu = qlvt.TenVatTu == null ? String.Empty : qlvt.TenVatTu,
-                    SoLuong = qlvt.SoLuong,
+                    SoLuong = qlvt.SoLuong == null ? 0 : qlvt.SoLuong,
                     NgaySuaChua = qlvt.NgaySuaChua == null ? DateTime.Today : qlvt.NgaySuaChua,
                     SuaChua = qlvt.SuaChua == null ? true : qlvt.SuaChua,
-                    ThayThe = qlvt.ThayThe == qlvt.ThayThe,
-                    GhiChu = qlvt.GhiChu == null ? String.Empty : qlvt.GhiChu,
-                };
+                    ThayThe = qlvt.ThayThe == null ? true : qlvt.ThayThe,
+                    GhiChu = qlvt.GhiChu == null ? String.Empty : qlvt.GhiChu, };
                 dtcontent.QuanLyVatTus.InsertOnSubmit(quanlyvattu);
                 dtcontent.SubmitChanges();
                 lb.InsertLog("Thêm " + qlvt.TenPhong + qlvt.TenVatTu, "thực hiện thao tác thêm trong quản lý vật tư.");
@@ -73,13 +70,13 @@ namespace QLNT.Business
                 var qlvt = dtcontent.QuanLyVatTus.Single(p => p.MaPhong == quanlyvattu.MaPhong);
                 qlvt.MaPhong = quanlyvattu.MaPhong;
                 qlvt.TenVatTu = quanlyvattu.TenVatTu;
+
+                qlvt.SoLuong = quanlyvattu.SoLuong;
                 qlvt.NgaySuaChua = quanlyvattu.NgaySuaChua;
                 qlvt.ThayThe = quanlyvattu.ThayThe;
                 qlvt.SuaChua = quanlyvattu.SuaChua;
                 qlvt.GhiChu = quanlyvattu.GhiChu;
                 dtcontent.SubmitChanges();
-                qlvt.SoLuong = quanlyvattu.SoLuong;
-                lb.InsertLog("Sửa ", "...");
 
                 lb.InsertLog("Sửa ", "thực hiện thao tác sửa trong quản lý vật tư.");
             }
