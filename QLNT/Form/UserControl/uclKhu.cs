@@ -89,13 +89,13 @@ namespace QLNT.Form.UserControl
                     if (gridViewKhu.IsRowSelected(i) == true)
                         list.Add(gridViewKhu.GetRowCellValue(i, "MaKhu").ToString());
                 }
-                List<LinQToSQL.Khu> khuk = khub.KhuTheoMa(list);
+                List<LinQToSQL.Phong> khuk = khub.KhuTheoMa(list);
+
                 if (khuk.Count > 0)
                 {
                     XtraMessageBox.Show("Khu này có phòng còn Sinh viên, vui lòng xóa hết phòng trong khu", "Thông báo");
                     return;
                 }
-
                 else
                 {
                     khub.Delete_to_Rac(list);

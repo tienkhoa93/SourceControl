@@ -12,15 +12,15 @@ namespace QLNT.Business
     {
        QLNTDataContext datacontent = new QLNTDataContext();
        Log_Bus lb = new Log_Bus();
-       public List<Khu> KhuTheoMa(List<String> mk)
+       public List<Phong> KhuTheoMa(List<String> mk)
        {
-           List<Khu> t = new List<Khu>();
+           List<Phong> t = new List<Phong>();
             try { 
                     foreach (string m in mk)
                       t.AddRange(
-                                (from khu in datacontent.Khus 
-                                where khu.MaKhu ==m
-                                select khu).ToList<Khu>());
+                                (from khu in datacontent.Phongs 
+                                where khu.MaKhu == m
+                                select khu).ToList<Phong>());
                    }
                   catch { return t; }
           return t;
