@@ -80,13 +80,15 @@ namespace QLNT.Form.KhachTro
 
             try
             {
-                var a = picAnh.Image;
-                var ms = new MemoryStream();
-                a.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                var img = ms.ToArray();
-                kt.Anh = img;
+                using (var ms = new MemoryStream())
+                {
+                    var a = picAnh.Image;
+                    Bitmap bmp = new Bitmap(a);
+                    bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    kt.Anh = ms.ToArray();
+                }
             }
-            catch
+            catch (Exception ex)
             {
                 kt.Anh = null;
             }
