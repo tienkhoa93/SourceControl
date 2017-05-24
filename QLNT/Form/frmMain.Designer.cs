@@ -212,15 +212,15 @@
             this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
+            this.navQuanLySinhVien = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navDanhBa = new DevExpress.XtraNavBar.NavBarItem();
+            this.navThungRac = new DevExpress.XtraNavBar.NavBarItem();
             this.navQuanLyPhongkhu = new DevExpress.XtraNavBar.NavBarGroup();
             this.navDanhSachKhu = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarSeparatorItem1 = new DevExpress.XtraNavBar.NavBarSeparatorItem();
             this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarSeparatorItem4 = new DevExpress.XtraNavBar.NavBarSeparatorItem();
-            this.navQuanLySinhVien = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navDanhBa = new DevExpress.XtraNavBar.NavBarItem();
-            this.navThungRac = new DevExpress.XtraNavBar.NavBarItem();
             this.navQuanLyDienNuoc = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem7 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarSeparatorItem2 = new DevExpress.XtraNavBar.NavBarSeparatorItem();
@@ -569,7 +569,7 @@
             // 
             this.barButtonItem24.Caption = "Hóa Đơn Điện Nước";
             this.barButtonItem24.Id = 66;
-            this.barButtonItem24.LargeGlyph = global::QLNT.Properties.Resources._qlychi1;
+            this.barButtonItem24.LargeGlyph = global::QLNT.Properties.Resources._qlychi;
             this.barButtonItem24.Name = "barButtonItem24";
             // 
             // barButtonItem25
@@ -960,8 +960,8 @@
             this.navBarControl1.ActiveGroup = this.navQuanLySinhVien;
             this.navBarControl1.CausesValidation = false;
             this.navBarControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.navBarControl1.DragDropFlags = ((DevExpress.XtraNavBar.NavBarDragDrop)((((DevExpress.XtraNavBar.NavBarDragDrop.Default | DevExpress.XtraNavBar.NavBarDragDrop.AllowDrag) 
-            | DevExpress.XtraNavBar.NavBarDragDrop.AllowDrop) 
+            this.navBarControl1.DragDropFlags = ((DevExpress.XtraNavBar.NavBarDragDrop)((((DevExpress.XtraNavBar.NavBarDragDrop.Default | DevExpress.XtraNavBar.NavBarDragDrop.AllowDrag)
+            | DevExpress.XtraNavBar.NavBarDragDrop.AllowDrop)
             | DevExpress.XtraNavBar.NavBarDragDrop.AllowOuterDrop)));
             this.navBarControl1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
@@ -993,6 +993,39 @@
             this.navBarControl1.Size = new System.Drawing.Size(234, 373);
             this.navBarControl1.TabIndex = 2;
             this.navBarControl1.Text = "QUẢN LÝ SINH VIÊN";
+            // 
+            // navQuanLySinhVien
+            // 
+            this.navQuanLySinhVien.Caption = "Quản Lý Khách Trọ";
+            this.navQuanLySinhVien.Expanded = true;
+            this.navQuanLySinhVien.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navDanhBa),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navThungRac)});
+            this.navQuanLySinhVien.LargeImage = global::QLNT.Properties.Resources.group_khachtro;
+            this.navQuanLySinhVien.Name = "navQuanLySinhVien";
+            // 
+            // navBarItem3
+            // 
+            this.navBarItem3.Caption = "Danh sách khách trọ";
+            this.navBarItem3.Name = "navBarItem3";
+            this.navBarItem3.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem3.SmallImage")));
+            this.navBarItem3.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem3_LinkClicked);
+            // 
+            // navDanhBa
+            // 
+            this.navDanhBa.Caption = "Danh Mục";
+            this.navDanhBa.LargeImage = ((System.Drawing.Image)(resources.GetObject("navDanhBa.LargeImage")));
+            this.navDanhBa.Name = "navDanhBa";
+            this.navDanhBa.SmallImage = ((System.Drawing.Image)(resources.GetObject("navDanhBa.SmallImage")));
+            this.navDanhBa.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navDanhBa_LinkClicked);
+            // 
+            // navThungRac
+            // 
+            this.navThungRac.Caption = "Khách Trọ Đã Xóa";
+            this.navThungRac.Name = "navThungRac";
+            this.navThungRac.SmallImage = global::QLNT.Properties.Resources.Recycle_Bin;
+            this.navThungRac.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navThungRac_LinkClicked);
             // 
             // navQuanLyPhongkhu
             // 
@@ -1040,39 +1073,6 @@
             this.navBarSeparatorItem4.Name = "navBarSeparatorItem4";
             this.navBarSeparatorItem4.SmallImageIndex = 0;
             this.navBarSeparatorItem4.SmallImageSize = new System.Drawing.Size(0, 0);
-            // 
-            // navQuanLySinhVien
-            // 
-            this.navQuanLySinhVien.Caption = "Quản Lý Khách Trọ";
-            this.navQuanLySinhVien.Expanded = true;
-            this.navQuanLySinhVien.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navDanhBa),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navThungRac)});
-            this.navQuanLySinhVien.LargeImage = global::QLNT.Properties.Resources.group_khachtro;
-            this.navQuanLySinhVien.Name = "navQuanLySinhVien";
-            // 
-            // navBarItem3
-            // 
-            this.navBarItem3.Caption = "Danh sách khách trọ";
-            this.navBarItem3.Name = "navBarItem3";
-            this.navBarItem3.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem3.SmallImage")));
-            this.navBarItem3.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem3_LinkClicked);
-            // 
-            // navDanhBa
-            // 
-            this.navDanhBa.Caption = "Danh Mục";
-            this.navDanhBa.LargeImage = ((System.Drawing.Image)(resources.GetObject("navDanhBa.LargeImage")));
-            this.navDanhBa.Name = "navDanhBa";
-            this.navDanhBa.SmallImage = ((System.Drawing.Image)(resources.GetObject("navDanhBa.SmallImage")));
-            this.navDanhBa.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navDanhBa_LinkClicked);
-            // 
-            // navThungRac
-            // 
-            this.navThungRac.Caption = "Khách Trọ Đã Xóa";
-            this.navThungRac.Name = "navThungRac";
-            this.navThungRac.SmallImage = global::QLNT.Properties.Resources.Recycle_Bin;
-            this.navThungRac.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navThungRac_LinkClicked);
             // 
             // navQuanLyDienNuoc
             // 
@@ -1201,7 +1201,7 @@
             this.tabQuanLyPhong.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabQuanLyPhong.Name = "tabQuanLyPhong";
             this.tabQuanLyPhong.PageVisible = false;
-            this.tabQuanLyPhong.Size = new System.Drawing.Size(844, 344);
+            this.tabQuanLyPhong.Size = new System.Drawing.Size(844, 345);
             this.tabQuanLyPhong.Text = "Danh Sách Phòng";
             // 
             // tabDienNuoc
@@ -1209,7 +1209,7 @@
             this.tabDienNuoc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabDienNuoc.Name = "tabDienNuoc";
             this.tabDienNuoc.PageVisible = false;
-            this.tabDienNuoc.Size = new System.Drawing.Size(844, 344);
+            this.tabDienNuoc.Size = new System.Drawing.Size(844, 345);
             this.tabDienNuoc.Text = "Quản lí Điện - Nước";
             // 
             // tabTienPhong
@@ -1217,7 +1217,7 @@
             this.tabTienPhong.Controls.Add(this.splitContainerControl1);
             this.tabTienPhong.Name = "tabTienPhong";
             this.tabTienPhong.PageVisible = false;
-            this.tabTienPhong.Size = new System.Drawing.Size(844, 344);
+            this.tabTienPhong.Size = new System.Drawing.Size(844, 345);
             this.tabTienPhong.Text = "Tiền Phòng";
             // 
             // splitContainerControl1
@@ -1229,7 +1229,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.grLoaiTien);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(844, 344);
+            this.splitContainerControl1.Size = new System.Drawing.Size(844, 345);
             this.splitContainerControl1.SplitterPosition = 806;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -1239,7 +1239,7 @@
             this.grTien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grTien.Location = new System.Drawing.Point(0, 0);
             this.grTien.Name = "grTien";
-            this.grTien.Size = new System.Drawing.Size(806, 344);
+            this.grTien.Size = new System.Drawing.Size(806, 345);
             this.grTien.TabIndex = 0;
             this.grTien.Text = "Danh Sách Khách Trọ Đóng Tiền";
             // 
@@ -1248,7 +1248,7 @@
             this.grLoaiTien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grLoaiTien.Location = new System.Drawing.Point(0, 0);
             this.grLoaiTien.Name = "grLoaiTien";
-            this.grLoaiTien.Size = new System.Drawing.Size(33, 344);
+            this.grLoaiTien.Size = new System.Drawing.Size(33, 345);
             this.grLoaiTien.TabIndex = 0;
             this.grLoaiTien.Text = "Các Khoản Tiền";
             // 
@@ -1256,14 +1256,14 @@
             // 
             this.tabkhu.Name = "tabkhu";
             this.tabkhu.PageVisible = false;
-            this.tabkhu.Size = new System.Drawing.Size(844, 344);
+            this.tabkhu.Size = new System.Drawing.Size(844, 345);
             this.tabkhu.Text = "Quản Lý Khu";
             // 
             // tabQuanLyVatTu
             // 
             this.tabQuanLyVatTu.Name = "tabQuanLyVatTu";
             this.tabQuanLyVatTu.PageVisible = false;
-            this.tabQuanLyVatTu.Size = new System.Drawing.Size(844, 344);
+            this.tabQuanLyVatTu.Size = new System.Drawing.Size(844, 345);
             this.tabQuanLyVatTu.Text = "Quản Lý Vật Tư";
             // 
             // tabKyLuat
@@ -1271,7 +1271,7 @@
             this.tabKyLuat.Controls.Add(this.splitContainerControl2);
             this.tabKyLuat.Name = "tabKyLuat";
             this.tabKyLuat.PageVisible = false;
-            this.tabKyLuat.Size = new System.Drawing.Size(844, 344);
+            this.tabKyLuat.Size = new System.Drawing.Size(844, 345);
             this.tabKyLuat.Text = "Kỷ Luật";
             // 
             // splitContainerControl2
@@ -1283,7 +1283,7 @@
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.grcHinhThucKyLuat);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(844, 344);
+            this.splitContainerControl2.Size = new System.Drawing.Size(844, 345);
             this.splitContainerControl2.SplitterPosition = 734;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
@@ -1293,7 +1293,7 @@
             this.grcKyLuat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grcKyLuat.Location = new System.Drawing.Point(0, 0);
             this.grcKyLuat.Name = "grcKyLuat";
-            this.grcKyLuat.Size = new System.Drawing.Size(734, 344);
+            this.grcKyLuat.Size = new System.Drawing.Size(734, 345);
             this.grcKyLuat.TabIndex = 0;
             this.grcKyLuat.Text = "Danh sách khách trọ bị kỷ luật";
             // 
@@ -1302,7 +1302,7 @@
             this.grcHinhThucKyLuat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grcHinhThucKyLuat.Location = new System.Drawing.Point(0, 0);
             this.grcHinhThucKyLuat.Name = "grcHinhThucKyLuat";
-            this.grcHinhThucKyLuat.Size = new System.Drawing.Size(105, 344);
+            this.grcHinhThucKyLuat.Size = new System.Drawing.Size(105, 345);
             this.grcHinhThucKyLuat.TabIndex = 0;
             this.grcHinhThucKyLuat.Text = "Hình thức kỷ luật";
             // 
@@ -1310,56 +1310,56 @@
             // 
             this.tabHoaDon.Name = "tabHoaDon";
             this.tabHoaDon.PageVisible = false;
-            this.tabHoaDon.Size = new System.Drawing.Size(844, 344);
+            this.tabHoaDon.Size = new System.Drawing.Size(844, 345);
             this.tabHoaDon.Text = "Hóa Đơn";
             // 
             // tabLichSu
             // 
             this.tabLichSu.Name = "tabLichSu";
             this.tabLichSu.PageVisible = false;
-            this.tabLichSu.Size = new System.Drawing.Size(844, 344);
+            this.tabLichSu.Size = new System.Drawing.Size(844, 345);
             this.tabLichSu.Text = "Lịch Sử Truy Cập";
             // 
             // tabDanhMuc
             // 
             this.tabDanhMuc.Name = "tabDanhMuc";
             this.tabDanhMuc.PageVisible = false;
-            this.tabDanhMuc.Size = new System.Drawing.Size(844, 344);
+            this.tabDanhMuc.Size = new System.Drawing.Size(844, 345);
             this.tabDanhMuc.Text = "Danh Mục";
             // 
             // tabDanhSachNguoiDung
             // 
             this.tabDanhSachNguoiDung.Name = "tabDanhSachNguoiDung";
             this.tabDanhSachNguoiDung.PageVisible = false;
-            this.tabDanhSachNguoiDung.Size = new System.Drawing.Size(844, 344);
+            this.tabDanhSachNguoiDung.Size = new System.Drawing.Size(844, 345);
             this.tabDanhSachNguoiDung.Text = "Danh sách người dùng";
             // 
             // tabDanhSachNhomQuyen
             // 
             this.tabDanhSachNhomQuyen.Name = "tabDanhSachNhomQuyen";
             this.tabDanhSachNhomQuyen.PageVisible = false;
-            this.tabDanhSachNhomQuyen.Size = new System.Drawing.Size(844, 344);
+            this.tabDanhSachNhomQuyen.Size = new System.Drawing.Size(844, 345);
             this.tabDanhSachNhomQuyen.Text = "Danh sách nhóm quyền";
             // 
             // xtraThungRac
             // 
             this.xtraThungRac.Name = "xtraThungRac";
             this.xtraThungRac.PageVisible = false;
-            this.xtraThungRac.Size = new System.Drawing.Size(844, 344);
+            this.xtraThungRac.Size = new System.Drawing.Size(844, 345);
             this.xtraThungRac.Text = "Danh sách đã xóa";
             // 
             // tabKhachQuaDem
             // 
             this.tabKhachQuaDem.Name = "tabKhachQuaDem";
             this.tabKhachQuaDem.PageVisible = false;
-            this.tabKhachQuaDem.Size = new System.Drawing.Size(844, 344);
+            this.tabKhachQuaDem.Size = new System.Drawing.Size(844, 345);
             this.tabKhachQuaDem.Text = "Khách trọ qua đêm";
             // 
             // tabBaoCaoPhong
             // 
             this.tabBaoCaoPhong.Name = "tabBaoCaoPhong";
             this.tabBaoCaoPhong.PageVisible = false;
-            this.tabBaoCaoPhong.Size = new System.Drawing.Size(844, 344);
+            this.tabBaoCaoPhong.Size = new System.Drawing.Size(844, 345);
             this.tabBaoCaoPhong.Text = "Báo cáo theo phòng";
             // 
             // commandBarGalleryDropDown1

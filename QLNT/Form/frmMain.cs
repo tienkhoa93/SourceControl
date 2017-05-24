@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
@@ -13,16 +8,12 @@ using DevExpress.XtraTab.ViewInfo;
 using DevExpress.XtraTab;
 using Common;
 using DevExpress.LookAndFeel;
-using QLNT.Form.UserControl;
 using System.Threading;
-using DevExpress.XtraReports.UI;
 using DevExpress.XtraCharts;
 using DevExpress.Utils;
-using System.Xml;
-using QLNT.Form.PhanQuyen;
 using QLNT.LinQToSQL;
 using QLNT.Business;
-using QLNT.Form.In;
+using QLNT.Form.UserControl;
 namespace QLNT
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
@@ -39,7 +30,7 @@ namespace QLNT
                 // đăng ký giao diện
                 InitSkinGallery();
             });
-            t.Start();   
+            t.Start();
             PhanQuyen();
             AddNewTab();
         }
@@ -79,13 +70,13 @@ namespace QLNT
                             case "12": btnDanhSachNguoiDung.Enabled = false; break;
                             case "13": btnDanhSachNhomQuyen.Enabled = false; break;
                             case "14": btnDanhSachKhachTro.Enabled = false;
-                                navBarItem3.Enabled=false;break;
+                                navBarItem3.Enabled = false; break;
                             case "16": btnDanhMuc.Enabled = false;
                                 navDanhBa.Enabled = false; break;
                             case "17": btnDanhSachPhong.Enabled = false;
                                 navBarItem6.Enabled = false; break;
 
-                            case "18": btnDanhSachKhu.Enabled = false; 
+                            case "18": btnDanhSachKhu.Enabled = false;
                                 navDanhSachKhu.Enabled = false; break;
                             case "19": btnTienPhong.Enabled = false;
                                 navBarItem7.Enabled = false; break;
@@ -95,7 +86,7 @@ namespace QLNT
                                 btnHoaDon.Enabled = false; break;
 
                             case "22": btnQuanLyVatTu.Enabled = false;
-                                navQuanLyVatTu.Enabled = false; break;                       
+                                navQuanLyVatTu.Enabled = false; break;
                         }
                     }
 
@@ -104,31 +95,31 @@ namespace QLNT
             }
 
         }
-        #region Backup tu dong 
-            void BackupAuto()
+        #region Backup tu dong
+        void BackupAuto()
+        {
+            Business.Backups_Bus bk = new Business.Backups_Bus();
+            LinQToSQL.Backupss backup = bk.GetListBackups();
+            Business.Options_Bus opb = new Business.Options_Bus();
+            LinQToSQL.Option op = opb.GetOp();
+            Common.BackupData bkcm = new Common.BackupData();
+            if (backup.Onn == true && backup.TrangThai == false)
             {
-                Business.Backups_Bus bk = new Business.Backups_Bus();
-                LinQToSQL.Backupss backup = bk.GetListBackups();
-                Business.Options_Bus opb = new Business.Options_Bus();
-                LinQToSQL.Option op=  opb.GetOp();
-                Common.BackupData bkcm = new Common.BackupData();
-                if (backup.Onn == true&&backup.TrangThai==false)
-                {                    
-                    string date=DateTime.Today.DayOfWeek.ToString();
-                    if (date.Equals(backup.Ngay))
+                string date = DateTime.Today.DayOfWeek.ToString();
+                if (date.Equals(backup.Ngay))
+                {
+                    if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có muốn sao lưu dữ liệu không?", "Sao Lưu Tự Động", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
-                        if (DevExpress.XtraEditors.XtraMessageBox.Show("Bạn có muốn sao lưu dữ liệu không?", "Sao Lưu Tự Động", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
-                        {
-                            bkcm.Backup_click(op.TenFileBackup, op.LuufileBackup);
-                            bk.DaBackup();// sua lai trang thai đã backup
-                            return;
-                        }
+                        bkcm.Backup_click(op.TenFileBackup, op.LuufileBackup);
+                        bk.DaBackup();// sua lai trang thai đã backup
+                        return;
                     }
-                    else bk.ChuaBackup();                
-                    
                 }
+                else bk.ChuaBackup();
 
             }
+
+        }
         #endregion
         #region Đăng ký giao diện cho phần mềm
         /// <summary>
@@ -137,7 +128,8 @@ namespace QLNT
         void InitSkinGallery()
         {
             RegistryFile.ReadRegistry();
-            try {
+            try
+            {
                 DevExpress.Skins.SkinManager.EnableFormSkins();
                 DevExpress.Skins.SkinManager.EnableMdiFormSkins();
                 DevExpress.UserSkins.BonusSkins.Register();
@@ -150,15 +142,15 @@ namespace QLNT
             {
                 UserLookAndFeel.Default.SkinName = "Blue";
             }
-            
+
         }
-        #endregion                  
+        #endregion
         private void xtraTabControl1_CloseButtonClick(object sender, EventArgs e)
         {
             ClosePageButtonEventArgs arg = e as ClosePageButtonEventArgs;
             (arg.Page as XtraTabPage).PageVisible = false;
         }
-      
+
         public void AddNewTab()
         {
             CheckForIllegalCrossThreadCalls = false;
@@ -166,20 +158,19 @@ namespace QLNT
             phong.Dock = DockStyle.Fill;
             tabQuanLyPhong.Controls.Add(phong);
             tabQuanLyPhong.PageVisible = true;
-            tabMain.SelectedTabPage = tabQuanLyPhong;
             tabMain.SelectedTabPageIndex = 1;
-        }        
+        }
         /// <summary>
         /// Luu giao dien he thong
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void giaodien_GalleryItemClick(object sender, DevExpress.XtraBars.Ribbon.GalleryItemClickEventArgs e)
-        {   
-            UserInfo.Skin = e.Item.Caption;                   
+        {
+            UserInfo.Skin = e.Item.Caption;
         }
 
-        #region Sự kiện sao lưu và phục hồi giữ liệu 
+        #region Sự kiện sao lưu và phục hồi giữ liệu
         private void btnBackup_ItemClick(object sender, ItemClickEventArgs e)
         {
             Form.Systems.frmBackup backup = new Form.Systems.frmBackup();
@@ -191,7 +182,7 @@ namespace QLNT
             restore.ShowDialog();
         }
         #endregion
-        
+
 
         /// <summary>
         ///  Su kien truoc khi dong form thi luu giao dien lai
@@ -200,12 +191,13 @@ namespace QLNT
         /// <param name="e"></param>
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            try { 
+            try
+            {
                 RegistryFile.GhiUser(UserInfo.Stt, UserInfo.Account, UserInfo.Pass, UserInfo.Skin);
-               // SetConnectionString();
+                // SetConnectionString();
             }
             catch { }
-            
+
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -220,7 +212,7 @@ namespace QLNT
         {
             uclPhong phong = new uclPhong();
             phong.Dock = DockStyle.Fill;
-            tabQuanLyPhong.Controls.Add(phong);        
+            tabQuanLyPhong.Controls.Add(phong);
             tabQuanLyPhong.PageVisible = true;
             tabMain.SelectedTabPageIndex = 1;
         }
@@ -236,7 +228,7 @@ namespace QLNT
             {
                 BackupAuto();
             });
-            t.Start();          
+            t.Start();
         }
         #endregion
 
@@ -274,7 +266,7 @@ namespace QLNT
                 grLoaiTien.Controls.Add(tp);
             }));
 
-           
+
         }
         private void navBarItem7_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
@@ -312,8 +304,8 @@ namespace QLNT
             Form.Systems.frmQuanLiDungChung ch = new Form.Systems.frmQuanLiDungChung();
             ch.ShowDialog();
         }
-       
-        
+
+
         /// <summary>
         /// Kỷ luật
         /// </summary>
@@ -321,7 +313,7 @@ namespace QLNT
         /// <param name="e"></param>
         private void navBarItem4_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            
+
         }
 
         private void navDienNuocSoTien_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -335,17 +327,17 @@ namespace QLNT
 
         private void navBarItem8_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-          
+
         }
 
         private void navBarItem9_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            
+
         }
 
         private void navBarItem5_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-          
+
         }
 
         private void navBarItem3_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -362,9 +354,9 @@ namespace QLNT
 
         }
 
-     
 
-       
+
+
         private void navBarItem11_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Form.In.frmInHoaDonDienNuocKoCS frm = new Form.In.frmInHoaDonDienNuocKoCS();
@@ -380,8 +372,8 @@ namespace QLNT
             tabMain.SelectedTabPage = tabLichSu;
         }
         #region thong ke
-        
-       
+
+
         //}
         //#region Thống kê sinh viên
         //    #region thống kê chỗ trống
@@ -431,9 +423,9 @@ namespace QLNT
         //    #endregion
         //    #region Thongkedotuoi
         //    void ThongKeDoTuoi() { 
-      
-            
-           
+
+
+
         //        CharThongKeTuoi.SideBySideEqualBarWidth = false;
 
         //        List<Business.ThongKe_Bus.Tuoi_> nn = tk.ThongKeTuoi();
@@ -452,15 +444,15 @@ namespace QLNT
         //        CharThongKeTuoi.Titles.Add(Title);
 
         //        CharThongKeTuoi.Dock = DockStyle.Fill;
-           
-           
+
+
         //    }
 
         //    #endregion
         //    #region thống kê theo khóa học
 
         //void ThongKeKhoaHoc(){
-         
+
         //    // thống kê khóa học
         //    CharKhoaHoc.SideBySideEqualBarWidth = false;
 
@@ -479,7 +471,7 @@ namespace QLNT
         //    CharKhoaHoc.Titles.Add(TitleKh);
 
         //    CharKhoaHoc.Dock = DockStyle.Fill;
-           
+
         //}
         // #endregion
         //    #region Thong ke tat ca dan toc
@@ -529,9 +521,9 @@ namespace QLNT
         //        CharDanTocThieuSo.Dock = DockStyle.Fill;
 
         //    }
-        
+
         //    #endregion
-            
+
         //private void btnDanhSachSinhVien_ItemClick(object sender, ItemClickEventArgs e)
         //{
         //   // splashScreenManager1.ShowWaitForm();
@@ -541,7 +533,7 @@ namespace QLNT
         //    tabQLSV.PageVisible = true;
         //   // splashScreenManager1.CloseWaitForm();
         //    tabMain.SelectedTabPage = tabQLSV;
-           
+
         //}
 
 
@@ -549,7 +541,7 @@ namespace QLNT
         #endregion
         private void barButtonItem1_ItemClick_1(object sender, ItemClickEventArgs e)
         {
-            
+
         }
 
         private void btnDanhSachPhong_ItemClick(object sender, ItemClickEventArgs e)
@@ -558,7 +550,7 @@ namespace QLNT
             phong.Dock = DockStyle.Fill;
             tabQuanLyPhong.Controls.Add(phong);
             tabQuanLyPhong.PageVisible = true;
-            tabMain.SelectedTabPage = tabQuanLyPhong;
+            tabMain.SelectedTabPageIndex = 1;
         }
         private void btnDanhSachKhu_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -610,11 +602,11 @@ namespace QLNT
         }
         private void btnThongKe_ItemClick(object sender, ItemClickEventArgs e)
         {
-            
+
         }
         private void ribbon_Click(object sender, EventArgs e)
         {
-            if (ribbon.SelectedPage==ribbonPage1)
+            if (ribbon.SelectedPage == ribbonPage1)
             {
                 navQuanLySinhVien.Expanded = true;
                 return;
@@ -632,7 +624,7 @@ namespace QLNT
         }
         private void btnDanhMuc_ItemClick(object sender, ItemClickEventArgs e)
         {
-            
+
             Form.Systems.frmQuanLiDungChung qldt = new Form.Systems.frmQuanLiDungChung();
             qldt.TopLevel = false;
             qldt.Dock = DockStyle.Fill;
@@ -644,7 +636,7 @@ namespace QLNT
 
         private void btnBaoCaoSinhVien_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-         
+
         }
         #region Danh sách khách trọ
         private void btnDanhSachSinhVien_ItemClick(object sender, ItemClickEventArgs e)
@@ -663,7 +655,7 @@ namespace QLNT
             tabKhachTro.Controls.Add(dn);
             tabKhachTro.PageVisible = true;
             tabMain.SelectedTabPage = tabKhachTro;
-        } 
+        }
         #endregion
         private void btnHoaDon_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
@@ -699,7 +691,7 @@ namespace QLNT
         /// thống kê chỗ còn trống theo khu
         /// </summary>
 
-        
+
         #endregion
 
         private void btnDanhSachKhachTro_ItemClick(object sender, ItemClickEventArgs e)
@@ -737,7 +729,7 @@ namespace QLNT
 
         private void btnDanhSachKyLuat_ItemClick(object sender, ItemClickEventArgs e)
         {
-          
+
         }
 
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
@@ -806,12 +798,12 @@ namespace QLNT
 
         private void btnThongKeDoanhSo_ItemClick(object sender, ItemClickEventArgs e)
         {
-           
+
         }
 
         private void btnThongKeDoanhSo1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-             
+
         }
     }
 }

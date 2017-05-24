@@ -37,7 +37,8 @@ namespace QLNT.Business
             {
                 var list_khachtro =
                     from khachtro in datacontext.KhachTros
-                    join phong in datacontext.Phongs on khachtro.MaPhong equals phong.MaPhong into pg from phg in pg.DefaultIfEmpty()
+                    join phong in datacontext.Phongs on khachtro.MaPhong equals phong.MaPhong into pg
+                    from phg in pg.DefaultIfEmpty()
                     join phongcu in datacontext.Phongs on khachtro.MaPhongCu equals phongcu.MaPhong into phc
                     from phogc in phc.DefaultIfEmpty()
                     join dantoc in datacontext.DanTocs on khachtro.MaDanToc equals dantoc.MaDanToc
@@ -49,7 +50,7 @@ namespace QLNT.Business
                         MaKhachTro = khachtro.MaKhachTro,
                         HoLot = khachtro.HoLot,
                         Ten = khachtro.Ten,
-                        HoTen = khachtro.HoLot +" " + khachtro.Ten,
+                        HoTen = khachtro.HoLot + " " + khachtro.Ten,
                         Anh = khachtro.Anh == null ? null : khachtro.Anh.ToArray(),
                         NgaySinh = khachtro.NgaySinh,
                         GioiTinh = khachtro.GioiTinh,
@@ -99,7 +100,7 @@ namespace QLNT.Business
                     {
                         HoTenChuTro = option.HoTenChuTro,
                         NgaySinhChuTro = (DateTime)option.NgaySinh,
-                        NgayCapCMNDChuTro = option.NgayCap==null?DateTime.Parse("2-2-1000"):(DateTime)option.NgayCap,
+                        NgayCapCMNDChuTro = option.NgayCap == null ? DateTime.Parse("2-2-1000") : (DateTime)option.NgayCap,
                         CMNDChuTro = option.CMND,
                         NoiCapCMNDChuTro = option.NoiCap,
                         ThuongTruChuTro = option.ThuongTru,
@@ -124,7 +125,7 @@ namespace QLNT.Business
             }
             catch { return null; }
         }
-       
+
         public List<_KhachTro> ListDanhSachKhachTro_TheoMaPhong(string map)
         {
             try
@@ -181,7 +182,7 @@ namespace QLNT.Business
 
         public object ThongKeKhachTro(string mp, string mk, string gioitinh, short trangthai, DateTime t1, DateTime t2)
         {
-            var ob = from khachtro in datacontext.nt_SP_THONGKE_KHACHTRO(mp, mk, gioitinh, trangthai, t1, t2)
+            var ob = from khachtro in datacontext.NT_SP_THONGKE_KHACHTRO(mp, mk, gioitinh, trangthai, t1, t2)
 
                      select new _KhachTro
                      {
@@ -222,7 +223,7 @@ namespace QLNT.Business
                 datacontext.KhachTros.InsertOnSubmit(kh);
                 datacontext.SubmitChanges();
 
-                datacontext.sp_DemSoNguoi(kh.MaPhong);
+                datacontext.NT_sp_DemSoNguoi(kh.MaPhong);
                 datacontext.SubmitChanges();
                 lb.InsertLog("Thêm một khách trọ", "");
                 return true;
@@ -293,7 +294,7 @@ namespace QLNT.Business
             query1.HoatDong = false;
             datacontext.SubmitChanges();
 
-            datacontext.sp_DemSoNguoi(query1.MaPhong);
+            datacontext.NT_sp_DemSoNguoi(query1.MaPhong);
             datacontext.SubmitChanges();
 
             lb.InsertLog("Xóa khách trọ (Thùng rác) " + MaKhachTro, "Xóa khách trọ");
@@ -304,7 +305,7 @@ namespace QLNT.Business
             datacontext.KhachTros.DeleteOnSubmit(query);
             datacontext.SubmitChanges();
 
-            datacontext.sp_DemSoNguoi(query.MaPhong);
+            datacontext.NT_sp_DemSoNguoi(query.MaPhong);
             datacontext.SubmitChanges();
 
             lb.InsertLog("Xóa khách trọ (Xóa luôn) " + MaKhachTro, "Xóa khách trọ");
@@ -319,7 +320,7 @@ namespace QLNT.Business
             query1.HoatDong = true;
             datacontext.SubmitChanges();
 
-            datacontext.sp_DemSoNguoi(query1.MaPhong);
+            datacontext.NT_sp_DemSoNguoi(query1.MaPhong);
             datacontext.SubmitChanges();
 
             lb.InsertLog("Khôi phục khách trọ " + MaKhachTro, "Khôi phục khách trọ");
@@ -355,7 +356,7 @@ namespace QLNT.Business
                 khachtro.HoatDong = kh.HoatDong;
 
                 datacontext.SubmitChanges();
-                datacontext.sp_DemSoNguoi(khachtro.MaPhong);
+                datacontext.NT_sp_DemSoNguoi(khachtro.MaPhong);
                 datacontext.SubmitChanges();
                 return true;
             }
@@ -390,16 +391,16 @@ namespace QLNT.Business
             try
             {
                 datacontext.SubmitChanges();
-                datacontext.sp_DemSoNguoi(khachtro.MaPhong);
+                datacontext.NT_sp_DemSoNguoi(khachtro.MaPhong);
                 datacontext.SubmitChanges();
                 return true;
             }
             catch { return false; }
         }
-      public bool  KiemTraSoNguoi (string mp)
+        public bool KiemTraSoNguoi(string mp)
         {
             var d = (from phong in datacontext.Phongs where phong.MaPhong == mp select phong).First();
-            var c = (from khach in datacontext.KhachTros where khach.MaPhong == mp where khach.HoatDong==true select khach);
+            var c = (from khach in datacontext.KhachTros where khach.MaPhong == mp where khach.HoatDong == true select khach);
 
             if (c.Count() >= d.TongNguoi)
                 return false;
@@ -428,19 +429,19 @@ namespace QLNT.Business
                 kt.MaPhongCu = kt.MaPhong;
                 m = kt.MaPhong;
                 kt.MaPhong = mp;
-               
+
                 try
                 {
                     datacontext.SubmitChanges();
-                    lb.InsertLog("Chuyển phòng cho khách trọ " , "Chuyển phòng thành công.");
+                    lb.InsertLog("Chuyển phòng cho khách trọ ", "Chuyển phòng thành công.");
                 }
                 catch { }
             }
 
-            datacontext.sp_DemSoNguoi(m);
+            datacontext.NT_sp_DemSoNguoi(m);
             datacontext.SubmitChanges();
 
-            datacontext.sp_DemSoNguoi(mp);
+            datacontext.NT_sp_DemSoNguoi(mp);
             datacontext.SubmitChanges();
         }
     }

@@ -95,8 +95,20 @@ namespace QLNT.Form.KhachTro
             kt.Ten = txtTen.Text;
             kt.NgaySinh = DateTime.Parse(dateNgaySinh.EditValue.ToString());
             kt.GioiTinh = cboGioiTinh.EditValue.ToString();
-            kt.MaDanToc = long.Parse(glkDanToc.EditValue.ToString());
-            kt.MaTonGiao = long.Parse(glkTonGiao.EditValue.ToString());
+            try
+            {
+                kt.MaDanToc = long.Parse(glkDanToc.EditValue.ToString());
+            }
+            catch { }
+            try
+            {
+                kt.MaTonGiao = long.Parse(glkTonGiao.EditValue.ToString());
+            }
+            catch
+            {
+
+            }
+
             try
             {
                 kt.MaPhong = glkPhongMoi.EditValue.ToString();
@@ -128,7 +140,9 @@ namespace QLNT.Form.KhachTro
             kt.SDTLienHe = txtSDTLienHe.Text;
             kt.NgayVao = DateTime.Parse(dateNgayVao.EditValue.ToString());
             kt.NgayRa = DateTime.Parse(dateNgayRa.EditValue.ToString());
-            kt.MaTrangThai = long.Parse(glkTrangThai.EditValue.ToString());
+            try { kt.MaTrangThai = long.Parse(glkTrangThai.EditValue.ToString()); }
+            catch { }
+
             kt.GhiChu = txtGhiChu.Text;
             if (chkTruongPhong.Checked)
             {
@@ -276,15 +290,23 @@ namespace QLNT.Form.KhachTro
             catch
             {
             }
+            try {
+                if (DateTime.Parse(dateNgaySinh.EditValue.ToString()) > DateTime.Today)
+                {
+                    s += "Ngày sinh không thể lớn hơn ngày hiện tại\n";
+                }
+            }
+            catch { }
+           
+            try
+            {
+                if (DateTime.Parse(dateNgayCap.EditValue.ToString()) > DateTime.Today)
+                {
+                    s += "Ngày cấp CMND không thể lớn hơn ngày hiện tại\n";
+                }
+            }
+            catch { }
 
-            if ((DateTime)dateNgaySinh.EditValue > DateTime.Today)
-            {
-                s += "Ngày sinh không thể lớn hơn ngày hiện tại\n";
-            }
-            if ((DateTime)dateNgayCap.EditValue > DateTime.Today)
-            {
-                s += "Ngày cấp CMND không thể lớn hơn ngày hiện tại\n";
-            }
             if (s != string.Empty)
             {
                 XtraMessageBox.Show(s, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -293,8 +315,6 @@ namespace QLNT.Form.KhachTro
 
             return true;
         }
-
-
 
         private void btnLuuDong_Click(object sender, EventArgs e)
         {

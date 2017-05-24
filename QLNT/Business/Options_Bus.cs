@@ -8,87 +8,86 @@ using QLNT.LinQToSQL;
 
 namespace QLNT.Business
 {
-   public class Options_Bus
+    public class Options_Bus
     {
-       LinQToSQL.QLNTDataContext datacontext = new LinQToSQL.QLNTDataContext();
-       Log_Bus lb = new Log_Bus();
-       /// <summary>
-       /// Lay len bang Option tu csdl
-       /// </summary>
-       /// <returns></returns>
-       public Option GetOp()
-       {
-           try
-           {
-               var op = (from o in datacontext.Options select o).First();
-               return (Option)op;
-           }
-           catch
-           {
-               return null;
-           }
-       }
+        LinQToSQL.QLNTDataContext datacontext = new LinQToSQL.QLNTDataContext();
+        Log_Bus lb = new Log_Bus();
+        /// <summary>
+        /// Lay len bang Option tu csdl
+        /// </summary>
+        /// <returns></returns>
+        public Option GetOp()
+        {
+            try
+            {
+                var op = (from o in datacontext.Options select o).First();
+                return (Option)op;
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
-       public List<Option> ListOption()
-       {
-           var op = (from o in datacontext.Options select o);
-           return op.ToList<Option>();
-       }
-       public bool UpdateOption(Option opp)
-       {
-           try {
-           Option op = datacontext.Options.Single(p=> p.Id==1);
-           op.HoTenChuTro = opp.HoTenChuTro;
-           op.NgaySinh = opp.NgaySinh;
-<<<<<<< HEAD
-		   op.TenFileBackup = opp.TenFileBackup;
-           op.CMND = opp.CMND;
-           op.NgayCap = opp.NgayCap;
-           op.NoiCap = opp.NoiCap;
-           op.ThuongTru = opp.ThuongTru;
-		   op.LuufileBackup = opp.LuufileBackup;
-           op.LuufileRestore = opp.LuufileRestore;
-           datacontext.SubmitChanges();
-           op.GiaTienPhong = opp.GiaTienPhong;
-           op.GiaTienDien = opp.GiaTienDien;
-           op.GiaTienNuoc = opp.GiaTienNuoc;
-		              
-          // op.LuufileRestore = opp.LuufileRestore;
-           datacontext.SubmitChanges();
-           op.TenFileBackup =opp.TenFileBackup;
-	
+        public List<Option> ListOption()
+        {
+            var op = (from o in datacontext.Options select o);
+            return op.ToList<Option>();
+        }
+        public bool UpdateOption(Option opp)
+        {
+            try
+            {
+                Option op = datacontext.Options.Single(p => p.Id == 1);
+                op.HoTenChuTro = opp.HoTenChuTro;
+                op.NgaySinh = opp.NgaySinh;
+                op.TenFileBackup = opp.TenFileBackup;
+                op.CMND = opp.CMND;
+                op.NgayCap = opp.NgayCap;
+                op.NoiCap = opp.NoiCap;
+                op.ThuongTru = opp.ThuongTru;
+                op.LuufileBackup = opp.LuufileBackup;
+                op.LuufileRestore = opp.LuufileRestore;
+                datacontext.SubmitChanges();
+                op.GiaTienPhong = opp.GiaTienPhong;
+                op.GiaTienDien = opp.GiaTienDien;
+                op.GiaTienNuoc = opp.GiaTienNuoc;
 
-           lb.InsertLog("Thay đổi bảng tùy chọn."," Đã thay đổi bảng tùy chọn trong phần mềm");
-           return true;
-           }
-           catch { return false; }
-           
-       }
-	   public bool UpdateOption_Bk(Option opp)
-       {
-           try {
-           Option op = datacontext.Options.Single(p=> p.Id==1);
-           op.HoTenChuTro = opp.HoTenChuTro;
-           op.NgaySinh = opp.NgaySinh;
-=======
->>>>>>> 8f3af8a8254642c7700d94cfa898c3c29db4f0c9
-           op.CMND = opp.CMND;
-           op.NgayCap = opp.NgayCap;
-           op.NoiCap = opp.NoiCap;
-           op.ThuongTru = opp.ThuongTru;
-           op.GiaTienPhong = opp.GiaTienPhong;
-           op.GiaTienDien = opp.GiaTienDien;
-           op.GiaTienNuoc = opp.GiaTienNuoc;
-           op.TenFileBackup =opp.TenFileBackup;
-           op.LuufileBackup = opp.LuufileBackup;
-           op.LuufileRestore = opp.LuufileRestore;
-           datacontext.SubmitChanges();
-           lb.InsertLog("Thay đổi bảng tùy chọn."," Đã thay đổi bảng tùy chọn trong phần mềm");
-           return true;
-           }
-           catch { return false; }
-           
-       }
+                // op.LuufileRestore = opp.LuufileRestore;
+                datacontext.SubmitChanges();
+                op.TenFileBackup = opp.TenFileBackup;
+
+
+                lb.InsertLog("Thay đổi bảng tùy chọn.", " Đã thay đổi bảng tùy chọn trong phần mềm");
+                return true;
+            }
+            catch { return false; }
+
+        }
+        public bool UpdateOption_Bk(Option opp)
+        {
+            try
+            {
+                Option op = datacontext.Options.Single(p => p.Id == 1);
+                op.HoTenChuTro = opp.HoTenChuTro;
+                op.NgaySinh = opp.NgaySinh;
+                op.CMND = opp.CMND;
+                op.NgayCap = opp.NgayCap;
+                op.NoiCap = opp.NoiCap;
+                op.ThuongTru = opp.ThuongTru;
+                op.GiaTienPhong = opp.GiaTienPhong;
+                op.GiaTienDien = opp.GiaTienDien;
+                op.GiaTienNuoc = opp.GiaTienNuoc;
+                op.TenFileBackup = opp.TenFileBackup;
+                op.LuufileBackup = opp.LuufileBackup;
+                op.LuufileRestore = opp.LuufileRestore;
+                datacontext.SubmitChanges();
+                lb.InsertLog("Thay đổi bảng tùy chọn.", " Đã thay đổi bảng tùy chọn trong phần mềm");
+                return true;
+            }
+            catch { return false; }
+
+        }
 
     }
 }

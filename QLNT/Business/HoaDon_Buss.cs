@@ -22,23 +22,20 @@ namespace QLNT.Business
         public double SoTienNuoc { get; set; }
         public string ThangNam { get; set; }
         public string TenPhong { get; set; }
-        //public DateTime? NgayDong { get; set; }
-        //public string NguoiDong { get; set; }
-        //public double TongTien { get; set; }
     }
     public class HoaDon_Buss
     {
         QLNTDataContext dtcontent = new QLNTDataContext();
         Log_Bus lb = new Log_Bus();
-       public void TaoHoaDon(int thang,int nam,string makhu)
+        public void TaoHoaDon(int thang, int nam, string makhu)
         {
             try
             {
-                dtcontent.SP_TAOHOADON(thang, nam, makhu);
+                dtcontent.NT_SP_TAOHOADON(thang, nam, makhu);
                 dtcontent.SubmitChanges();
             }
             catch { }
-            
+
         }
         public List<LinQToSQL.HoaDon> ListHoaDon()
         {
@@ -83,7 +80,7 @@ namespace QLNT.Business
 
         public _HoaDon GetHoaDonTheoPhong(long id)
         {
-            var ob = (from hoadon in dtcontent.SPHOADONTIENPHONG(id)
+            var ob = (from hoadon in dtcontent.NT_SPHOADONTIENPHONG(id)
                       select new _HoaDon
                       {
                           SoDienCu = (int)hoadon.SoDienCu,
@@ -93,20 +90,20 @@ namespace QLNT.Business
 
                           SoTienDien = (double)hoadon.SoTienDien,
 
-                          SoNuocCu = (int)hoadon.SoNuocCu ,
-                          SoNuocMoi = (int)hoadon.SoNuocMoi ,
+                          SoNuocCu = (int)hoadon.SoNuocCu,
+                          SoNuocMoi = (int)hoadon.SoNuocMoi,
                           SoNuocTieuThu = (int)hoadon.SoNuocTieuThu,
-                          GiaTienNuoc = (double)hoadon.GiaTienNuoc ,
+                          GiaTienNuoc = (double)hoadon.GiaTienNuoc,
                           SoTienNuoc = (double)hoadon.SoTienNuoc,
 
                           TienPhong = (double)hoadon.TienPhong,
                           ThangNam = hoadon.ThangNam,
                           TenPhong = hoadon.TenPhong,
-                          TongTien = (double)hoadon.TongTien ,
+                          TongTien = (double)hoadon.TongTien,
                           NguoiDong = hoadon.NguoiDong,
                           NgayDong = (DateTime)hoadon.NgayDong
                       }).First();
-                      
+
             return (_HoaDon)ob;
         }
 
