@@ -223,7 +223,7 @@ namespace QLNT.Business
                 datacontext.KhachTros.InsertOnSubmit(kh);
                 datacontext.SubmitChanges();
 
-                datacontext.NT_sp_DemSoNguoi(kh.MaPhong);
+                datacontext.NT_SP_DemSoNguoi(kh.MaPhong);
                 datacontext.SubmitChanges();
                 lb.InsertLog("Thêm một khách trọ", "");
                 return true;
@@ -294,7 +294,7 @@ namespace QLNT.Business
             query1.HoatDong = false;
             datacontext.SubmitChanges();
 
-            datacontext.NT_sp_DemSoNguoi(query1.MaPhong);
+            datacontext.NT_SP_DemSoNguoi(query1.MaPhong);
             datacontext.SubmitChanges();
 
             lb.InsertLog("Xóa khách trọ (Thùng rác) " + MaKhachTro, "Xóa khách trọ");
@@ -305,7 +305,7 @@ namespace QLNT.Business
             datacontext.KhachTros.DeleteOnSubmit(query);
             datacontext.SubmitChanges();
 
-            datacontext.NT_sp_DemSoNguoi(query.MaPhong);
+            datacontext.NT_SP_DemSoNguoi(query.MaPhong);
             datacontext.SubmitChanges();
 
             lb.InsertLog("Xóa khách trọ (Xóa luôn) " + MaKhachTro, "Xóa khách trọ");
@@ -320,7 +320,7 @@ namespace QLNT.Business
             query1.HoatDong = true;
             datacontext.SubmitChanges();
 
-            datacontext.NT_sp_DemSoNguoi(query1.MaPhong);
+            datacontext.NT_SP_DemSoNguoi(query1.MaPhong);
             datacontext.SubmitChanges();
 
             lb.InsertLog("Khôi phục khách trọ " + MaKhachTro, "Khôi phục khách trọ");
@@ -356,7 +356,7 @@ namespace QLNT.Business
                 khachtro.HoatDong = kh.HoatDong;
 
                 datacontext.SubmitChanges();
-                datacontext.NT_sp_DemSoNguoi(khachtro.MaPhong);
+                datacontext.NT_SP_DemSoNguoi(khachtro.MaPhong);
                 datacontext.SubmitChanges();
                 return true;
             }
@@ -391,7 +391,7 @@ namespace QLNT.Business
             try
             {
                 datacontext.SubmitChanges();
-                datacontext.NT_sp_DemSoNguoi(khachtro.MaPhong);
+                datacontext.NT_SP_DemSoNguoi(khachtro.MaPhong);
                 datacontext.SubmitChanges();
                 return true;
             }
@@ -438,10 +438,10 @@ namespace QLNT.Business
                 catch { }
             }
 
-            datacontext.NT_sp_DemSoNguoi(m);
+            datacontext.NT_SP_DemSoNguoi(m);
             datacontext.SubmitChanges();
 
-            datacontext.NT_sp_DemSoNguoi(mp);
+            datacontext.NT_SP_DemSoNguoi(mp);
             datacontext.SubmitChanges();
         }
     }

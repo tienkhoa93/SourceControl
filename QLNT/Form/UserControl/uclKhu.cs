@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Common;
@@ -94,6 +88,7 @@ namespace QLNT.Form.UserControl
                 if (khuk.Count > 0)
                 {
                     XtraMessageBox.Show("Khu này có phòng còn Sinh viên, vui lòng xóa hết phòng trong khu", "Thông báo");
+                    this.Cursor = Cursors.Default;
                     return;
                 }
                 else
@@ -103,18 +98,18 @@ namespace QLNT.Form.UserControl
                 }
             }
             
-            List<Business.Khu_Bus.Khu_Count> sinhvien = (List<Business.Khu_Bus.Khu_Count>)gridViewKhu.DataSource;
-            Business.Khu_Bus.Khu_Count khu = (Business.Khu_Bus.Khu_Count)sinhvien[gridViewKhu.FocusedRowHandle];
-            if (khub.KiemTraTonTaiPhong(khu.MaKhu) == 0)
-            {
-                khub.DeleteKhu_Rac(khu.MaKhu);
-                XtraMessageBox.Show("Xóa " + khu.TenKhu + " thành công");
-            }
-            else
-            {
-                XtraMessageBox.Show("Khu này có phòng còn Sinh viên, vui lòng xóa hết phòng trong " + khu.TenKhu, "Thông báo");
-            }
-            gridKhu.DataSource = khub.GetAllKhu_Count();
+            //List<Business.Khu_Bus.Khu_Count> sinhvien = (List<Business.Khu_Bus.Khu_Count>)gridViewKhu.DataSource;
+            //Business.Khu_Bus.Khu_Count khu = (Business.Khu_Bus.Khu_Count)sinhvien[gridViewKhu.FocusedRowHandle];
+            //if (khub.KiemTraTonTaiPhong(khu.MaKhu) == 0)
+            //{
+            //    khub.DeleteKhu_Rac(khu.MaKhu);
+            //    XtraMessageBox.Show("Xóa " + khu.TenKhu + " thành công");
+            //}
+            //else
+            //{
+            //    XtraMessageBox.Show("Khu này có phòng còn Sinh viên, vui lòng xóa hết phòng trong " + khu.TenKhu, "Thông báo");
+            //}
+            //gridKhu.DataSource = khub.GetAllKhu_Count();
             gridViewKhu.MoveBy(--curr);
             this.Cursor = Cursors.Default;
         }

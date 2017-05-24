@@ -329,22 +329,19 @@
       <Column Name="GhiChu" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
-  <Function Name="dbo.NT_Backup_auto" Method="NT_Backup_auto">
+  <Function Name="dbo.Backup_auto" Method="Backup_auto">
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.NT_TGG_LOG" Method="NT_TGG_LOG">
     <Parameter Name="TDN" Parameter="tDN" Type="System.String" DbType="NVarChar(200)" />
     <Parameter Name="TV" Parameter="tV" Type="System.String" DbType="NVarChar(200)" />
     <Parameter Name="CT" Parameter="cT" Type="System.String" DbType="NVarChar(200)" />
-    <Parameter Name="Mac" Parameter="mac" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Mac" Parameter="mac" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(100)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.NT_SP_Count_SV_Inroom" Method="NT_SP_Count_SV_Inroom">
     <Parameter Name="maphong" Type="System.String" DbType="NVarChar(100)" />
-    <ElementType Name="NT_SP_Count_SV_InroomResult">
-      <Column Name="SISO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
   </Function>
   <Function Name="dbo.NT_SP_DELETE_ALL_NHATKY" Method="NT_SP_DELETE_ALL_NHATKY">
     <Return Type="System.Int32" />
@@ -355,9 +352,40 @@
       <Column Name="TongSo" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.NT_sp_DemSoNguoi" Method="NT_sp_DemSoNguoi">
+  <Function Name="dbo.NT_SP_DemSoNguoi" Method="NT_SP_DemSoNguoi">
     <Parameter Name="maphong" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.NT_SP_HOADONTIENPHONG" Method="NT_SP_HOADONTIENPHONG">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="NT_SP_HOADONTIENPHONGResult">
+      <Column Name="TenPhong" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TienPhong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TongTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SoDienCu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoDienMoi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoDienTieuThu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoTienDien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GiaTienDien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SoNuocCu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoNuocMoi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoNuocTieuThu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoTienNuoc" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GiaTienNuoc" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NgayDong" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NguoiDong" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ThangNam" Type="System.String" DbType="NVarChar(21)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.NT_SP_LayDienNuocCu" Method="NT_SP_LayDienNuocCu">
+    <Parameter Name="thang" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="makhu" Type="System.String" DbType="NVarChar(20)" />
+    <ElementType Name="NT_SP_LayDienNuocCuResult">
+      <Column Name="MaPhong" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="SoDienMoi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoNuocMoi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
   </Function>
   <Function Name="dbo.NT_SP_LIST_ROOM_SISO" Method="NT_SP_LIST_ROOM_SISO">
     <ElementType Name="NT_SP_LIST_ROOM_SISOResult">
@@ -369,8 +397,8 @@
       <Column Name="HoatDong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="GiaPhong" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="TongNguoi" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TuNgay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ToiNgay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TuNgay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ToiNgay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.NT_SP_TAOHOADON" Method="NT_SP_TAOHOADON">
@@ -438,32 +466,5 @@
     <Parameter Name="quanly" Type="System.Boolean" DbType="Bit" />
     <Parameter Name="ghichu" Type="System.String" DbType="NText" />
     <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.NT_SPHOADONTIENPHONG" Method="NT_SPHOADONTIENPHONG">
-    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" />
-    <ElementType Name="NT_SPHOADONTIENPHONGResult">
-      <Column Name="TenPhong" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="TienPhong" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TongTien" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="SoDienCu" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SoDienMoi" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SoDienTieuThu" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SoTienDien" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="GiaTienDien" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="SoNuocCu" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SoNuocMoi" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SoNuocTieuThu" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SoTienNuoc" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="GiaTienNuoc" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NgayDong" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="NguoiDong" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="ThangNam" Type="System.String" DbType="NVarChar(21)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.NT_StatisticsCountEachRoom" Method="NT_StatisticsCountEachRoom">
-    <Parameter Name="MaPhong" Parameter="maPhong" Type="System.String" DbType="VarChar(20)" />
-    <ElementType Name="NT_StatisticsCountEachRoomResult">
-      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
   </Function>
 </Database>

@@ -80,7 +80,7 @@ namespace QLNT.Business
 
         public _HoaDon GetHoaDonTheoPhong(long id)
         {
-            var ob = (from hoadon in dtcontent.NT_SPHOADONTIENPHONG(id)
+            var ob = (from hoadon in dtcontent.NT_SP_HOADONTIENPHONG(id)
                       select new _HoaDon
                       {
                           SoDienCu = (int)hoadon.SoDienCu,

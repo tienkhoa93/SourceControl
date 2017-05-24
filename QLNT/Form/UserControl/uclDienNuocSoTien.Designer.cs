@@ -57,6 +57,7 @@
             this.calTienNuoc = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcDienNuoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDienNuoc)).BeginInit();
@@ -216,7 +217,8 @@
             this.colTienDien,
             this.colTienNuoc,
             this.gridColumn6,
-            this.gridColumn7});
+            this.gridColumn7,
+            this.gridColumn4});
             this.gvDienNuoc.GridControl = this.grcDienNuoc;
             this.gvDienNuoc.Name = "gvDienNuoc";
             this.gvDienNuoc.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
@@ -238,6 +240,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 63;
             // 
             // cboThang
             // 
@@ -268,6 +271,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 63;
             // 
             // cboNam
             // 
@@ -306,6 +310,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.Width = 63;
             // 
             // gridPhong
             // 
@@ -331,6 +336,7 @@
             this.colTienDien.Name = "colTienDien";
             this.colTienDien.Visible = true;
             this.colTienDien.VisibleIndex = 3;
+            this.colTienDien.Width = 63;
             // 
             // calTienDien
             // 
@@ -348,6 +354,7 @@
             this.colTienNuoc.Name = "colTienNuoc";
             this.colTienNuoc.Visible = true;
             this.colTienNuoc.VisibleIndex = 4;
+            this.colTienNuoc.Width = 63;
             // 
             // calTienNuoc
             // 
@@ -365,6 +372,7 @@
             this.gridColumn6.OptionsColumn.ReadOnly = true;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.Width = 63;
             // 
             // gridColumn7
             // 
@@ -373,6 +381,18 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.Width = 63;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "ID";
+            this.gridColumn4.FieldName = "Id";
+            this.gridColumn4.MinWidth = 10;
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowShowHide = false;
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 7;
+            this.gridColumn4.Width = 20;
             // 
             // uclDienNuocSoTien
             // 
@@ -395,6 +415,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.calTienDien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.calTienNuoc)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -427,5 +448,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit gridPhong;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
     }
 }

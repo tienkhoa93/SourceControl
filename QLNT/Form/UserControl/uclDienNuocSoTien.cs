@@ -163,8 +163,10 @@ namespace QLNT.Form.UserControl
                 List<int> str = new List<int>();
                 for (int i = 0; i < gvDienNuoc.RowCount; i++)
                 {
-                    if (gvDienNuoc.IsRowSelected(i) == true)
-                        str.Add(int.Parse(gvDienNuoc.GetRowCellValue(i, "id").ToString()));
+                    if (gvDienNuoc.IsRowSelected(i) == true){
+                        //string a = gvDienNuoc.GetRowCellValue(i, "id").ToString();
+                        str.Add(int.Parse(gvDienNuoc.GetRowCellValue(i, "Id").ToString()));
+                    }
                 }
                 k = str[0];
                 str.RemoveAll(s => s == null);

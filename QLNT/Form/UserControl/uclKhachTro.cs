@@ -87,29 +87,28 @@ namespace QLNT.Form.UserControl
 
                     item = new DevExpress.XtraBars.Ribbon.GalleryItem();
                     item.Caption = phong[i].TenPhong + "[" + phong[i].MaPhong + "]\nGiá:" + String.Format("{0:0,0}", phong[i].GiaPhong) + " vnd";
-                    ISingleResult<NT_StatisticsCountEachRoomResult> result = dtcontext.NT_StatisticsCountEachRoom(phong[i].MaPhong);
+                    //ISingleResult<NT_StatisticsCountEachRoomResult> result = dtcontext.NT_StatisticsCountEachRoom(phong[i].MaPhong);
 
-                    int count = 0;
-                    foreach (var item1 in result)
-                    {
-                        count = item1.Total.Value;
-                    }
+                    //int count = 0;
+                    //foreach (var item1 in result)
+                    //{
+                    //    count = item1.Total.Value;
+                    //}
                     //if (value != null && value..count > 0)
                     //{
                     //    string a = value[0][0].ToString();
                     //}
-                    if (count > 0)
-                    {
-                        item.Description = "Hiện đang có " + count + " người\n";
-                    }
-                    else { item.Description = "Trạng thái: Trống. "; }
-
-                    //if (phong[i].SoNguoi > 0)
+                    //if (count > 0)
                     //{
-                    //    item.Description = "Hiện đang có " + phong[i].SoNguoi + " người\n";
                     //    item.Description = "Hiện đang có " + count + " người\n";
                     //}
                     //else { item.Description = "Trạng thái: Trống. "; }
+
+                    if (phong[i].SoNguoi > 0)
+                    {
+                        item.Description = "Hiện đang có " + phong[i].SoNguoi + " người\n";
+                    }
+                    else { item.Description = "Trạng thái: Trống. "; }
                     item.Value = phong[i].MaPhong;
                     if (File.Exists(@"../../Resources/1.png"))// user-icon1 @"../../Resources/1.png"
                         item.Image = Image.FromFile(@"../../Resources/1.png");
@@ -132,23 +131,23 @@ namespace QLNT.Form.UserControl
             Phong_Bus pb = new Phong_Bus();
             Phong pg = pb.SoNguoi(e.Item.Value.ToString());
             e.Item.Caption = pg.TenPhong + "[" + pg.MaPhong + "]\nGiá:" + String.Format("{0:0,0}", pg.GiaPhong) + " vnd";
-            ISingleResult<NT_StatisticsCountEachRoomResult> result = dtcontext.NT_StatisticsCountEachRoom(pg.MaPhong);
+            //ISingleResult<NT_StatisticsCountEachRoomResult> result = dtcontext.NT_StatisticsCountEachRoom(pg.MaPhong);
 
-            int count = 0;
-            foreach (var item1 in result)
+            //int count = 0;
+            //foreach (var item1 in result)
+            //{
+            //    count = item1.Total.Value;
+            //}
+            //if (count > 0)
+            //{
+            //    e.Item.Description = "Hiện đang có " + count + " người\n";
+            //}
+            //else { e.Item.Description = "Trạng thái: Trống. "; }
+            if (pg.SoNguoi > 0)
             {
-                count = item1.Total.Value;
-            }
-            if (count > 0)
-            {
-                e.Item.Description = "Hiện đang có " + count + " người\n";
+                e.Item.Description = "Hiện đang có " + pg.SoNguoi + " người\n";
             }
             else { e.Item.Description = "Trạng thái: Trống. "; }
-            //if (pg.SoNguoi > 0)
-            //{
-            //    e.Item.Description = "Hiện đang có " + pg.SoNguoi + " người\n";
-            //}
-            // else { e.Item.Description = "Trạng thái: Trống. "; }
             e.Item.Value = pg.MaPhong;
 
         }
