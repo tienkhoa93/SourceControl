@@ -115,7 +115,7 @@
       <Column Name="Anh" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="NoiSinh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="CMND" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CMND" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="NoiCap" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="NgayCap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="GioVao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
@@ -155,15 +155,6 @@
       <Column Name="GhiChu" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
-  <Table Name="dbo.KhoaHoc" Member="KhoaHocs">
-    <Type Name="KhoaHoc">
-      <Column Name="MaKhoaHoc" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="He" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="NamHoc" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="TenKhoaHoc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="GhiChu" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
   <Table Name="dbo.Khu" Member="Khus">
     <Type Name="Khu">
       <Column Name="MaKhu" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -181,22 +172,15 @@
       <Column Name="GhiChu" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
-  <Table Name="dbo.Lop" Member="Lops">
-    <Type Name="Lop">
-      <Column Name="MaLop" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TenLop" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="GhiChu" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
   <Table Name="dbo.NhatKy" Member="NhatKies">
     <Type Name="NhatKy">
-      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="STT" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TenDangNhap" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
       <Column Name="Ngay" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="TacVu" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
       <Column Name="ChiTiet" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="TenMayTinh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MacAddress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenMayTinh" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MacAddress" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.Options" Member="Options">
@@ -226,8 +210,8 @@
       <Column Name="HoatDong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="GiaPhong" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="TongNguoi" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TuNgay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ToiNgay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TuNgay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ToiNgay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.QuanLyVatTu" Member="QuanLyVatTus">
@@ -329,7 +313,7 @@
       <Column Name="GhiChu" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
-  <Function Name="dbo.Backup_auto" Method="Backup_auto">
+  <Function Name="dbo.NT_SP_Backup_auto" Method="NT_SP_Backup_auto">
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.NT_TGG_LOG" Method="NT_TGG_LOG">
